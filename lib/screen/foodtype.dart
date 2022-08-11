@@ -1,3 +1,6 @@
+import 'package:image_from_firebase_public/component/photorecevier.dart';
+import '../component/format.dart';
+import 'foodlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -30,11 +33,17 @@ class foodtype extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
-              format(),
+              format(
+                photoname: 'Foodtype/italian.jpg',
+                name: "ITTALIAN",
+              ),
               SizedBox(
                 height: 40,
               ),
-              format(), //calling the function to print he format
+              format(
+                photoname: 'Foodtype/french.jpeg',
+                name: "FRENCH",
+              ), //calling the function to print he format
             ],
           ),
         ]),
@@ -43,82 +52,7 @@ class foodtype extends StatelessWidget {
   }
 }
 
-class format extends StatelessWidget {
-  const format({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      children: [
-        Container(
-          height: 350,
-          color: Colors.white38,
-        ),
-        Column(
-          children: [
-            SizedBox(
-              height: 200,
-            ),
-            Container(
-              height: 100,
-              color: Colors.grey,
-            ),
-          ],
-        ),
-        // Container(
-        //   height: 200,
-        //   color: Colors.white,
-        // ),
-        // Positioned(
-        //   child:
-        Container(
-          //alignment: Alignment.center,
-          height: 250,
-          width: 250,
-          // ignore: prefer_const_constructors
-          decoration: BoxDecoration(
-              color: Colors.red,
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.greenAccent,
-                  offset: const Offset(
-                    5.0,
-                    5.0,
-                  ),
-                  blurRadius: 10.0,
-                  spreadRadius: 2.0,
-                ),
-                // BoxShadow(
-                //   color: Colors.white,
-                //   offset: const Offset(0.0, 0.0),
-                //   blurRadius: 00.0,
-                //   spreadRadius: 0.0,
-                // )
-              ]),
-        ),
-        // ),
-        Column(
-          children: [
-            SizedBox(
-              height: 275,
-            ),
-            TextButton(
-                onPressed: () {
-                  //navigate to the next page
-                },
-                child: Container(
-                    height: 50,
-                    width: 50,
-                    color: Colors.black,
-                    child: Icon(Icons.arrow_forward))),
-          ],
-        ),
-      ],
-    );
-  }
-}
 
 // return Scaffold(
 //   appBar: AppBar(

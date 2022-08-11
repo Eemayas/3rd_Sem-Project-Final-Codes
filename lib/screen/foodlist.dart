@@ -3,6 +3,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../Firebase/database_manager.dart';
+import '../component/photorecevier.dart';
+
 class foodlist extends StatelessWidget {
   static String ID = 'food_list';
 
@@ -25,7 +28,8 @@ class foodlist extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, "recipeepage.ID");
                   },
-                  child: Text("nextpage"))
+                  child: Text("nextpage")),
+              photoviewer('prashant.jpg'),
             ],
           ),
         ),
