@@ -17,8 +17,13 @@ class photoviewer extends StatelessWidget {
           );
         }
         if (snapshot.connectionState == ConnectionState.done) {
-          return Image.network(
-            snapshot.data.toString(),
+          return CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage(snapshot.data.toString()),
+
+            // Image.network(
+            //   snapshot.data.toString(),
+            //   fit: BoxFit.cover,
           );
         }
         return const Center(child: CircularProgressIndicator());

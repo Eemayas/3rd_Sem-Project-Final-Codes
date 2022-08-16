@@ -5,9 +5,10 @@ import 'package:image_from_firebase_public/component/photorecevier.dart';
 import '../constanst/constanst.dart';
 
 class format extends StatelessWidget {
-  format({required this.photoname, required this.name});
+  format({required this.photoname, required this.name, this.nextpage});
   final String? photoname;
   final String? name;
+  final String? nextpage;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class format extends StatelessWidget {
                 height: 150,
                 width: double.infinity,
                 decoration: BoxDecoration(
+                  boxShadow: kBoxshadow,
                   borderRadius: BorderRadius.circular(20),
                   color: cTextcontainer_foodtype_page,
                 ),
@@ -40,7 +42,9 @@ class format extends StatelessWidget {
                       "$name",
                       style: TextStyle(
                           fontSize: 30,
+                          fontFamily: 'abrilfatface',
                           fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
                           color: cFoodname_foodtype_page),
                     ),
                   ],
@@ -54,7 +58,7 @@ class format extends StatelessWidget {
           // ignore: prefer_const_constructors
           decoration: BoxDecoration(
             color: cPhotoframe_foodtype_page,
-            shape: BoxShape.rectangle,
+            shape: BoxShape.circle,
             boxShadow: kBoxshadow,
           ),
           child: photoviewer('$photoname'),
@@ -66,7 +70,7 @@ class format extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, "foodlist.ID");
+                  Navigator.pushNamed(context, '$nextpage');
                   //navigate to the next page
                 },
                 child: Container(

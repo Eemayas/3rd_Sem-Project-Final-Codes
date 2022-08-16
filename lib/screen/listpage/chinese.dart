@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/component/format.dart';
-import '../constanst/lists.dart';
+import '../../constanst/lists.dart';
 
-class foodlist extends StatelessWidget {
-  static String ID = 'food_list';
+class chinese extends StatelessWidget {
+  static String ID = 'chinese';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('foodlist'),
+        title: Text('Chinese'),
       ),
       body: SafeArea(
         child: Center(

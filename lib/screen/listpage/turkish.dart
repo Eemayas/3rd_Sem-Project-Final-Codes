@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/component/format.dart';
-import '../constanst/lists.dart';
+import '../../constanst/lists.dart';
 
-class foodlist extends StatelessWidget {
-  static String ID = 'food_list';
+class turkish extends StatelessWidget {
+  static String ID = 'turkish';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('foodlist'),
+        title: Text('turkish'),
       ),
       body: SafeArea(
         child: Center(
             child: ListView(
           // scrollDirection: Axis.horizontal,
           children: [
-            for (int i = 0; i < Foodlist_CHINESE.length; i++)
+            for (int i = 0; i < Foodlist_TURKISH.length; i++)
               format(
-                  photoname: Foodlist_CHINESE[i].imagePath,
-                  name: Foodlist_CHINESE[i].title),
+                  photoname: Foodlist_TURKISH[i].imagePath,
+                  name: Foodlist_TURKISH[i].title),
           ],
         )),
       ),
