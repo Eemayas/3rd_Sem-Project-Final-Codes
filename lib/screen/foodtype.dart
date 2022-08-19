@@ -1,5 +1,6 @@
 import 'package:image_from_firebase_public/component/photorecevier.dart';
 import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
+import 'package:image_from_firebase_public/screen/listpage/french.dart';
 import 'package:image_from_firebase_public/screen/listpage/italian.dart';
 import 'package:image_from_firebase_public/screen/listpage/japnese.dart';
 import 'package:image_from_firebase_public/screen/listpage/korean.dart';
@@ -43,7 +44,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/chinese.jpg',
                 name: "CHINESE",
-                nextpage: 'chinese.ID',
+                nextpage: chinese.ID,
               ),
               SizedBox(
                 height: 40,
@@ -51,7 +52,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/french.jpeg',
                 name: "FRENCH",
-                nextpage: 'french.ID',
+                nextpage: french.ID,
               ), //calling the function to print he format
               SizedBox(
                 height: 40,
@@ -59,7 +60,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/italian.jpg',
                 name: "ITALIAN",
-                nextpage: 'italian.ID',
+                nextpage: italian.ID,
               ),
               SizedBox(
                 height: 40,
@@ -67,7 +68,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/japanese.jfif',
                 name: "JAPANESE",
-                nextpage: 'japanese.ID',
+                nextpage: japanese.ID,
               ),
               SizedBox(
                 height: 40,
@@ -75,7 +76,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/korean.jpg',
                 name: "KOREAN",
-                nextpage: 'korean.ID',
+                nextpage: korean.ID,
               ),
               SizedBox(
                 height: 40,
@@ -83,7 +84,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/subcontinental.jpg',
                 name: "SUBCONTINENTAL",
-                nextpage: 'subcontiental.ID',
+                nextpage: subcontiental.ID,
               ),
               SizedBox(
                 height: 40,
@@ -91,7 +92,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/thai.jpg',
                 name: "THAI",
-                nextpage: 'thai.ID',
+                nextpage: thai.ID,
               ),
               SizedBox(
                 height: 40,
@@ -99,7 +100,7 @@ class foodtype extends StatelessWidget {
               format(
                 photoname: 'Foodtype/turkish.jpg',
                 name: "TURKISH",
-                nextpage: "turkish.ID",
+                nextpage: turkish.ID,
               ),
             ],
           ),

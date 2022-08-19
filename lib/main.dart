@@ -6,6 +6,7 @@ import 'package:image_from_firebase_public/screen/listpage/korean.dart';
 import 'package:image_from_firebase_public/screen/listpage/subcontinental.dart';
 import 'package:image_from_firebase_public/screen/listpage/thai.dart';
 import 'package:image_from_firebase_public/screen/listpage/turkish.dart';
+import 'package:image_from_firebase_public/screen/recipee/try.dart';
 import '/screen/foodlist.dart';
 import '/screen/foodtype.dart';
 import '/screen/recipeepage.dart';
@@ -27,20 +28,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      initialRoute: "foodtype.ID",
+      initialRoute: foodtype.ID,
       routes: {
-        "foodlist.ID": (context) => foodlist(),
-        "foodtype.ID": (context) => foodtype(),
+        foodlist.ID: (context) => foodlist(),
+        foodtype.ID: (context) => foodtype(),
         "recipeepage.ID": (context) => recipeepage(),
         "slidebar.ID": (context) => slidebar(),
-        "french.ID": (context) => french(),
-        "chinese.ID": (context) => chinese(),
-        "italian.ID": (context) => italian(),
-        "japanese.ID": (context) => japanese(),
-        "korean.ID": (context) => korean(),
-        'subcontiental.ID': (context) => subcontiental(),
-        "thai.ID": (context) => thai(),
-        "turkish.ID": (context) => turkish(),
+        french.ID: (context) => french(),
+        chinese.ID: (context) => chinese(),
+        italian.ID: (context) => italian(),
+        japanese.ID: (context) => japanese(),
+        korean.ID: (context) => korean(),
+        subcontiental.ID: (context) => subcontiental(),
+        thai.ID: (context) => thai(),
+        turkish.ID: (context) => turkish(),
+        tryy.ID: (context) => new tryy(foodname: "chinese"),
       },
     );
   }

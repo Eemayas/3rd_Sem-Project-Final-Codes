@@ -61,7 +61,7 @@ class format extends StatelessWidget {
             shape: BoxShape.circle,
             boxShadow: kBoxshadow,
           ),
-          child: photoviewer('$photoname'),
+          child: photoviewer_format('$photoname'),
         ),
         Column(
           children: [

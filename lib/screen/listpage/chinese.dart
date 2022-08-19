@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/component/format.dart';
+import 'package:image_from_firebase_public/screen/recipee/try.dart';
 import '../../constanst/lists.dart';
 
 class chinese extends StatelessWidget {
@@ -19,7 +20,8 @@ class chinese extends StatelessWidget {
             for (int i = 0; i < Foodlist_CHINESE.length; i++)
               format(
                   photoname: Foodlist_CHINESE[i].imagePath,
-                  name: Foodlist_CHINESE[i].title),
+                  name: Foodlist_CHINESE[i].title,
+                  nextpage: tryy.ID),
           ],
         )),
       ),
