@@ -19,19 +19,18 @@ List Foodlist_FRENCH = [
   Food('Foodlist/French/Canelés.jpg', "Canelés"),
   Food('Foodlist/French/Choux pastry for eclairs, chouquettes or gougeres.jpg',
       "Choux pastry for eclairs, chouquettes or gougeres"),
-  Food('Foodlist/French/Creme Brulee.jpeg', "Creme Brulee"),
-  Food('Foodlist/French/French Onion Soup.jpeg', "French Onion Soup"),
+  Food('Foodlist/French/Creme Brulee.jpg', "Creme Brulee"),
+  Food('Foodlist/French/French Onion Soup.jpg', "French Onion Soup"),
 ];
 List Foodlist_ITALIAN = [
   Food('Foodlist/Italian/Caprese.jpg', "Caprese"),
-  Food('Foodlist/Italian/Lentil, spinach & mushroom veggie lasagne.jpg',
+  Food('Foodlist/Italian/Lentil, spinach _ mushroom veggie lasagne.jpg',
       "Lentil, spinach & mushroom veggie lasagne"),
   Food('Foodlist/Italian/Pasta with wild asparagus and pancetta.jpg',
       "Pasta with wild asparagus and pancetta"),
   Food('Foodlist/Italian/Pumpkin risotto.jpg', "Pumpkin risotto"),
   Food('Foodlist/Italian/Spaghetti in bolognese sauce.jpg',
       "Spaghetti in bolognese sauce"),
-  Food('Foodlist/Italian/chinese.jpg', "ITALIAN"),
 ];
 List Foodlist_JAPANESES = [
   Food('Foodlist/Japanese/japanese.jfif', "JAPANESE"),
@@ -45,7 +44,7 @@ List Foodlist_JAPANESES = [
   Food('Foodlist/Japanese/Yakitori.jpg', "Yakitori"),
 ];
 List Foodlist_KOREAN = [
-  Food('Foodlist/Korean/Yangnyeom chicken : Korean spicy chicken.jpg',
+  Food('Foodlist/Korean/Yangnyeom chicken _ Korean spicy chicken.jpg',
       "Yangnyeom chicken : Korean spicy chicken"),
   Food('Foodlist/Korean/Veggie Bibimbap.jpg', "Veggie Bibimbap"),
   Food('Foodlist/Korean/Toppogi (Spicy Korean mochi soup).jpg',

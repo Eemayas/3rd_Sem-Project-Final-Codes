@@ -12,6 +12,20 @@ class format extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height2 = 250;
+    double width2 = 250;
+    var container = Container(
+      //alignment: Alignment.center,
+      height: height2, //250
+      width: width2, //250
+      // ignore: prefer_const_constructors
+      decoration: BoxDecoration(
+        color: cPhotoframe_foodtype_page,
+        shape: BoxShape.circle,
+        boxShadow: kBoxshadow,
+      ),
+      child: photoviewer_format('$photoname'),
+    );
     return Stack(
       alignment: Alignment.topCenter,
       children: [
@@ -51,18 +65,7 @@ class format extends StatelessWidget {
                 )),
           ],
         ),
-        Container(
-          //alignment: Alignment.center,
-          height: 250,
-          width: 250,
-          // ignore: prefer_const_constructors
-          decoration: BoxDecoration(
-            color: cPhotoframe_foodtype_page,
-            shape: BoxShape.circle,
-            boxShadow: kBoxshadow,
-          ),
-          child: photoviewer_format('$photoname'),
-        ),
+        container,
         Column(
           children: [
             SizedBox(
