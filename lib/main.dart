@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         subcontiental.ID: (context) => subcontiental(),
         thai.ID: (context) => thai(),
         turkish.ID: (context) => turkish(),
-        tryy.ID: (context) => new tryy(foodname: "chinese"),
+        tryy.ID: (context) => new tryy(foodname: "chiness"),
       },
     );
   }
