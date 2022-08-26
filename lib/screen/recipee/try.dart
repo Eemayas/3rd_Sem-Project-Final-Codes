@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
-
-import '../../component/photorecevier.dart';
-import '../../constanst/constanst.dart';
+import '../../component/appbar.dart';
+import '../../Firebase/firebase_extractor.dart';
+import '../../component/recipephotoviewr.dart';
 
 class tryy extends StatelessWidget {
-  tryy({required this.foodname});
-  final String foodname;
+  tryy({required this.foodtype});
+  // final String foodname;
+  // final String imgPath;
+  final String foodtype;
+  // final String collection_name;
+  // final String docs_name;
+  // final String subcollection_name;
   static String ID = "try";
-  static const List<Widget> _views = [
-    const Center(child: const Text('Content of Tab One')),
-    const Center(child: const Text('Content of Tab Two')),
-  ];
+
   @override
   Widget build(BuildContext context) {
+    double kTabbar_width = MediaQuery.of(context).size.width;
+    double kTabbar_height = MediaQuery.of(context).size.width / 7;
+    double kTabbarView_height = MediaQuery.of(context).size.height / 2;
+    double kTabbarView_width = MediaQuery.of(context).size.width;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -21,19 +27,25 @@ class tryy extends StatelessWidget {
           child: SafeArea(
             child: ListView(
               children: [
-                recipepage_photo(foodname: foodname),
+                recipepage_photo(foodname: foodtype),
                 Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width,
+                  height: kTabbar_height,
+                  width: kTabbar_width,
                   child: tabbar(),
                 ),
                 Container(
                   color: Colors.amber,
-                  height: MediaQuery.of(context).size.height / 2,
+                  height: kTabbarView_height,
                   child: TabBarView(
                     children: [
-                      const Center(child: const Text('Content of Tab One')),
-                      const Center(child: const Text('Content of Tab Two')),
+                      Center(
+                          child: firebase_extractor(
+                        selection: 0,
+                      )),
+                      Center(
+                          child: firebase_extractor(
+                        selection: 1,
+                      )),
                     ],
                   ),
                 )
@@ -42,62 +54,6 @@ class tryy extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class tabbar extends StatefulWidget {
-  const tabbar({Key? key}) : super(key: key);
-
-  @override
-  State<tabbar> createState() => _tabbarState();
-}
-
-class _tabbarState extends State<tabbar> {
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      bottom: TabBar(tabs: [
-        Tab(text: "INGREDIENT"),
-        Tab(text: "STEPS"),
-      ]),
-    );
-  }
-}
-
-class recipepage_photo extends StatelessWidget {
-  const recipepage_photo({
-    Key? key,
-    required this.foodname,
-  }) : super(key: key);
-
-  final String foodname;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(children: [
-        Stack(
-          alignment: Alignment.bottomLeft,
-          children: [
-            photoviewer_recipee('Foodlist/Chinese/chinese.jpg'),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 18.0),
-              child: Container(
-                height: MediaQuery.of(context).size.height / 3,
-                width: double.infinity,
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  foodname,
-                  style: TextStyle(
-                      fontSize: 36, backgroundColor: Colors.grey.shade300),
-                ),
-              ),
-            )
-          ],
-        )
-      ]),
     );
   }
 }

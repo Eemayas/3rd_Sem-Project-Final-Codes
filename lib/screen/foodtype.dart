@@ -1,18 +1,19 @@
-import 'package:image_from_firebase_public/component/photorecevier.dart';
-import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
-import 'package:image_from_firebase_public/screen/listpage/french.dart';
-import 'package:image_from_firebase_public/screen/listpage/italian.dart';
-import 'package:image_from_firebase_public/screen/listpage/japnese.dart';
-import 'package:image_from_firebase_public/screen/listpage/korean.dart';
-import 'package:image_from_firebase_public/screen/listpage/subcontinental.dart';
-import 'package:image_from_firebase_public/screen/listpage/thai.dart';
-import 'package:image_from_firebase_public/screen/listpage/turkish.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+import '/screen/listpage/chinese.dart';
+import '/screen/listpage/french.dart';
+import '/screen/listpage/italian.dart';
+import '/screen/listpage/japnese.dart';
+import '/screen/listpage/korean.dart';
+import '/screen/listpage/subcontinental.dart';
+import '/screen/listpage/thai.dart';
+import '/screen/listpage/turkish.dart';
 import '../component/format.dart';
-import 'foodlist.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import '../constanst/firstpage_constant.dart';
+import 'drawer.dart';
 
 class foodtype extends StatelessWidget {
   static String ID = 'food_type';
@@ -20,16 +21,17 @@ class foodtype extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       appBar: AppBar(
         title: Text(
-          'foodtypes',
+          kAppbar_title,
         ),
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, 'slidebar.ID');
-          },
-          child: Icon(Icons.menu),
-        ),
+        // leading: GestureDetector(
+        //   onTap: () {
+        //     Navigator.pushNamed(context, 'slidebar.ID');
+        //   },
+        //   child: Icon(Icons.menu),
+        // ),
       ),
       body: SafeArea(
           child: Padding(
@@ -39,69 +41,14 @@ class foodtype extends StatelessWidget {
           Column(
             children: [
               SizedBox(
-                height: 50,
+                height: kSizedBox_height,
               ),
-              format(
-                photoname: 'Foodtype/chinese.jpg',
-                name: "CHINESE",
-                nextpage: chinese.ID,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              format(
-                photoname: 'Foodtype/french.jpeg',
-                name: "FRENCH",
-                nextpage: french.ID,
-              ), //calling the function to print he format
-              SizedBox(
-                height: 40,
-              ),
-              format(
-                photoname: 'Foodtype/italian.jpg',
-                name: "ITALIAN",
-                nextpage: italian.ID,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              format(
-                photoname: 'Foodtype/japanese.jfif',
-                name: "JAPANESE",
-                nextpage: japanese.ID,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              format(
-                photoname: 'Foodtype/korean.jpg',
-                name: "KOREAN",
-                nextpage: korean.ID,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              format(
-                photoname: 'Foodtype/subcontinental.jpg',
-                name: "SUBCONTINENTAL",
-                nextpage: subcontiental.ID,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              format(
-                photoname: 'Foodtype/thai.jpg',
-                name: "THAI",
-                nextpage: thai.ID,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              format(
-                photoname: 'Foodtype/turkish.jpg',
-                name: "TURKISH",
-                nextpage: turkish.ID,
-              ),
+              for (int i = 0; i < foodtype_list.length; i++)
+                format(
+                  photoname: foodtype_list[i].ImgPath,
+                  name: foodtype_list[i].name,
+                  nextpage: foodtype_list[i].nextpage,
+                ),
             ],
           ),
         ]),
@@ -109,8 +56,6 @@ class foodtype extends StatelessWidget {
     );
   }
 }
-
-
 
 // return Scaffold(
 //   appBar: AppBar(
@@ -152,3 +97,65 @@ class foodtype extends StatelessWidget {
 //           CircleAvatar(maxRadius: 150.0, backgroundColor: Colors.white),
 //         ]),
 //       )
+
+// format(
+//   photoname: foodtype_list[0].ImgPath,
+//   name: foodtype_list[0].name,
+//   nextpage: foodtype_list[0].nextpage,
+// ),
+// SizedBox(
+//   height: kSizedBox_height,
+// ),
+// format(
+//   photoname: 'Foodtype/french.jpeg',
+//   name: "FRENCH",
+//   nextpage: french.ID,
+// ), //calling the function to print he format
+// SizedBox(
+//   height: kSizedBox_height,
+// ),
+// format(
+//   photoname: 'Foodtype/italian.jpg',
+//   name: "ITALIAN",
+//   nextpage: italian.ID,
+// ),
+// SizedBox(
+//   height: kSizedBox_height,
+// ),
+// format(
+//   photoname: 'Foodtype/japanese.jfif',
+//   name: "JAPANESE",
+//   nextpage: japanese.ID,
+// ),
+// SizedBox(
+//   height: kSizedBox_height,
+// ),
+// format(
+//   photoname: 'Foodtype/korean.jpg',
+//   name: "KOREAN",
+//   nextpage: korean.ID,
+// ),
+// SizedBox(
+//   height: kSizedBox_height,
+// ),
+// format(
+//   photoname: 'Foodtype/subcontinental.jpg',
+//   name: "SUBCONTINENTAL",
+//   nextpage: subcontiental.ID,
+// ),
+// SizedBox(
+//   height: kSizedBox_height,
+// ),
+// format(
+//   photoname: 'Foodtype/thai.jpg',
+//   name: "THAI",
+//   nextpage: thai.ID,
+// ),
+// SizedBox(
+//   height: kSizedBox_height,
+// ),
+// format(
+//   photoname: 'Foodtype/turkish.jpg',
+//   name: "TURKISH",
+//   nextpage: turkish.ID,
+// ),

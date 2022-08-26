@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,13 @@ class photoviewer_format extends StatelessWidget {
             //   fit: BoxFit.cover,
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return //CachedNetworkImage(
+            //   imageUrl: snapshot.data.toString(),
+            //   placeholder: (context, url) => CircularProgressIndicator(),
+            //   errorWidget: (context, url, error) => Icon(Icons.error),
+            // );
+            //CachedNetworkImage(imageUrl: snapshot.data.toString());
+            const Center(child: CircularProgressIndicator());
       },
     );
   }
@@ -64,5 +71,30 @@ class photoviewer_recipee extends StatelessWidget {
         return const Center(child: CircularProgressIndicator());
       },
     );
+  }
+}
+
+class offline extends StatelessWidget {
+  offline(this.photoname);
+  final String? photoname;
+  @override
+  Widget build(BuildContext context) {
+    return const CircleAvatar(
+        radius: 30,
+        backgroundImage: CachedNetworkImageProvider(
+            "https://images.immediate.co.uk/production/volatile/sites/30/2022/02/Beef-chow-mein-e16180c.jpg")
+        //"https://firebasestorage.googleapis.com/v0/b/meal-a5eab.appspot.com/o/Foodlist%2FChinese%2FChinese%20Bayberries%20Myrica%20rubra.jpg?alt=media&token=f6918105-06c7-4b94-8d23-31770aa8649b"),
+
+        // Image.network(
+        //   snapshot.data.toString(),
+        //   fit: BoxFit.cover,
+        );
+    //   return ClipRRect(
+    //     borderRadius: BorderRadius.circular(20),
+    //     child: CachedNetworkImage(
+    //         imageUrl:
+    //             "https://firebasestorage.googleapis.com/v0/b/meal-a5eab.appspot.com/o/Foodlist%2FChinese%2FChinese%20Bayberries%20Myrica%20rubra.jpg?alt=media&token=f6918105-06c7-4b94-8d23-31770aa8649b"),
+    //   );
+    // }
   }
 }

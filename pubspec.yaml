@@ -37,6 +37,10 @@ dependencies:
   firebase_core: ^1.6.0
   firebase_storage: ^10.0.6
   scroll_snap_list: ^0.9.1
+  cloud_firestore: ^3.4.5
+  firebase_database: ^9.1.2
+  cached_network_image: ^3.2.1
+  connectivity_plus: ^2.3.6+1
 
 dev_dependencies:
   flutter_test:
