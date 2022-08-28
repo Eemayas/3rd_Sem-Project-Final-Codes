@@ -8,7 +8,7 @@ import 'package:image_from_firebase_public/screen/listpage/subcontinental.dart';
 import 'package:image_from_firebase_public/screen/listpage/thai.dart';
 import 'package:image_from_firebase_public/screen/listpage/turkish.dart';
 import 'package:image_from_firebase_public/screen/recipee/try.dart';
-import '/screen/foodlist.dart';
+import 'dummy/foodlist.dart';
 import '/screen/foodtype.dart';
 import '/screen/recipeepage.dart';
 import '/screen/slidebar.dart';

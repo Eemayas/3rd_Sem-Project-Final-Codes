@@ -1,12 +1,12 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:image_from_firebase_public/screen/foodlist.dart';
+import 'package:image_from_firebase_public/dummy/foodlist.dart';
 import 'package:image_from_firebase_public/screen/foodtype.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double container_height = 100;
+    double container_width = 100;
     return Drawer(
       child: Column(
         children: <Widget>[
@@ -18,8 +18,8 @@ class MainDrawer extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: container_width,
+                    height: container_height,
                     margin: EdgeInsets.only(top: 30),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
