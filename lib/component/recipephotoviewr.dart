@@ -1,12 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'photorecevier.dart';
 
 class recipepage_photo extends StatelessWidget {
-  const recipepage_photo({
-    Key? key,
+  recipepage_photo({
     required this.foodname,
-  }) : super(key: key);
+    required this.imageUrl,
+  });
+  final String imageUrl;
 
   final String foodname;
 
@@ -19,7 +21,12 @@ class recipepage_photo extends StatelessWidget {
         Stack(
           alignment: Alignment.bottomLeft,
           children: [
-            photoviewer_recipee('Foodlist/Chinese/chinese.jpg'),
+            //photoviewer_recipee('Foodlist/Chinese/chinese.jpg'),
+            ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl,
+                )),
             Padding(
               padding: const EdgeInsets.only(bottom: 18.0),
               child: Container(

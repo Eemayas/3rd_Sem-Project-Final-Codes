@@ -2,10 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '/constanst/foodname.dart';
 
-String dataentrypage_FOODTYPE = foodtype_name_list.nAmerican;
-String dataentrypage_FOODlist =
-    foodtype_name_list.am_Chimichurristyle_steaksarnies;
-
 final Map<String, String> ingredient_data = {};
 final Map<String, String> step_data = {};
 
@@ -21,7 +17,15 @@ class _dataentrypageState extends State<dataentrypage> {
   var selected_ingredient = '1';
   int no_ingredient = 1;
   var selected_step = '1';
-  String Foodname = "MEALUP";
+  List<String> foodlist_data = [
+    foodtype_name_list.br_Apple_jam,
+    foodtype_name_list.br_Chocolate_Swiss_roll,
+    foodtype_name_list.br_Easy_seafood_chowder,
+    foodtype_name_list.br_Healthy_roast_dinner,
+    foodtype_name_list.br_Vegan_apple_cake,
+  ];
+  //List<DropdownMenuItem<String>> fooodlist =dropdownfoodlist(foodlist_data);
+
   final Map<String, String> ingredient_data = {};
   List<DropdownMenuItem<String>> ingredient =
       dropdownlist(starting: 1, ending: 16);
@@ -66,9 +70,9 @@ class _dataentrypageState extends State<dataentrypage> {
                     height: 60,
                     width: MediaQuery.of(context).size.width,
                     child: TextFormField(
-                      onChanged: (value) {
-                        Foodname = value;
-                      },
+                      // onChanged: (value) {
+                      //   Foodname = value;
+                      // },
                       style: TextStyle(),
                       textAlign: TextAlign.center,
                       obscureText: false,
@@ -138,7 +142,7 @@ class _dataentrypageState extends State<dataentrypage> {
                             Category: "INGREDIENT",
                             number: i,
                             lastnumber: int.parse(selected_ingredient),
-                            Foodname: Foodname),
+                            Foodname: dataentrypage_FOODlist),
                     ],
                   ),
                 ),
@@ -158,7 +162,7 @@ class _dataentrypageState extends State<dataentrypage> {
                             Category: "STEPS",
                             number: i,
                             lastnumber: int.parse(selected_step),
-                            Foodname: Foodname),
+                            Foodname: dataentrypage_FOODlist),
                     ],
                   ),
                 )
@@ -178,6 +182,18 @@ List<DropdownMenuItem<String>> dropdownlist(
     var item = DropdownMenuItem(
       child: Text(i.toString()),
       value: i.toString(),
+    );
+    listt.add(item);
+  }
+  return listt;
+}
+
+List<DropdownMenuItem<String>> dropdownfoodlist(List<String> listtt) {
+  List<DropdownMenuItem<String>> listt = [];
+  for (var i = 0; i <= listtt.length; i++) {
+    var item = DropdownMenuItem(
+      child: Text(listtt[i]),
+      value: listtt[i],
     );
     listt.add(item);
   }
@@ -238,7 +254,7 @@ class _BoxState extends State<Box> {
                           .doc(dataentrypage_FOODTYPE)
                           .collection(widget.Foodname)
                           .doc("INGREDIENT")
-                          .set(ingredient_data)
+                          .set(ingreddddientt)
                           .then((value) => print("sucesss"));
                       for (int i = 1; i <= widget.lastnumber; i++)
                         print(ingredient_data[i.toString()]);
@@ -296,3 +312,49 @@ class _foodnameState extends State<foodname> {
     );
   }
 }
+
+String dataentrypage_FOODTYPE = foodtype_name_list.nChinese;
+String dataentrypage_FOODlist = foodtype_name_list.cn_Sticky_rib_hot_pot;
+
+Map<String, String> ingreddddientt = {
+  "1": "  4 spring onions, cut into lengths, green tops finely sliced to serve",
+  "2": " 3 tbsp Lee Kum Kee Hoisin Sauce ",
+  "3": "2 tbsp Lee Kum Kee Premium Dark Soy Sauce",
+  "4": "1tbsp Lee Kum Kee Seasoned Rice Vinegar",
+  "5": "3 tbsp no-salt chicken stock or water (optional, see tip)",
+  "6": "500-600g pork ribs, cut into individual ribs",
+  "7": "2 tbsp cornflour",
+  "8": "1 tbsp Lee Kum Kee Sesame Wok Oil",
+  "9": "1 garlic clove, finely sliced",
+  "10": "1 tbsp grated ginger",
+  "11": "1 red pepper, cut into chunks",
+  "12": "1 small sweet potato, cut into chunks",
+  "13": "100g mangetout, cut into strips",
+};
+
+
+//"1":"
+//"2":"
+//"3":"
+//"4":"
+//"5":"
+//"6":"
+//"7":"
+//"8":"
+//"9":"
+//"10":"
+//"11":"
+//"12":"
+//"13":"
+//"14":"
+//"15":"
+//"16":"
+//"17":"
+//"18":"
+//"19":"
+//"20":"
+//"21":"
+//"22":"
+//"23":"
+
+

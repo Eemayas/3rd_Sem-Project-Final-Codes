@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/component/format.dart';
-import '../../constanst/foodlists_constant.dart';
+import '../../constanst/secondpage_foodlists_constant.dart';
 
 class japanese extends StatelessWidget {
   static String ID = 'japanese';

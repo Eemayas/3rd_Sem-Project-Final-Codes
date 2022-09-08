@@ -2,16 +2,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class firebase_extractor extends StatelessWidget {
+  final String foodlist_s;
+  final String foodtype_f;
   final int selection;
-  firebase_extractor({required this.selection});
+  firebase_extractor(
+      {required this.selection,
+      required this.foodlist_s,
+      required this.foodtype_f});
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
       /// connecteted to the pathhof the neeeded collection
       stream: FirebaseFirestore.instance
           .collection("Datamealapp")
-          .doc("Chinese")
-          .collection("Chinese Stir Fry Spicy Chicken")
+          .doc(foodtype_f)
+          .collection(foodlist_s)
           .snapshots(),
 
       builder: (BuildContext context,

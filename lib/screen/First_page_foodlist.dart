@@ -1,21 +1,9 @@
-import 'package:firebase_database/firebase_database.dart';
-
-import '/screen/listpage/chinese.dart';
-import '/screen/listpage/french.dart';
-import '/screen/listpage/italian.dart';
-import '/screen/listpage/japnese.dart';
-import '/screen/listpage/korean.dart';
-import '/screen/listpage/subcontinental.dart';
-import '/screen/listpage/thai.dart';
-import '/screen/listpage/turkish.dart';
 import '../component/format.dart';
-
 import 'package:flutter/material.dart';
-
 import '../constanst/firstpage_constant.dart';
 import 'drawer.dart';
 
-class foodtype extends StatelessWidget {
+class Firstpage_foodtype extends StatelessWidget {
   static String ID = 'food_type';
 
   @override
@@ -26,12 +14,6 @@ class foodtype extends StatelessWidget {
         title: Text(
           kAppbar_title,
         ),
-        // leading: GestureDetector(
-        //   onTap: () {
-        //     Navigator.pushNamed(context, 'slidebar.ID');
-        //   },
-        //   child: Icon(Icons.menu),
-        // ),
       ),
       body: SafeArea(
           child: Padding(
@@ -56,6 +38,93 @@ class foodtype extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // return Scaffold(
 //   appBar: AppBar(

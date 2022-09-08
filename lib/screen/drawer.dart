@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/dummy/foodlist.dart';
-import 'package:image_from_firebase_public/screen/foodtype.dart';
+import 'package:image_from_firebase_public/screen/First_page_foodlist.dart';
 import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -56,7 +56,7 @@ class MainDrawer extends StatelessWidget {
               Drawer_Text: 'Foodtype',
               Icons: Icons.food_bank_outlined,
               onpressed: () {
-                Navigator.pushNamed(context, foodtype.ID);
+                Navigator.pushNamed(context, Firstpage_foodtype.ID);
               }),
           lists_drawer(
               Drawer_Text: 'foodlist',

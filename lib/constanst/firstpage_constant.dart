@@ -1,11 +1,11 @@
-import '/screen/listpage/chinese.dart';
-import '/screen/listpage/french.dart';
-import '/screen/listpage/italian.dart';
-import '/screen/listpage/japnese.dart';
-import '/screen/listpage/korean.dart';
-import '/screen/listpage/subcontinental.dart';
-import '/screen/listpage/thai.dart';
-import '/screen/listpage/turkish.dart';
+// import '/screen/listpage/chinese.dart';
+// import '/screen/listpage/french.dart';
+// import '/screen/listpage/italian.dart';
+// import '/screen/listpage/japnese.dart';
+// import '/screen/listpage/korean.dart';
+// import '/screen/listpage/subcontinental.dart';
+// import '/screen/listpage/thai.dart';
+// import '/screen/listpage/turkish.dart';
 import 'foodname.dart';
 
 String kAppbar_title = 'foodtypes';
@@ -23,15 +23,26 @@ class foodtype {
 }
 
 List foodtype_list = [
-  foodtype(name: foodtype_name_list.nAmerican, nextpage: chinese.ID),
-  foodtype(name: foodtype_name_list.nBritish, nextpage: chinese.ID),
-  foodtype(name: foodtype_name_list.nCaribbean, nextpage: chinese.ID),
-  foodtype(name: foodtype_name_list.nChinese, nextpage: chinese.ID),
-  foodtype(name: foodtype_name_list.nFrench, nextpage: french.ID),
-  foodtype(name: foodtype_name_list.nGreek, nextpage: chinese.ID),
-  foodtype(name: foodtype_name_list.nIndian, nextpage: chinese.ID),
-  foodtype(name: foodtype_name_list.nItalian, nextpage: italian.ID),
-  foodtype(name: foodtype_name_list.nJapnese, nextpage: japanese.ID),
+  foodtype(
+      name: foodtype_name_list.nAmerican,
+      nextpage: foodtype_name_list.nAmerican),
+  foodtype(
+      name: foodtype_name_list.nBritish, nextpage: foodtype_name_list.nBritish),
+  foodtype(
+      name: foodtype_name_list.nCaribbean,
+      nextpage: foodtype_name_list.nCaribbean),
+  foodtype(
+      name: foodtype_name_list.nChinese, nextpage: foodtype_name_list.nChinese),
+  foodtype(
+      name: foodtype_name_list.nFrench, nextpage: foodtype_name_list.nFrench),
+  foodtype(
+      name: foodtype_name_list.nGreek, nextpage: foodtype_name_list.nGreek),
+  foodtype(
+      name: foodtype_name_list.nIndian, nextpage: foodtype_name_list.nIndian),
+  foodtype(
+      name: foodtype_name_list.nItalian, nextpage: foodtype_name_list.nItalian),
+  foodtype(
+      name: foodtype_name_list.nJapnese, nextpage: foodtype_name_list.nJapnese),
 ];
 
 Map<String, String> imageeurl = {
