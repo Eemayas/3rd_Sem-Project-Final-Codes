@@ -8,6 +8,7 @@ import 'package:image_from_firebase_public/screen/listpage/subcontinental.dart';
 import 'package:image_from_firebase_public/screen/listpage/thai.dart';
 import 'package:image_from_firebase_public/screen/listpage/turkish.dart';
 import 'package:image_from_firebase_public/screen/recipee/try.dart';
+import 'dummy/dataentry_page.dart';
 import 'dummy/foodlist.dart';
 import '/screen/foodtype.dart';
 import '/screen/recipeepage.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         thai.ID: (context) => thai(),
         turkish.ID: (context) => turkish(),
         tryy.ID: (context) => new tryy(foodtype: "chiness"),
+        "datata": (context) => dataentrypage()
       },
     );
   }

@@ -1,17 +1,33 @@
 import 'package:image_from_firebase_public/constanst/constanst.dart';
 
-List Foodlist_CHINESE = [
-  Food('Foodlist/Chinese/Chinese Bayberries Myrica rubra.jpg',
-      "Chinese Babyberries Myrica rubra"),
+class Food {
+  final String imagePath;
+
+  final String title;
+
   Food(
-      'Foodlist/Chinese/Chinese Beancurd, Ginkgo Nuts, and Barley Sweet Soup Dessert.jpg',
-      "Chinese Beancurd, Gingko Nuts, and Barley Sweet Soup Dessert"),
-  Food('Foodlist/Chinese/Chinese Stir Fry Spicy Chicken.jpg',
-      "Chinese Stir Fry Spicy Chicken"),
-  Food('Foodlist/Chinese/Chinese Sweet and Sour Pork.jpg',
-      "Chinese Sweet and Sour Pork"),
-  Food('Foodlist/Chinese/Chinese Bayberries Myrica rubra.jpg',
-      "Chinese Bayberries Myrica rubra"),
+    this.imagePath,
+    this.title,
+  );
+}
+
+List Foodlist_CHINESE = [
+  Food(
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/02/Beef-chow-mein-e16180c.jpg',
+      "Chinese Babyberries Myrica rubra"),
+  // Food('Foodlist/Chinese/Chinese Bayberries Myrica rubra.jpg',
+  //     "Chinese Babyberries Myrica rubra"),
+  // Food('Foodlist/Chinese/Chinese Bayberries Myrica rubra.jpg',
+  //     "Chinese Babyberries Myrica rubra"),
+  // Food(
+  //     'Foodlist/Chinese/Chinese Beancurd, Ginkgo Nuts, and Barley Sweet Soup Dessert.jpg',
+  //     "Chinese Beancurd, Gingko Nuts, and Barley Sweet Soup Dessert"),
+  // Food('Foodlist/Chinese/Chinese Stir Fry Spicy Chicken.jpg',
+  //     "Chinese Stir Fry Spicy Chicken"),
+  // Food('Foodlist/Chinese/Chinese Sweet and Sour Pork.jpg',
+  //     "Chinese Sweet and Sour Pork"),
+  // Food('Foodlist/Chinese/Chinese Bayberries Myrica rubra.jpg',
+  //     "Chinese Bayberries Myrica rubra"),
 ];
 List Foodlist_FRENCH = [
   Food('Foodlist/French/Beef Bourguignon with Egg Fettuccine.jpg',

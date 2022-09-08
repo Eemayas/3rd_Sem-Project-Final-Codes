@@ -16,14 +16,3 @@ Color cPhotoframe_foodtype_page = Colors.white70;
 Color cTextcontainer_foodtype_page = Colors.grey;
 Color cFoodname_foodtype_page = Colors.redAccent;
 Color cblurshadow_foodtype_page = Colors.greenAccent;
-
-class Food {
-  final String imagePath;
-
-  final String title;
-
-  Food(
-    this.imagePath,
-    this.title,
-  );
-}

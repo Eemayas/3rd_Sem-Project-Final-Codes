@@ -69,8 +69,8 @@ class format extends StatelessWidget {
             shape: BoxShape.circle,
             boxShadow: kBoxshadow,
           ),
-          child: //soffline('$photoname'),
-              photoviewer_format('$photoname'),
+          child: offline('$photoname'),
+          //photoviewer_format('$photoname'), //online from firebase
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,

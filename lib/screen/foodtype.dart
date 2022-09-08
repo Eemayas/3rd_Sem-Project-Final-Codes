@@ -45,7 +45,7 @@ class foodtype extends StatelessWidget {
               ),
               for (int i = 0; i < foodtype_list.length; i++)
                 format(
-                  photoname: foodtype_list[i].ImgPath,
+                  photoname: imageeurl[foodtype_list[i].name],
                   name: foodtype_list[i].name,
                   nextpage: foodtype_list[i].nextpage,
                 ),

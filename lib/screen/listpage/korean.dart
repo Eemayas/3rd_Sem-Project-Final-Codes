@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/component/format.dart';
-import '../../constanst/lists.dart';
+import '../../constanst/foodlists_constant.dart';
 
 class korean extends StatelessWidget {
   static String ID = 'korean';

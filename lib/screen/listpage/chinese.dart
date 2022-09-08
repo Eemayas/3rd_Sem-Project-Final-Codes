@@ -2,7 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/component/format.dart';
 import 'package:image_from_firebase_public/screen/recipee/try.dart';
-import '../../constanst/lists.dart';
+import '../../constanst/foodlists_constant.dart';
 
 class chinese extends StatelessWidget {
   static String ID = 'chinese';

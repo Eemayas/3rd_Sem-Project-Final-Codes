@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/dummy/foodlist.dart';
 import 'package:image_from_firebase_public/screen/foodtype.dart';
+import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -22,12 +23,13 @@ class MainDrawer extends StatelessWidget {
                     height: container_height,
                     margin: EdgeInsets.only(top: 30),
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-                            ),
-                            fit: BoxFit.fill)),
+                      shape: BoxShape.circle,
+                      // image: DecorationImage(
+                      //     image: NetworkImage(
+                      //       'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+                      //     ),
+                      //     fit: BoxFit.fill)
+                    ),
                   ),
                   Text(
                     ' MEAL UP',
@@ -60,7 +62,13 @@ class MainDrawer extends StatelessWidget {
               Drawer_Text: 'foodlist',
               Icons: Icons.food_bank_outlined,
               onpressed: () {
-                Navigator.pushNamed(context, foodlist.ID);
+                Navigator.pushNamed(context, chinese.ID);
+              }),
+          lists_drawer(
+              Drawer_Text: 'Data Entry',
+              Icons: Icons.settings,
+              onpressed: () {
+                Navigator.pushNamed(context, "datata");
               }),
           lists_drawer(Drawer_Text: 'Settings', Icons: Icons.settings),
           lists_drawer(Drawer_Text: "Log out", Icons: Icons.arrow_back),
