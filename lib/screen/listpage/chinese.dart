@@ -20,8 +20,8 @@ class chinese extends StatelessWidget {
           children: [
             for (int i = 0; i < Foodlist_CHINESE.length; i++)
               format(
-                  photoname: Foodlist_CHINESE[i].imagePath,
-                  name: Foodlist_CHINESE[i].title,
+                  photoname: CHINESE_imageeurl[Foodlist_CHINESE[i].name],
+                  name: Foodlist_CHINESE[i].name,
                   nextpage: tryy.ID),
           ],
         )),

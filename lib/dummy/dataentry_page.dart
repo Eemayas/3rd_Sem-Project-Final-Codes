@@ -2,7 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '/constanst/foodname.dart';
 
-String FOODTYPE = foodtype_name_list.nChinese;
+String dataentrypage_FOODTYPE = foodtype_name_list.nAmerican;
+String dataentrypage_FOODlist =
+    foodtype_name_list.am_Chimichurristyle_steaksarnies;
+
 final Map<String, String> ingredient_data = {};
 final Map<String, String> step_data = {};
 
@@ -53,6 +56,10 @@ class _dataentrypageState extends State<dataentrypage> {
                   'Data Entry',
                   style: TextStyle(fontSize: 30),
                 ),
+                Text(
+                  dataentrypage_FOODTYPE,
+                  style: TextStyle(fontSize: 15),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, left: 50, right: 50),
                   child: Container(
@@ -68,7 +75,7 @@ class _dataentrypageState extends State<dataentrypage> {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        label: Center(child: Text("FOODNAME")),
+                        label: Center(child: Text(dataentrypage_FOODlist)),
                         labelStyle: TextStyle(),
                       ),
                     ),
@@ -228,7 +235,7 @@ class _BoxState extends State<Box> {
                       var db =
                           FirebaseFirestore.instance.collection("Datamealapp");
                       db
-                          .doc(FOODTYPE)
+                          .doc(dataentrypage_FOODTYPE)
                           .collection(widget.Foodname)
                           .doc("INGREDIENT")
                           .set(ingredient_data)
@@ -239,7 +246,7 @@ class _BoxState extends State<Box> {
                       var db =
                           FirebaseFirestore.instance.collection("Datamealapp");
                       db
-                          .doc(FOODTYPE)
+                          .doc(dataentrypage_FOODTYPE)
                           .collection(widget.Foodname)
                           .doc("STEPS")
                           .set(step_data)
