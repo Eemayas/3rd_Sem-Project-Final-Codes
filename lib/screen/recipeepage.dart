@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../component/appbar.dart';
 import '../../Firebase/firebase_extractor.dart';
 import '../../component/recipephotoviewr.dart';
+import '../constanst/constanst.dart';
 
 class recipee_page extends StatelessWidget {
   recipee_page(
@@ -22,41 +23,44 @@ class recipee_page extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: SafeArea(
-            child: ListView(
-              children: [
-                recipepage_photo(
-                  foodname: foodlist_sR,
-                  imageUrl: imageUrl,
-                ),
-                Container(
-                  height: kTabbar_height,
-                  width: kTabbar_width,
-                  child: tabbar(),
-                ),
-                Container(
-                  color: Colors.amber,
-                  height: kTabbarView_height,
-                  child: TabBarView(
-                    children: [
-                      Center(
-                          child: firebase_extractor(
-                        foodtype_f: foodtype_fR,
-                        foodlist_s: foodlist_sR,
-                        selection: 0,
-                      )),
-                      Center(
-                          child: firebase_extractor(
-                        foodtype_f: foodtype_fR,
-                        foodlist_s: foodlist_sR,
-                        selection: 1,
-                      )),
-                    ],
+        body: Container(
+          decoration: apptheme_background,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: SafeArea(
+              child: ListView(
+                children: [
+                  recipepage_photo(
+                    foodname: foodlist_sR,
+                    imageUrl: imageUrl,
                   ),
-                )
-              ],
+                  Container(
+                    height: kTabbar_height,
+                    width: kTabbar_width,
+                    child: tabbar(),
+                  ),
+                  Container(
+                    color: Colors.amber,
+                    height: kTabbarView_height,
+                    child: TabBarView(
+                      children: [
+                        Center(
+                            child: firebase_extractor(
+                          foodtype_f: foodtype_fR,
+                          foodlist_s: foodlist_sR,
+                          selection: 0,
+                        )),
+                        Center(
+                            child: firebase_extractor(
+                          foodtype_f: foodtype_fR,
+                          foodlist_s: foodlist_sR,
+                          selection: 1,
+                        )),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

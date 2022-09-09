@@ -37,7 +37,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.light(),
+      theme: ThemeData.light(), //.copyWith(
+      //appBarTheme: AppBarTheme(backgroundColor: Color(0xff041C1F))),
       debugShowCheckedModeBanner: false,
       initialRoute: Firstpage_foodtype.ID,
       routes: {

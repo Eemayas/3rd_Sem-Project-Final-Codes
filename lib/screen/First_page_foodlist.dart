@@ -1,5 +1,6 @@
 import '../component/format.dart';
 import 'package:flutter/material.dart';
+import '../constanst/constanst.dart';
 import '../constanst/firstpage_constant.dart';
 import 'drawer.dart';
 
@@ -11,29 +12,35 @@ class Firstpage_foodtype extends StatelessWidget {
     return Scaffold(
       drawer: MainDrawer(),
       appBar: AppBar(
-        title: Text(
-          kAppbar_title,
+        backgroundColor: kappbar_color,
+        title: Center(
+          child: Text(
+            kAppbar_title,
+          ),
         ),
       ),
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: ListView // listview which alow to scroll down
-            (children: [
-          Column(
-            children: [
-              SizedBox(
-                height: kSizedBox_height,
-              ),
-              for (int i = 0; i < foodtype_list.length; i++)
-                format(
-                  photoname: imageeurl[foodtype_list[i].name],
-                  name: foodtype_list[i].name,
-                  nextpage: foodtype_list[i].nextpage,
+          child: Container(
+        decoration: apptheme_background,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: ListView // listview which alow to scroll down
+              (children: [
+            Column(
+              children: [
+                SizedBox(
+                  height: kSizedBox_height,
                 ),
-            ],
-          ),
-        ]),
+                for (int i = 0; i < foodtype_list.length; i++)
+                  format(
+                    photoname: imageeurl[foodtype_list[i].name],
+                    name: foodtype_list[i].name,
+                    nextpage: foodtype_list[i].nextpage,
+                  ),
+              ],
+            ),
+          ]),
+        ),
       )),
     );
   }

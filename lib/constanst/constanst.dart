@@ -29,3 +29,10 @@ List secondpagelist = [
   foodtype_name_list.nItalian,
   foodtype_name_list.nJapnese,
 ];
+BoxDecoration apptheme_background = BoxDecoration(
+    gradient: LinearGradient(
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
+        colors: [Color(0xff05404A), Color(0xff1F7A7B)]));
+
+Color kappbar_color = Color(0xff06282E);

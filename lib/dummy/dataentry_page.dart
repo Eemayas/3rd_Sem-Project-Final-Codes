@@ -254,7 +254,7 @@ class _BoxState extends State<Box> {
                           .doc(dataentrypage_FOODTYPE)
                           .collection(widget.Foodname)
                           .doc("INGREDIENT")
-                          .set(ingreddddientt)
+                          .set(ingreddddientt_manual)
                           .then((value) => print("sucesss"));
                       for (int i = 1; i <= widget.lastnumber; i++)
                         print(ingredient_data[i.toString()]);
@@ -265,7 +265,7 @@ class _BoxState extends State<Box> {
                           .doc(dataentrypage_FOODTYPE)
                           .collection(widget.Foodname)
                           .doc("STEPS")
-                          .set(step_data)
+                          .set(step_data_manual)
                           .then((value) => print("sucesss"));
 
                       for (int i = 1; i <= widget.lastnumber; i++)
@@ -313,23 +313,30 @@ class _foodnameState extends State<foodname> {
   }
 }
 
-String dataentrypage_FOODTYPE = foodtype_name_list.nChinese;
-String dataentrypage_FOODlist = foodtype_name_list.cn_Sticky_rib_hot_pot;
+String dataentrypage_FOODTYPE = foodtype_name_list.nFrench;
+String dataentrypage_FOODlist = foodtype_name_list.fr_Allotment_salad;
 
-Map<String, String> ingreddddientt = {
-  "1": "  4 spring onions, cut into lengths, green tops finely sliced to serve",
-  "2": " 3 tbsp Lee Kum Kee Hoisin Sauce ",
-  "3": "2 tbsp Lee Kum Kee Premium Dark Soy Sauce",
-  "4": "1tbsp Lee Kum Kee Seasoned Rice Vinegar",
-  "5": "3 tbsp no-salt chicken stock or water (optional, see tip)",
-  "6": "500-600g pork ribs, cut into individual ribs",
-  "7": "2 tbsp cornflour",
-  "8": "1 tbsp Lee Kum Kee Sesame Wok Oil",
-  "9": "1 garlic clove, finely sliced",
-  "10": "1 tbsp grated ginger",
-  "11": "1 red pepper, cut into chunks",
-  "12": "1 small sweet potato, cut into chunks",
-  "13": "100g mangetout, cut into strips",
+Map<String, String> ingreddddientt_manual = {
+  "1": " 8 asparagus spears, halved  ",
+  "2": "250g green beans, halved",
+  "3": "250g long-stem broccoli, chopped into 2cm lengths",
+  "4": "200g peas, fresh or frozen",
+  "5": "8 radishes, sliced",
+  "6": "1 pointed cabbage, shredded",
+  "7": "4 spring onions, sliced",
+  "8": "handful of mint leaves, chopped",
+  "9": "4 tbsp olive oil",
+  "10": "1 tbsp Dijon mustard",
+  "11": "1 lemon, juiced",
+};
+
+Map<String, String> step_data_manual = {
+  "1":
+      "  To make the dressing, combine all the ingredients in a bowl and season well.",
+  "2":
+      "Bring a pan of salted water to the boil and fill a bowl with iced water. Cook the asparagus for 2 mins, then transfer to the iced water with a slotted spoon. Cook the beans for 4 mins and repeat, then do the same with the broccoli (cook for 2½ mins) and peas (cook for 1 min). Drain and pat dry with kitchen paper.",
+  "3":
+      "Tip into a bowl with the radishes, cabbage, spring onions and mint. Serve the dressing on the side.",
 };
 
 

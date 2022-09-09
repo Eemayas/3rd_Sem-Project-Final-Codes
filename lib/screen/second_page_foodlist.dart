@@ -3,6 +3,7 @@ import 'package:image_from_firebase_public/constanst/foodname.dart';
 import 'package:image_from_firebase_public/screen/First_page_foodlist.dart';
 
 import '../component/format.dart';
+import '../constanst/constanst.dart';
 import '../constanst/secondpage_foodlists_constant.dart';
 import 'package:image_from_firebase_public/screen/recipee/try.dart';
 
@@ -43,23 +44,27 @@ class secondpage_foodlist extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text(Foodtype_name),
+        backgroundColor: kappbar_color,
+        title: Center(child: Text(Foodtype_name)),
       ),
       body: SafeArea(
-        child: Center(
-            child: ListView(
-          // scrollDirection: Axis.horizontal,
-          children: [
-            for (int i = 0; i < secondpage_list.length; i++)
-              format_secondpage(
-                  imageUrl: secondpage_map_imageurl[secondpage_list[i].name],
-                  photo_url: secondpage_map_imageurl[secondpage_list[i].name],
-                  name: secondpage_list[i].name,
-                  //nextpage: tryy.ID
-                  foodtype_f: Foodtype_name,
-                  foodlist_s: secondpage_list[i].name),
-          ],
-        )),
+        child: Container(
+          decoration: apptheme_background,
+          child: Center(
+              child: ListView(
+            // scrollDirection: Axis.horizontal,
+            children: [
+              for (int i = 0; i < secondpage_list.length; i++)
+                format_secondpage(
+                    imageUrl: secondpage_map_imageurl[secondpage_list[i].name],
+                    photo_url: secondpage_map_imageurl[secondpage_list[i].name],
+                    name: secondpage_list[i].name,
+                    //nextpage: tryy.ID
+                    foodtype_f: Foodtype_name,
+                    foodlist_s: secondpage_list[i].name),
+            ],
+          )),
+        ),
       ),
     );
   }

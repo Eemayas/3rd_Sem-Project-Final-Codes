@@ -34,7 +34,7 @@ class format extends StatelessWidget {
         Container(
           height: kmaincontainer_height,
           width: kmaincontainer_width,
-          color: Colors.white38,
+          color: Colors.transparent,
         ),
         Column(
           children: [
@@ -140,7 +140,7 @@ class format_secondpage extends StatelessWidget {
         Container(
           height: kmaincontainer_height,
           width: kmaincontainer_width,
-          color: Colors.white38,
+          color: Colors.transparent,
         ),
         Column(
           children: [
