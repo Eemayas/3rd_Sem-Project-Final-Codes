@@ -203,6 +203,173 @@ Map<String, String> JAPANESES_imageeurl = {
       'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2020/01/wasabi-chicken-rice-salad.jpg',
 };
 
+List Foodlist_MEDITERRANEAN = [
+  Food(foodtype_name_list.md_Hummus_snack_packs),
+  Food(foodtype_name_list.md_Healthy_chicken_pasta_bake),
+  Food(foodtype_name_list.md_Falafel_lunchbox),
+  Food(foodtype_name_list.md_Sabich),
+  Food(foodtype_name_list.md_Spinach_filo_spiral_pie),
+];
+
+Map<String, String> MEDITERRANEAN_imageeurl = {
+  Foodlist_MEDITERRANEAN[0].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/05/Hummus-snack-packs-626073e.jpg',
+  Foodlist_MEDITERRANEAN[1].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/11/Healthy-chicken-pasta-bake-8c8fa07.jpg',
+  Foodlist_MEDITERRANEAN[4].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Spinach-filo-spiral-pie-3d77d2c.jpg',
+  Foodlist_MEDITERRANEAN[3].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2019/07/sabich.jpg',
+  Foodlist_MEDITERRANEAN[2].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2020/05/falafel-lunch-box.jpg',
+};
+
+List Foodlist_MEXICAN = [
+  Food(foodtype_name_list.mx_Cabbage_roll_enchiladas),
+  Food(foodtype_name_list.mx_Chicken_enchilada_wraps),
+  Food(foodtype_name_list.mx_Mexican_hot_chocolate),
+  Food(foodtype_name_list.mx_Spicy_beef_taco_bowl),
+  Food(foodtype_name_list.mx_Spicy_rice_burritos),
+];
+
+Map<String, String> MEXICAN_imageeurl = {
+  Foodlist_MEXICAN[0].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/01/Cabbage-roll-enchiladas-7e99061.jpg',
+  Foodlist_MEXICAN[1].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/05/chicken-enchilada-wraps-6d81ed6.jpg',
+  Foodlist_MEXICAN[2].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/09/Mexican-hot-chocolate-98d2c8c.jpg',
+  Foodlist_MEXICAN[3].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/03/spicy-beef-taco-2cd04fc.jpg',
+  Foodlist_MEXICAN[4].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/05/RS_GFO-0621-HealthyDietPlan-Recipes-Suppers-SpicyRiceBurritos_02923-fc65693.jpg',
+};
+
+List Foodlist_MOROCCO = [
+  Food(foodtype_name_list.mr_Harira),
+  Food(foodtype_name_list.mr_Moroccan_sausage_stew),
+  Food(foodtype_name_list.mr_Spiced_chicken_hotpot),
+  Food(foodtype_name_list.mr_Spicy_Moroccan_eggs),
+  Food(foodtype_name_list.mr_Stuffed_Moroccan_pitta),
+];
+
+Map<String, String> MOROCCO_imageeurl = {
+  Foodlist_MOROCCO[0].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/09/Harira-0ad84c9.jpg',
+  Foodlist_MOROCCO[1].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/sausages_1.jpg',
+  Foodlist_MOROCCO[2].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/07/One-pan-hotpot-f85e19e.jpg',
+  Foodlist_MOROCCO[3].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/moroccan-eggs.jpg',
+  Foodlist_MOROCCO[4].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/pitta.jpg',
+};
+
+List Foodlist_MIDDLEEAST = [
+  Food(foodtype_name_list.me_Fatteh_makdous),
+  Food(foodtype_name_list.me_Meze_meatballs),
+  Food(foodtype_name_list.me_Muhammara),
+  Food(foodtype_name_list.me_Vegan_kebabs),
+  Food(foodtype_name_list.me_One_pan_lamb_tagine),
+];
+
+Map<String, String> MIDDLEEAST_imageeurl = {
+  Foodlist_MIDDLEEAST[0].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/08/Fatteh-makdous-66ab5b9.jpg',
+  Foodlist_MIDDLEEAST[1].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/01/Meze-meatballs-9509fc5.jpg',
+  Foodlist_MIDDLEEAST[2].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2021/08/Muhammara-79bf27b.jpg',
+  Foodlist_MIDDLEEAST[3].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/03/Vegan-kebabs-3322e41.jpg',
+  Foodlist_MIDDLEEAST[4].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/03/tagine-ff6dcc0.jpg',
+};
+List Foodlist_SPANSIH = [
+  Food(foodtype_name_list.sp_Easiest_ever_paella),
+  Food(foodtype_name_list.sp_Paella_mixta),
+  Food(foodtype_name_list.sp_Spanish_chicken_pie),
+  Food(foodtype_name_list.sp_Spanish_seafood_rice),
+  Food(foodtype_name_list.sp_Spiced_tortilla),
+];
+
+Map<String, String> SPANISH_imageeurl = {
+  Foodlist_SPANSIH[0].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--1259716_8.jpg',
+  Foodlist_SPANSIH[1].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2020/05/paella.jpg',
+  Foodlist_SPANSIH[2].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--1035696_10.jpg',
+  Foodlist_SPANSIH[3].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--218528_10.jpg',
+  Foodlist_SPANSIH[4].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--10375_11.jpg',
+};
+
+List Foodlist_VIETNAMESE = [
+  Food(foodtype_name_list.vi_Barbecue_pork_buns),
+  Food(foodtype_name_list.vi_Vietnamese_egg_coffee),
+  Food(foodtype_name_list.vi_Vietnamese_pork_peanu_burgers),
+  Food(foodtype_name_list.vi_Vietnamese_porkvsalad),
+  Food(foodtype_name_list.vi_Vietnamese_style_caramel_pork),
+];
+
+Map<String, String> VIETNAMESE_imageeurl = {
+  Foodlist_VIETNAMESE[0].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--646454_11.jpg',
+  Foodlist_VIETNAMESE[1].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2016/08/vietnamese-egg-coffee.jpg',
+  Foodlist_VIETNAMESE[2].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/vietnamese-pork-peanut-burgers.jpg',
+  Foodlist_VIETNAMESE[3].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--4957_11.jpg',
+  Foodlist_VIETNAMESE[4].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/vietnamese-caramel-pork.jpg',
+};
+
+List Foodlist_TURKISH = [
+  Food(foodtype_name_list.tu_DIY_kofta_burgers),
+  Food(foodtype_name_list.tu_Pistachio_katmer),
+  Food(foodtype_name_list.tu_Simit_bread),
+  Food(foodtype_name_list.tu_Smoked_aubergine_pure),
+  Food(foodtype_name_list.tu_Sweet_potato_salad),
+];
+
+Map<String, String> TURKISH_imageeurl = {
+  Foodlist_TURKISH[0].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--424790_11.jpg',
+  Foodlist_TURKISH[1].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2019/04/pistachio-katmer.jpg',
+  Foodlist_TURKISH[2].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2019/01/simit-bread.jpg',
+  Foodlist_TURKISH[3].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--1039_11.jpg',
+  Foodlist_TURKISH[4].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe_images/recipe-image-legacy-id--1201823_11.jpg',
+};
+
+List Foodlist_THAI = [
+  Food(foodtype_name_list.th_Cheats_sausage_larb),
+  Food(foodtype_name_list.th_Chicken_pad_Thai),
+  Food(foodtype_name_list.th_Golden_new_potato_pea_curry),
+  Food(foodtype_name_list.th_Next_level_pad_Thai),
+  Food(foodtype_name_list.th_Thai_green_tofu_noodles),
+];
+
+Map<String, String> THAI_imageeurl = {
+  Foodlist_THAI[0].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2019/10/cheats-sausage-larb.jpg',
+  Foodlist_THAI[1].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2020/07/chicken-pad-thai.jpg',
+  Foodlist_THAI[2].name:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2022/03/Golden-new-potato-and-pea-curry-aecd13f.jpg',
+  Foodlist_THAI[3].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2019/04/pad-thai.jpg',
+  Foodlist_THAI[4].name:
+      'https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2020/03/thai-green-tofu-noodles.jpg',
+};
+
 // List Foodlist_CHINESE = [
 //   Food(
 //       // 'https://images.immediate.co.uk/production/volatile/sites/30/2022/02/Beef-chow-mein-e16180c.jpg',
@@ -277,7 +444,7 @@ List Foodlist_SUBCONTINENTAL = [
   // Food('Foodlist/Subcontinental/subcontinental.jpg', "SUBCONTINENTAL"),
   // Food('Foodlist/Subcontinental/subcontinental.jpg', "SUBCONTINENTAL"),
 ];
-List Foodlist_THAI = [
+// List Foodlist_THAI = [
   // Food('Foodlist/Thai/Thai Yellow Curry With Lamb.jpg',
   //     "Thai Yellow Curry With Lamb"),
   // Food(
@@ -288,10 +455,10 @@ List Foodlist_THAI = [
   // Food('Foodlist/Thai/Thai tuna salad.jpg', "Thai tuna salad"),
   // Food('Foodlist/Thai/Tom Yum canned Makerel in tomato sauce soup.jpg',
   //     "Tom Yum canned Makerel in tomato sauce soup"),
-];
-List Foodlist_TURKISH = [
+// ];
+//List Foodlist_TURKISH = [
   // Food('Foodlist/Turkish/turkish.jpg', "TURKISH"),
   // Food('Foodlist/Turkish/turkish.jpg', "TURKISH"),
   // Food('Foodlist/Turkish/turkish.jpg', "TURKISH"),
   // Food('Foodlist/Turkish/turkish.jpg', "TURKISH"),
-];
+// ];

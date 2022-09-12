@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/constanst/foodname.dart';
 import 'package:image_from_firebase_public/dummy/foodlist.dart';
 import 'package:image_from_firebase_public/screen/First_page_foodlist.dart';
 import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
+import 'package:image_from_firebase_public/screen/profile_page.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -23,12 +25,11 @@ class MainDrawer extends StatelessWidget {
                     height: container_height,
                     margin: EdgeInsets.only(top: 30),
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('image/mealup.jpg'),
+                        fit: BoxFit.fill,
+                      ),
                       shape: BoxShape.circle,
-                      // image: DecorationImage(
-                      //     image: NetworkImage(
-                      //       'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-                      //     ),
-                      //     fit: BoxFit.fill)
                     ),
                   ),
                   Text(
@@ -51,6 +52,9 @@ class MainDrawer extends StatelessWidget {
           lists_drawer(
             Drawer_Text: 'Profile',
             Icons: Icons.person,
+            onpressed: () {
+              Navigator.pushNamed(context, profile_page.ID);
+            },
           ),
           lists_drawer(
               Drawer_Text: 'Foodtype',
@@ -62,7 +66,7 @@ class MainDrawer extends StatelessWidget {
               Drawer_Text: 'foodlist',
               Icons: Icons.food_bank_outlined,
               onpressed: () {
-                Navigator.pushNamed(context, chinese.ID);
+                Navigator.pushNamed(context, foodtype_name_list.nChinese);
               }),
           lists_drawer(
               Drawer_Text: 'Data Entry',

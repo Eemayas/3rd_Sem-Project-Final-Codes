@@ -9,6 +9,7 @@ import 'package:image_from_firebase_public/screen/listpage/korean.dart';
 import 'package:image_from_firebase_public/screen/listpage/subcontinental.dart';
 import 'package:image_from_firebase_public/screen/listpage/thai.dart';
 import 'package:image_from_firebase_public/screen/listpage/turkish.dart';
+import 'package:image_from_firebase_public/screen/profile_page.dart';
 import 'package:image_from_firebase_public/screen/recipee/try.dart';
 import 'package:image_from_firebase_public/screen/second_page_foodlist.dart';
 import 'dummy/dataentry_page.dart';
@@ -37,8 +38,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.light(), //.copyWith(
-      //appBarTheme: AppBarTheme(backgroundColor: Color(0xff041C1F))),
+      theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
       initialRoute: Firstpage_foodtype.ID,
       routes: {
@@ -46,6 +46,7 @@ class MyApp extends StatelessWidget {
           secondpagelist[i]: (context) =>
               new secondpage_foodlist(Foodtype_name: secondpagelist[i]),
         "data": (context) => dataentry(),
+        profile_page.ID: (context) => profile_page(),
         foodlist.ID: (context) => foodlist(),
         Firstpage_foodtype.ID: (context) => Firstpage_foodtype(),
         // "recipeepage.ID": (context) => recipee_page(foodtype: '',),

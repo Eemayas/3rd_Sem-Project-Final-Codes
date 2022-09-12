@@ -28,6 +28,14 @@ List secondpagelist = [
   foodtype_name_list.nIndian,
   foodtype_name_list.nItalian,
   foodtype_name_list.nJapnese,
+  foodtype_name_list.nMediterranean,
+  foodtype_name_list.nMexican,
+  foodtype_name_list.nMiddle_Eastern,
+  foodtype_name_list.nMorccan,
+  foodtype_name_list.nSpanish,
+  foodtype_name_list.nThai,
+  foodtype_name_list.nTurkish,
+  foodtype_name_list.nVietnamese,
 ];
 BoxDecoration apptheme_background = BoxDecoration(
     gradient: LinearGradient(

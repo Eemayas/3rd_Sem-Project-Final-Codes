@@ -23,26 +23,61 @@ class foodtype {
 }
 
 List foodtype_list = [
+  //1
   foodtype(
       name: foodtype_name_list.nAmerican,
       nextpage: foodtype_name_list.nAmerican),
+  //2
   foodtype(
       name: foodtype_name_list.nBritish, nextpage: foodtype_name_list.nBritish),
+  //3
   foodtype(
       name: foodtype_name_list.nCaribbean,
       nextpage: foodtype_name_list.nCaribbean),
+  //4
   foodtype(
       name: foodtype_name_list.nChinese, nextpage: foodtype_name_list.nChinese),
+  //5
   foodtype(
       name: foodtype_name_list.nFrench, nextpage: foodtype_name_list.nFrench),
+  //6
   foodtype(
       name: foodtype_name_list.nGreek, nextpage: foodtype_name_list.nGreek),
+  //7
   foodtype(
       name: foodtype_name_list.nIndian, nextpage: foodtype_name_list.nIndian),
+
   foodtype(
       name: foodtype_name_list.nItalian, nextpage: foodtype_name_list.nItalian),
+  //8
   foodtype(
       name: foodtype_name_list.nJapnese, nextpage: foodtype_name_list.nJapnese),
+  //9
+  foodtype(
+      name: foodtype_name_list.nMediterranean,
+      nextpage: foodtype_name_list.nMediterranean),
+  //10
+  foodtype(
+      name: foodtype_name_list.nMexican, nextpage: foodtype_name_list.nMexican),
+  //11
+  foodtype(
+      name: foodtype_name_list.nMiddle_Eastern,
+      nextpage: foodtype_name_list.nMiddle_Eastern),
+  //12
+  foodtype(
+      name: foodtype_name_list.nMorccan, nextpage: foodtype_name_list.nMorccan),
+  //13
+  foodtype(
+      name: foodtype_name_list.nSpanish, nextpage: foodtype_name_list.nSpanish),
+  //14
+  foodtype(name: foodtype_name_list.nThai, nextpage: foodtype_name_list.nThai),
+  //15
+  foodtype(
+      name: foodtype_name_list.nTurkish, nextpage: foodtype_name_list.nTurkish),
+  //16
+  foodtype(
+      name: foodtype_name_list.nVietnamese,
+      nextpage: foodtype_name_list.nVietnamese),
 ];
 
 Map<String, String> imageeurl = {
@@ -64,6 +99,22 @@ Map<String, String> imageeurl = {
       'https://images.immediate.co.uk/production/volatile/sites/30/2022/07/Tomato-and-nduja-bruschetta-e1321b0.jpg',
   foodtype_list[8].name:
       'https://images.immediate.co.uk/production/volatile/sites/30/2022/08/Matcha-tofu-ice-cream-6c3335f.jpg',
+  foodtype_list[9].name:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2022/05/Hummus-snack-packs-626073e.jpg",
+  foodtype_list[10].name:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2022/03/spicy-beef-taco-2cd04fc.jpg",
+  foodtype_list[11].name:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2022/03/tagine-ff6dcc0.jpg",
+  foodtype_list[12].name:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2022/07/One-pan-hotpot-f85e19e.jpg",
+  foodtype_list[13].name:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2021/06/Chorizo-and-chickpea-summer-stew-7a4af9a.jpg",
+  foodtype_list[14].name:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2022/03/Golden-new-potato-and-pea-curry-aecd13f.jpg",
+  foodtype_list[15].name:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Spinach-with-chickpeas-pine-nuts-and-raisins-dc297c1.jpg",
+  foodtype_list[16].name:
+      "https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2016/08/vietnamese-egg-coffee.jpg",
 };
 
 

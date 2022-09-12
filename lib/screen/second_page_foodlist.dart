@@ -41,7 +41,32 @@ class secondpage_foodlist extends StatelessWidget {
     } else if (Foodtype_name == foodtype_name_list.nJapnese) {
       secondpage_list = Foodlist_JAPANESES;
       secondpage_map_imageurl = JAPANESES_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nMediterranean) {
+      secondpage_list = Foodlist_MEDITERRANEAN;
+      secondpage_map_imageurl = MEDITERRANEAN_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nMexican) {
+      secondpage_list = Foodlist_MEXICAN;
+      secondpage_map_imageurl = MEXICAN_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nMorccan) {
+      secondpage_list = Foodlist_MOROCCO;
+      secondpage_map_imageurl = MOROCCO_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nMiddle_Eastern) {
+      secondpage_list = Foodlist_MIDDLEEAST;
+      secondpage_map_imageurl = MIDDLEEAST_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nSpanish) {
+      secondpage_list = Foodlist_SPANSIH;
+      secondpage_map_imageurl = SPANISH_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nThai) {
+      secondpage_list = Foodlist_THAI;
+      secondpage_map_imageurl = THAI_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nTurkish) {
+      secondpage_list = Foodlist_TURKISH;
+      secondpage_map_imageurl = TURKISH_imageeurl;
+    } else if (Foodtype_name == foodtype_name_list.nVietnamese) {
+      secondpage_list = Foodlist_VIETNAMESE;
+      secondpage_map_imageurl = VIETNAMESE_imageeurl;
     }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kappbar_color,

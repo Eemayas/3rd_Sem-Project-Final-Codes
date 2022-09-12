@@ -10,6 +10,15 @@ class foodtype_name_list extends StatelessWidget {
   static String nIndian = "INDIAN";
   static String nItalian = "ITALIAN";
   static String nJapnese = "JAPANESE";
+  static String nMediterranean = "MEDITERRANEN";
+  static String nMexican = "MEXICAN";
+  static String nMorccan = "MOROCCAN";
+  static String nSpanish = "SPANISH";
+  static String nThai = "THAI";
+  static String nVietnamese = "VIETNAMESE";
+  static String nMiddle_Eastern = "MIDDLE EASTERN";
+  static String nTurkish = "TURKISH";
+
   static String am_Simple_salt_beef = "Simple salt beef";
   static String am_Maple_chilli_glazed_leg_of_lamb =
       "Maple & chilli-glazed leg of lamb";
@@ -72,6 +81,57 @@ class foodtype_name_list extends StatelessWidget {
   static String jp_Vegan_katsu_curry = "Vegan katsu curry";
   static String jp_Wasabi_chicken_rice_salad = "Wasabi chicken rice salad";
   static String jp_Furikake_devilled_eggs = "Furikake devilled eggs";
+
+  static String md_Hummus_snack_packs = "Hummus snack packs";
+  static String md_Healthy_chicken_pasta_bake = "Healthy chicken pasta bake";
+  static String md_Spinach_filo_spiral_pie = "Spinach filo spiral pie";
+  static String md_Sabich = "Sabich";
+  static String md_Falafel_lunchbox = "Falafel lunchbox";
+
+  static String mx_Spicy_beef_taco_bowl = "Spicy beef taco bowl";
+  static String mx_Mexican_hot_chocolate = "Mexican hot chocolate";
+  static String mx_Chicken_enchilada_wraps = "Chicken enchilada wraps";
+  static String mx_Spicy_rice_burritos = "Spicy rice burritos";
+  static String mx_Cabbage_roll_enchiladas = "Cabbage roll enchiladas";
+
+  static String mr_Spiced_chicken_hotpot = "Spiced chicken hotpot";
+  static String mr_Harira = "Harira";
+  static String mr_Moroccan_sausage_stew = "Moroccan sausage stew";
+  static String mr_Stuffed_Moroccan_pitta = "Stuffed Moroccan pitta";
+  static String mr_Spicy_Moroccan_eggs = "Spicy Moroccan eggs";
+
+  static String sp_Paella_mixta = "Paella mixta";
+  static String sp_Easiest_ever_paella = "Easiest ever paella";
+  static String sp_Spanish_chicken_pie = "Spanish chicken pie";
+  static String sp_Spanish_seafood_rice = "Spanish seafood rice";
+  static String sp_Spiced_tortilla = "Spiced tortilla";
+
+  static String th_Golden_new_potato_pea_curry =
+      "Golden new potato & pea curry";
+  static String th_Chicken_pad_Thai = "Chicken pad Thai";
+  static String th_Thai_green_tofu_noodles = "Thai green tofu noodles";
+  static String th_Cheats_sausage_larb = "Cheat’s sausage larb";
+  static String th_Next_level_pad_Thai = "Next level pad Thai";
+
+  static String tu_Pistachio_katmer = "Pistachio katmer";
+  static String tu_Simit_bread = "Simit bread";
+  static String tu_DIY_kofta_burgers = "DIY kofta burgers";
+  static String tu_Sweet_potato_salad = "Sweet potato salad";
+  static String tu_Smoked_aubergine_pure = "Smoked aubergine purée";
+
+  static String vi_Vietnamese_egg_coffee = "Vietnamese egg coffee";
+  static String vi_Vietnamese_pork_peanu_burgers =
+      "Vietnamese pork & peanut burgers";
+  static String vi_Vietnamese_style_caramel_pork =
+      "Vietnamese-style caramel pork";
+  static String vi_Vietnamese_porkvsalad = "Vietnamese pork salad";
+  static String vi_Barbecue_pork_buns = "Barbecue pork buns";
+
+  static String me_One_pan_lamb_tagine = "One-pan lamb tagine with chickpeas";
+  static String me_Vegan_kebabs = "Vegan kebabs";
+  static String me_Meze_meatballs = "Meze meatballs";
+  static String me_Fatteh_makdous = "Fatteh makdous";
+  static String me_Muhammara = "Muhammara ";
 
   @override
   Widget build(BuildContext context) {
