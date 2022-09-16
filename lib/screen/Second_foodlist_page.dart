@@ -10,7 +10,7 @@ import '../constanst/secondpage_foodlists_constant.dart';
 import '../constanst/constanst.dart';
 import '../constanst/firstpage_constant.dart';
 
-import 'foodtype_first_page.dart';
+import 'First_foodtype_page.dart';
 import 'Recipee_page.dart';
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 

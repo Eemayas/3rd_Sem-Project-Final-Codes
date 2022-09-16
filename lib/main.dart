@@ -10,6 +10,7 @@ import '/screen/listpage/subcontinental.dart';
 import '/screen/listpage/thai.dart';
 import '/screen/listpage/turkish.dart';
 import '/screen/profile_page.dart';
+import 'screen/First_foodtype_page.dart';
 import 'screen/O_second_page_foodlist.dart';
 import 'screen/SignIn_page.dart';
 import 'screen/SignUp_page.dart';
@@ -19,7 +20,7 @@ import 'dummy/foodlist.dart';
 import 'screen/O_First_page_foodlist.dart';
 import 'dummy/dataentry.dart';
 import 'screen/Second_foodlist_page.dart';
-import 'screen/foodtype_first_page.dart';
+
 import 'screen/listpage/chinese.dart';
 import 'screen/listpage/french.dart';
 import 'screen/Starting_page2.dart';

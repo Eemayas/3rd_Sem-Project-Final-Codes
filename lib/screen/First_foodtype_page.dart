@@ -8,6 +8,7 @@ import 'package:line_icons/line_icons.dart';
 import '../constanst/constanst.dart';
 import '../constanst/firstpage_constant.dart';
 import 'Second_foodlist_page.dart';
+import 'profile_page.dart';
 
 class Firstpage_food extends StatefulWidget {
   static String ID = "fooftype";
@@ -63,9 +64,7 @@ class _Firstpage_foodState extends State<Firstpage_food> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (builder) => Secondpage_food(
-                            FoodType: 'AMERICAN',
-                          ),
+                          builder: (builder) => profile_page(),
                         ));
                   },
                 ),

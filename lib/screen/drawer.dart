@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:image_from_firebase_public/screen/profile_page.dart';
 
-import 'foodtype_first_page.dart';
+import 'First_foodtype_page.dart';
 
 class New_drawer_page extends StatelessWidget {
   const New_drawer_page({Key? key}) : super(key: key);

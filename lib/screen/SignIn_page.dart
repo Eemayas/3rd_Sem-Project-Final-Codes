@@ -4,7 +4,7 @@ import 'package:image_from_firebase_public/constanst/constanst.dart';
 import '../component/loginpage.dart';
 import '../component/signuppage_comp.dart';
 
-import 'foodtype_first_page.dart';
+import 'First_foodtype_page.dart';
 
 class Sign_In extends StatelessWidget {
   static String ID = "sign in";
