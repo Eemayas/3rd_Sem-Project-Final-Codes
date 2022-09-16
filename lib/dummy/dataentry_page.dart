@@ -140,21 +140,19 @@ class _dataentrypageState extends State<dataentrypage> {
                     'INGREDIENT',
                     style: TextStyle(fontSize: 15),
                   ),
-                  Container(
-                    height: 300,
-                    child: ListView(
-                      children: [
-                        for (int i = 1;
-                            i <= int.parse(selected_ingredient);
-                            i++)
-                          Box(
-                              Category: "INGREDIENT",
-                              number: i,
-                              lastnumber: int.parse(selected_ingredient),
-                              Foodname: dataentrypage_FOODlist),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   height: 300,
+                  //   child: ListView(
+                  //     children: [
+                  for (int i = 1; i <= int.parse(selected_ingredient); i++)
+                    Box(
+                        Category: "INGREDIENT",
+                        number: i,
+                        lastnumber: int.parse(selected_ingredient),
+                        Foodname: dataentrypage_FOODlist),
+                  //     ],
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 100,
                   ),
@@ -162,19 +160,19 @@ class _dataentrypageState extends State<dataentrypage> {
                     'STEPS',
                     style: TextStyle(fontSize: 15),
                   ),
-                  Container(
-                    height: 400,
-                    child: ListView(
-                      children: [
-                        for (int i = 1; i <= int.parse(selected_step); i++)
-                          Box(
-                              Category: "STEPS",
-                              number: i,
-                              lastnumber: int.parse(selected_step),
-                              Foodname: dataentrypage_FOODlist),
-                      ],
-                    ),
-                  )
+                  // Container(
+                  //   height: 400,
+                  //   child: ListView(
+                  //   children: [
+                  for (int i = 1; i <= int.parse(selected_step); i++)
+                    Box(
+                        Category: "STEPS",
+                        number: i,
+                        lastnumber: int.parse(selected_step),
+                        Foodname: dataentrypage_FOODlist),
+                  //     ],
+                  //   ),
+                  // )
                 ]),
               ),
             ),

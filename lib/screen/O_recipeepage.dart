@@ -45,7 +45,7 @@ class recipee_page extends StatelessWidget {
                     child: TabBarView(
                       children: [
                         Center(
-                            child: firebase_extractor(
+                            child: new_firebase_extractor(
                           foodtype_f: foodtype_fR,
                           foodlist_s: foodlist_sR,
                           selection: 0,

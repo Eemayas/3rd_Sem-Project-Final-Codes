@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'foodname.dart';
 
@@ -12,6 +14,23 @@ List<BoxShadow> kBoxshadow = [
     spreadRadius: 2.0,
   ),
 ];
+
+Decoration boxDecoration_backgroundimage = BoxDecoration(
+  image: DecorationImage(image: AssetImage("image/backgroundimage.png")),
+);
+TextStyle textStyle = TextStyle(
+    fontFamily: "Poppins",
+    fontStyle: FontStyle.italic,
+    fontWeight: FontWeight.normal,
+    fontSize: 28,
+    foreground: Paint()
+      ..shader = LinearGradient(
+        colors: <Color>[
+          Color(0xffEA5753),
+          Color(0xffCC540D),
+        ],
+      ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 100.0)));
+
 Color cArrow_foodtype_page = Colors.black;
 Color cPhotoframe_foodtype_page = Colors.white70;
 Color cTextcontainer_foodtype_page = Colors.grey;

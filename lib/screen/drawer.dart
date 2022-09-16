@@ -1,28 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:image_from_firebase_public/constanst/foodname.dart';
-import 'package:image_from_firebase_public/dummy/foodlist.dart';
-import 'package:image_from_firebase_public/screen/First_page_foodlist.dart';
-import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
+
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:image_from_firebase_public/screen/profile_page.dart';
 
-class MainDrawer extends StatelessWidget {
+import 'foodtype_first_page.dart';
+
+class New_drawer_page extends StatelessWidget {
+  const New_drawer_page({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    double container_height = 100;
-    double container_width = 100;
-    return Drawer(
-      child: Column(
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(20),
-            color: Theme.of(context).primaryColor,
-            child: Center(
+    double total_height = MediaQuery.of(context).size.height;
+    return SafeArea(
+      child: Drawer(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("image/background2.png"),
+                  fit: BoxFit.fill)),
+          child: Column(children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: total_height * 0.3,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: DecorationImage(
+                      image: AssetImage("image/Drawerbackground.png"),
+                      fit: BoxFit.fill)),
               child: Column(
-                children: <Widget>[
+                children: [
                   Container(
-                    width: container_width,
-                    height: container_height,
+                    width: 120,
+                    height: 120,
                     margin: EdgeInsets.only(top: 30),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -32,74 +45,100 @@ class MainDrawer extends StatelessWidget {
                       shape: BoxShape.circle,
                     ),
                   ),
-                  Text(
-                    ' MEAL UP',
+                  GradientText(
+                    'Meal UP',
                     style: TextStyle(
+                      fontFamily: "Poppins",
+                      fontStyle: FontStyle.italic,
                       fontSize: 22,
-                      color: Colors.white,
                     ),
+                    colors: [
+                      Color(0xffFFFFFF),
+                      Color(0xffCC540D),
+                    ],
                   ),
-                  Text(
+                  GradientText(
                     'mealup@gmail.com',
                     style: TextStyle(
-                      color: Colors.white,
+                      fontFamily: "Poppins",
+                      fontStyle: FontStyle.italic,
+                      fontSize: 16,
                     ),
+                    colors: [
+                      Color(0xffFFFFFF),
+                      Color(0xffCC540D),
+                    ],
                   ),
                 ],
               ),
             ),
-          ),
-          lists_drawer(
-            Drawer_Text: 'Profile',
-            Icons: Icons.person,
-            onpressed: () {
-              Navigator.pushNamed(context, profile_page.ID);
-            },
-          ),
-          lists_drawer(
-              Drawer_Text: 'Foodtype',
-              Icons: Icons.food_bank_outlined,
+            Tile_drawer_page(
+              Text_list: "Profile",
+              Iccon: Icon(Icons.person),
               onpressed: () {
-                Navigator.pushNamed(context, Firstpage_foodtype.ID);
-              }),
-          lists_drawer(
-              Drawer_Text: 'foodlist',
-              Icons: Icons.food_bank_outlined,
+                Navigator.pushNamed(context, profile_page.ID);
+              },
+            ),
+            Tile_drawer_page(
+              Text_list: "Cuisines",
+              Iccon: Icon(Icons.restaurant),
               onpressed: () {
-                Navigator.pushNamed(context, foodtype_name_list.nChinese);
-              }),
-          lists_drawer(
-              Drawer_Text: 'Data Entry',
-              Icons: Icons.settings,
-              onpressed: () {
-                Navigator.pushNamed(context, "datata");
-              }),
-          lists_drawer(Drawer_Text: 'Settings', Icons: Icons.settings),
-          lists_drawer(Drawer_Text: "Log out", Icons: Icons.arrow_back),
-        ],
+                Navigator.pushNamed(context, Firstpage_food.ID);
+              },
+            ),
+            Tile_drawer_page(
+                Text_list: "Info", Iccon: Icon(Icons.info_outline)),
+            Expanded(child: Container()),
+            Tile_drawer_page(
+                Text_list: "Data Entry(Developer Only)",
+                Iccon: Icon(Icons.devices_rounded),
+                onpressed: () {
+                  Navigator.pushNamed(context, "datata");
+                }),
+            Tile_drawer_page(
+                Text_list: "Logout", Iccon: Icon(Icons.exit_to_app)),
+          ]),
+        ),
       ),
     );
   }
 }
 
-class lists_drawer extends StatelessWidget {
-  lists_drawer(
-      {required this.Icons, required this.Drawer_Text, this.onpressed});
-  final IconData Icons;
-  final String Drawer_Text;
+class Tile_drawer_page extends StatelessWidget {
+  final String Text_list;
+  final Widget Iccon;
   final Function()? onpressed;
-
+  Tile_drawer_page(
+      {required this.Text_list, required this.Iccon, this.onpressed});
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(Icons),
-      title: Text(
-        Drawer_Text,
-        style: TextStyle(
-          fontSize: 18,
+    return Padding(
+      padding: const EdgeInsets.only(left: 15, right: 15, top: 9, bottom: 9),
+      child: GestureDetector(
+        onTap: onpressed,
+        child: Container(
+          height: 40,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(8))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Iccon,
+              ),
+              Expanded(child: Container()),
+              Text(
+                Text_list,
+                style: TextStyle(fontSize: 16, fontFamily: "Poppins"),
+              ),
+              Expanded(child: Container()),
+            ],
+          ),
         ),
       ),
-      onTap: onpressed,
     );
   }
 }

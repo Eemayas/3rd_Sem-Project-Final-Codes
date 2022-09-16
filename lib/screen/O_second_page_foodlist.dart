@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/constanst/foodname.dart';
-import 'package:image_from_firebase_public/screen/First_page_foodlist.dart';
 
 import '../component/format.dart';
 import '../constanst/constanst.dart';
 import '../constanst/secondpage_foodlists_constant.dart';
-import 'package:image_from_firebase_public/screen/recipee/try.dart';
 
 class secondpage_foodlist extends StatelessWidget {
   secondpage_foodlist({required this.Foodtype_name});
