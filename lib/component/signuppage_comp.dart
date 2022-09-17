@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class emailbox extends StatelessWidget {
+  final Function(String)? Onchanged;
+
+  emailbox({required this.Onchanged});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,6 +24,7 @@ class emailbox extends StatelessWidget {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
+          onChanged: Onchanged,
           //autofocus: true,
           // focusNode: true,
           keyboardType: TextInputType.emailAddress,
@@ -43,6 +47,8 @@ class emailbox extends StatelessWidget {
 }
 
 class passwordbox extends StatefulWidget {
+  final Function(String)? Onchanged;
+  passwordbox({this.Onchanged});
   @override
   State<passwordbox> createState() => _passwordboxState();
 }
@@ -70,6 +76,7 @@ class _passwordboxState extends State<passwordbox> {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
+          onChanged: widget.Onchanged,
           style: TextStyle(
             color: Colors.black,
           ),

@@ -3,59 +3,71 @@
 import 'package:flutter/material.dart';
 import '../constanst/constanst.dart';
 import 'frontphoto.dart';
+import "package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart";
 
 class loginformat_page extends StatelessWidget {
   final List<Widget> list_widget;
-  loginformat_page({required this.list_widget});
+  loginformat_page({required this.list_widget, required this.saving});
+  final bool saving;
   @override
   Widget build(BuildContext context) {
     double totalheight = MediaQuery.of(context).size.height * 2;
     double totalwidth = MediaQuery.of(context).size.width;
     double t0pgap = 30;
     double image_container_gap = 50;
-    return Scaffold(
-        resizeToAvoidBottomInset: false,
-        extendBody: true,
-        body: SafeArea(
-          child: Container(
-            height: totalheight,
-            width: totalwidth,
-            decoration: boxDecoration_backgroundimage,
-            child: ListView(
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(height: t0pgap),
-                    Hero(
-                      tag: "firstphoto",
-                      child: Front_photo(height: 220, widthh: 220),
-                    ),
-                    SizedBox(height: image_container_gap),
-                    Container(
-                      height: totalheight - image_container_gap - t0pgap - 259,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(55),
-                              topRight: Radius.circular(55)),
-                          gradient: LinearGradient(
-                              colors: [Color(0xffE79292), Color(0xffDBEC17)],
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: list_widget,
-                      ),
-                    )
-                  ],
-                ),
-              ],
+    return ModalProgressHUD(
+      inAsyncCall: saving,
+      dismissible: true,
+      child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          extendBody: true,
+          body: SafeArea(
+            child: Container(
+              height: totalheight,
+              width: totalwidth,
+              decoration: boxDecoration_backgroundimage,
+              child: ListView(
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: t0pgap),
+                      Hero(
+                          tag: "firstphoto",
+                          child: Front_photo(
+                            height: ratio_height(context, 220),
+                            widthh: ratio_height(context, 220),
+                          )
+                          // Front_photo(height: 220, widthh: 220),
+                          ),
+                      SizedBox(height: image_container_gap),
+                      Container(
+                        height:
+                            totalheight - image_container_gap - t0pgap - 259,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(55),
+                                topRight: Radius.circular(55)),
+                            gradient: LinearGradient(
+                                colors: [Color(0xffE79292), Color(0xffDBEC17)],
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: list_widget,
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ));
+          )),
+    );
   }
 }
 

@@ -321,49 +321,48 @@ class _foodnameState extends State<foodname> {
   }
 }
 
-String dataentrypage_FOODTYPE = foodtype_name_list.nGreek;
+String dataentrypage_FOODTYPE = foodtype_name_list.nMediterranean;
 String dataentrypage_FOODlist =
-    foodtype_name_list.gr_Feta_cakes_with_Greek_salad;
+    foodtype_name_list.md_Healthy_chicken_pasta_bake;
 
 Map<String, String> ingreddddientt_manual = {
-  "1": "a drop of rapeseed oil, for the baking sheet",
-  "2": "700g potatoes, peeled and cut into chunks",
-  "3": "1 lemon, zested, half juiced",
-  "4": "6 spring onions, very finely chopped",
-  "5": "2 tbsp chopped mint",
-  "6": "3 tbsp chopped parsley",
-  "7": "100g feta, crumbled",
-  "8": "1 large egg",
-  "9": "6 tbsp wholemeal flour",
-  "10": "½ tsp smoked paprika",
-  "11": "320g tomatoes, cut into wedges",
-  "12": "1 cucumber (about 320g), diced",
-  "13": "1 red onion finely chopped",
-  "14": "12 Kalamata olives, quartered",
-  "15": "1-2 tbsp finely chopped mint",
-  "16": "2 tsp lemon juice",
-  "17": "2 tsp extra virgin olive oil",
+  "1": "300g wholemeal penne",
+  "2": "2 tsp olive oil",
+  "3": "2 peppers (we used 1 yellow and 1 orange), deseeded and chopped",
+  "4": "1 large courgette (160g), coarsely grated",
+  "5": "3 large garlic cloves, finely grated",
+  "6": "500g carton passata",
+  "7": "1 tbsp smoked paprika",
+  "8": "1½ tsp vegetable bouillon powder",
+  "9": "1 tsp chilli powder (optional)",
+  "10": "25g Kalamata olives (about 8), sliced",
+  "11": "400g chicken breasts (2 large), cut into pieces",
+  "12": "large handful of basil, chopped, plus extra to serve",
+  "13": "100g ricotta",
+  "14": "20g finely grated mature cheddar",
 };
 
 Map<String, String> step_data_manual = {
   "1":
-      "Heat the oven to 200C/180C fan/gas 6 and oil a non-stick baking sheet. Bring a pan of water to the boil, add the potatoes and cook for 15-20 mins until tender. Drain very well, then return to the pan and mash with lots of black pepper, the lemon zest and juice, the spring onions, mint and 2 tbsp of the parsley. Stir through the feta.",
+      " Cook the pasta following pack instructions. Heat the oven to 180C/160C fan/gas 4.",
   "2":
-      "Beat the egg in a shallow bowl, then mix the flour, paprika and remaining 1 tbsp parsley in another. Shape the potato mixture into eight cakes, then carefully coat all over in the egg, then the flour mix, reshaping them if you need to. Arrange the cakes on the baking sheet and bake for 15 mins until starting to turn golden. Use a palette knife to carefully turn each one over and bake for another 10-15 mins until golden.",
+      "Meanwhile, heat the oil in a large pan over a medium heat and fry the peppers for 8 mins, stirring until they start to soften. Add the courgette and garlic, stir for a few minutes more, then tip in the passata and stir in the smoked paprika, bouillon, chilli, if using, and olives. Simmer for 3-4 mins.",
   "3":
-      "Meanwhile, toss half the salad with half the lemon and oil. Serve with four cakes and chill the remainder for another day, tossing the remaining salad with the rest of the lemon and oil just before serving. Will keep, covered, for up to two days in the fridge. To reheat the cakes, cook on a baking tray at 200C/180C fan/gas 6 for 15-20 mins.",
+      "Drain the pasta, reserving the pasta water. Tip the pasta into the passata mixture along with the chicken, half a mug of the pasta water and the basil. Stir together well, then tip into baking dish.",
+  "4":
+      "Mix the ricotta in a bowl with 5 tbsp of the pasta water and spread across the top of the pasta. Sprinkle over the cheddar, then bake for 35 mins. Scatter with a few extra basil leaves, if you like, and serve.",
 };
 
 
-//"1":"
-//"2":"
-//"3":"
-//"4":"
-//"5":"
-//"6":"
-//"7":"
-//"8":"
-//"9":"
+//"1":   "
+//"2":   "
+//"3":   "
+//"4":   "
+//"5":   "
+//"6":   "
+//"7":   "
+//"8":   "
+//"9":   "
 //"10":"
 //"11":"
 //"12":"

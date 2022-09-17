@@ -16,7 +16,8 @@ List<BoxShadow> kBoxshadow = [
 ];
 
 Decoration boxDecoration_backgroundimage = BoxDecoration(
-  image: DecorationImage(image: AssetImage("image/backgroundimage.png")),
+  image: DecorationImage(
+      image: AssetImage("image/backgroundimage.png"), fit: BoxFit.fill),
 );
 TextStyle textStyle = TextStyle(
     fontFamily: "Poppins",
@@ -63,3 +64,17 @@ BoxDecoration apptheme_background = BoxDecoration(
         colors: [Color(0xff05404A), Color(0xff1F7A7B)]));
 
 Color kappbar_color = Color(0xff06282E);
+double workingscreen_width = 360;
+double workingscreen_height = 800;
+double ratio_height(BuildContext context, double height) {
+  double height_ratio =
+      height * MediaQuery.of(context).size.height / workingscreen_height;
+  print("ratio height $height_ratio");
+  return height_ratio;
+}
+
+double ratio_width(BuildContext context, double width) {
+  double width_ratio =
+      width * MediaQuery.of(context).size.width / workingscreen_width;
+  return width_ratio;
+}

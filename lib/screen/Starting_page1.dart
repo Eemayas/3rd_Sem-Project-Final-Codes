@@ -26,7 +26,12 @@ class _startingpage1State extends State<startingpage1> {
         children: [
           Hero(
             tag: "firstphoto",
-            child: Front_photo(height: 275, widthh: 275),
+            child:
+                //  Front_photo(
+                //   height: ratio_height(context, 275),
+                //   widthh: ratio_width(context, 275),
+                // ),
+                Front_photo(height: 275, widthh: 275),
           ),
           Text(
             "Cooking Experience\nLike a Chef",
