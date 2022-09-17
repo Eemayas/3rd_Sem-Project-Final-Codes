@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/constanst/constanst.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../component/Alertdialouge.dart';
+import '../component/Detail_to_Firebase.dart';
 import '../component/loginpage.dart';
 import '../component/signuppage_comp.dart';
 import 'O_First_page_foodlist.dart';
@@ -21,6 +23,9 @@ class _Sign_UpState extends State<Sign_Up> {
   late String _email;
 
   late String _password;
+  late String _name;
+  late String _ph_number;
+  late String _address;
 
   bool saving = false;
 
@@ -94,13 +99,30 @@ class _Sign_UpState extends State<Sign_Up> {
                       _password = value;
                       print(value);
                     }),
-                    generalbox(label: "Name", keyboardtype: TextInputType.name),
                     generalbox(
-                        label: "Phone Number",
-                        keyboardtype: TextInputType.phone),
+                      label: "Name",
+                      keyboardtype: TextInputType.name,
+                      Onchanged: (p0) {
+                        _name = p0;
+                        print(p0);
+                      },
+                    ),
                     generalbox(
-                        label: "Address",
-                        keyboardtype: TextInputType.streetAddress),
+                      label: "Phone Number",
+                      keyboardtype: TextInputType.phone,
+                      Onchanged: (p0) {
+                        _ph_number = p0;
+                        print(p0);
+                      },
+                    ),
+                    generalbox(
+                      label: "Address",
+                      keyboardtype: TextInputType.streetAddress,
+                      Onchanged: (p0) {
+                        _address = p0;
+                        print(p0);
+                      },
+                    ),
                     SizedBox(
                       height: ratio_height(context, 20), //20,
                     ),
@@ -109,7 +131,11 @@ class _Sign_UpState extends State<Sign_Up> {
                         onTap: () async {
                           savingtrue();
                           try {
-                            if (_email != null && _password != null) {
+                            if (_email != null &&
+                                _password != null &&
+                                _name != null &&
+                                _ph_number != null &&
+                                _address != null) {
                               try {
                                 UserCredential userCredential =
                                     await FirebaseAuth.instance
@@ -127,6 +153,20 @@ class _Sign_UpState extends State<Sign_Up> {
                                   print(
                                       'The account already exists for that email.');
                                 }
+                                Detail_to_firebase(
+                                    _email, _name, _ph_number, _address);
+                                // Map<String, String> info = {
+                                //   "Email": _email,
+                                //   "Name": _name,
+                                //   "Phone Number": _ph_number,
+                                //   "Address": _address,
+                                // };
+                                // var db = FirebaseFirestore.instance
+                                //     .collection("User_detail");
+                                // db
+                                //     .doc(_email)
+                                //     .set(info)
+                                //     .then((value) => print("sucesss"));
                               } catch (e) {
                                 print(e);
                               }
@@ -168,3 +208,4 @@ class _Sign_UpState extends State<Sign_Up> {
 //     print(e);
 //   }
 // }
+

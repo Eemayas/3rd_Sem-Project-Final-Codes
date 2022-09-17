@@ -105,9 +105,11 @@ class _passwordboxState extends State<passwordbox> {
 }
 
 class generalbox extends StatelessWidget {
+  final Function(String)? Onchanged;
+
   final String label;
   TextInputType keyboardtype;
-  generalbox({required this.label, required this.keyboardtype});
+  generalbox({required this.label, required this.keyboardtype, this.Onchanged});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -128,6 +130,7 @@ class generalbox extends StatelessWidget {
         height: 60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
+          onChanged: Onchanged,
           //autofocus: true,
           // focusNode: true,
           keyboardType: keyboardtype,
