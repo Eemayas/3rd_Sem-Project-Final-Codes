@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (RMX2001)",
+            "program": "lib/main.dart",
+            "deviceId": "OVEINB6HVC7HOVGU",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

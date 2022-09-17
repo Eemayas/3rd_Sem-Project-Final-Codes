@@ -85,8 +85,8 @@ class login_button extends StatelessWidget {
           onTap();
         },
         child: Container(
-          height: 50,
-          width: 150,
+          height: ratio_height(context, 50), // 50,
+          width: ratio_width(context, 150), //150,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
@@ -107,6 +107,7 @@ class login_button extends StatelessWidget {
             children: [
               Text(
                 Textt,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                     fontFamily: "Poppins",
                     fontStyle: FontStyle.normal,

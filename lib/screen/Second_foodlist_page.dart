@@ -190,8 +190,8 @@ class _Secondpage_foodState extends State<Secondpage_food> {
                           child: Hero(
                             tag: "logo",
                             child: Container(
-                              height: 100,
-                              width: 100,
+                              height: ratio_height(context, 100), //100,
+                              width: ratio_width(context, 100), //100,
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.transparent,
@@ -217,8 +217,9 @@ class _Secondpage_foodState extends State<Secondpage_food> {
                         Align(
                           alignment: Alignment.centerRight,
                           child: Container(
-                              height: 100,
-                              width: MediaQuery.of(context).size.width - 100,
+                              height: ratio_height(context, 100), //100,
+                              width: MediaQuery.of(context).size.width -
+                                  ratio_width(context, 100), //x-100
                               decoration: BoxDecoration(
                                   boxShadow: [
                                     BoxShadow(
@@ -255,8 +256,8 @@ class _Secondpage_foodState extends State<Secondpage_food> {
                               //   tag: "photo+${widget.FoodType}",
                               //   child:
                               Container(
-                            height: 100,
-                            width: 100,
+                            height: ratio_height(context, 100), //100,
+                            width: ratio_width(context, 100), //100,
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.transparent,

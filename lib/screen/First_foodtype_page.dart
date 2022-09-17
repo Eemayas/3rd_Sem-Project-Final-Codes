@@ -117,8 +117,8 @@ class _Firstpage_foodState extends State<Firstpage_food> {
                               child: Hero(
                                 tag: "logo",
                                 child: Container(
-                                  height: 100,
-                                  width: 100,
+                                  height: ratio_height(context, 100), //100,
+                                  width: ratio_width(context, 100), //100,
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Colors.transparent,
@@ -193,8 +193,8 @@ class slide_view extends StatelessWidget {
       child: GestureDetector(
         onTap: OnTap,
         child: Container(
-          height: 340,
-          width: 244.5,
+          height: ratio_height(context, 340), //340,
+          width: ratio_width(context, 244.5), // 244.5,
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -216,8 +216,8 @@ class slide_view extends StatelessWidget {
               //   tag: "photo+$Textt",
               //   child:
               Container(
-                height: 160,
-                width: 160,
+                height: ratio_height(context, 160), // 160,
+                width: ratio_width(context, 160), //160,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.transparent,

@@ -60,9 +60,8 @@ class _Sign_UpState extends State<Sign_Up> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: 40,
-                    ),
+                    SizedBox(height: ratio_height(context, 40) //40,
+                        ),
                     Hero(
                       tag: "logo",
                       child: Container(
@@ -103,7 +102,7 @@ class _Sign_UpState extends State<Sign_Up> {
                         label: "Address",
                         keyboardtype: TextInputType.streetAddress),
                     SizedBox(
-                      height: 20,
+                      height: ratio_height(context, 20), //20,
                     ),
                     login_button(
                         Textt: "Sign UP",
@@ -138,6 +137,11 @@ class _Sign_UpState extends State<Sign_Up> {
                           // print("pressed");
                           // Navigator.pushNamed(context, Firstpage_foodtype.ID);
                         }),
+                    login_button(
+                        Textt: "Sign In Anonymous",
+                        onTap: () {
+                          Navigator.pushNamed(context, Firstpage_foodtype.ID);
+                        }),
                     SizedBox(
                       height: totalheight / 2,
                     )
@@ -150,17 +154,17 @@ class _Sign_UpState extends State<Sign_Up> {
   }
 }
 
-Future<void> resitration(String _email, String _password) async {
-  try {
-    UserCredential userCredential = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: _email, password: _password);
-  } on FirebaseAuthException catch (e) {
-    if (e.code == 'weak-password') {
-      print('The password provided is too weak.');
-    } else if (e.code == 'email-already-in-use') {
-      print('The account already exists for that email.');
-    }
-  } catch (e) {
-    print(e);
-  }
-}
+// Future<void> resitration(String _email, String _password) async {
+//   try {
+//     UserCredential userCredential = await FirebaseAuth.instance
+//         .createUserWithEmailAndPassword(email: _email, password: _password);
+//   } on FirebaseAuthException catch (e) {
+//     if (e.code == 'weak-password') {
+//       print('The password provided is too weak.');
+//     } else if (e.code == 'email-already-in-use') {
+//       print('The account already exists for that email.');
+//     }
+//   } catch (e) {
+//     print(e);
+//   }
+// }

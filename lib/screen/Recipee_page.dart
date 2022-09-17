@@ -4,6 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/Firebase/firebase_extractor.dart';
 
+import '../constanst/constanst.dart';
+
 class Recipe_page extends StatefulWidget {
   final String Img_URL;
   final String foodname_text;
@@ -18,10 +20,10 @@ class Recipe_page extends StatefulWidget {
 
 class _Recipe_pageState extends State<Recipe_page> {
   int _selectedtab = 1;
-  double recipepage_photoheight = 200;
 
   @override
   Widget build(BuildContext context) {
+    double recipepage_photoheight = ratio_height(context, 200); //200;
     String foodname_text = widget.foodname_text;
     String Img_URL = widget.Img_URL;
     String Cuisines = widget.Cuisines;
@@ -132,8 +134,8 @@ class _Recipe_pageState extends State<Recipe_page> {
                       children: [
                         GestureDetector(
                           child: Container(
-                            height: 35,
-                            width: 110,
+                            height: ratio_height(context, 35), //35,
+                            width: ratio_width(context, 110), //110,
                             decoration: BoxDecoration(
                                 color: _selectedtab == 1
                                     ? Color(0xffFF6433)
@@ -257,7 +259,8 @@ class Listtile_recipe extends StatelessWidget {
     return Container(
       //height: 50,
 
-      width: MediaQuery.of(context).size.width - 20,
+      width:
+          MediaQuery.of(context).size.width - ratio_height(context, 20), //x-20,
       decoration: BoxDecoration(
           color: Color(0x20FFC5A4),
           borderRadius: BorderRadius.all(Radius.circular(12))),
@@ -273,7 +276,7 @@ class Listtile_recipe extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 20,
+            width: ratio_height(context, 20), //20,
           ),
           Expanded(
             child: Padding(

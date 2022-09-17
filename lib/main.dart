@@ -44,7 +44,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      initialRoute: startingpage1.ID, //Firstpage_foodtype.ID,
+      initialRoute: startingpage1.ID,
+      // Firstpage_food.ID, // //Firstpage_foodtype.ID,
       routes: {
         for (int i = 0; i < secondpagelist.length; i++)
           secondpagelist[i]: (context) =>

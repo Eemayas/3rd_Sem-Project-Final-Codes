@@ -42,33 +42,37 @@ class _Sign_InState extends State<Sign_In> {
         // Column(
         //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         //  children: [
-        Hero(
-          tag: "logo",
-          child: Container(
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.transparent,
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(4, 7),
-                    blurRadius: 10,
-                    spreadRadius: 2,
-                  )
-                ],
-                image: DecorationImage(image: AssetImage("image/logo.jpg"))),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20, bottom: 10),
-          child: Text("Sign IN", textAlign: TextAlign.center, style: textStyle),
-        ),
+
         // ModalProgressHUD(
         //   inAsyncCall: saving,
         //   child:
         Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Hero(
+              tag: "logo",
+              child: Container(
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.transparent,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(4, 7),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                      )
+                    ],
+                    image:
+                        DecorationImage(image: AssetImage("image/logo.jpg"))),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, bottom: 10),
+              child: Text("Sign IN",
+                  textAlign: TextAlign.center, style: textStyle),
+            ),
             emailbox(Onchanged: (value) {
               _email = value;
               print(value);
@@ -107,12 +111,17 @@ class _Sign_InState extends State<Sign_In> {
 
                   // Navigator.pushNamed(context, Firstpage_food.ID);
                 }),
+            login_button(
+                Textt: "Sign In Anonymous",
+                onTap: () {
+                  Navigator.pushNamed(context, Firstpage_food.ID);
+                }),
           ],
         ),
         //),
 
         SizedBox(
-          height: 30 + MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height - ratio_height(context, 2),
         )
       ],
     );

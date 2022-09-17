@@ -69,7 +69,7 @@ double workingscreen_height = 800;
 double ratio_height(BuildContext context, double height) {
   double height_ratio =
       height * MediaQuery.of(context).size.height / workingscreen_height;
-  print("ratio height $height_ratio");
+
   return height_ratio;
 }
 
