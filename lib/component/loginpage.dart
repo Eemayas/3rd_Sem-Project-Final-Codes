@@ -13,8 +13,8 @@ class loginformat_page extends StatelessWidget {
   Widget build(BuildContext context) {
     double totalheight = MediaQuery.of(context).size.height * 2;
     double totalwidth = MediaQuery.of(context).size.width;
-    double t0pgap = 30;
-    double image_container_gap = 50;
+    double t0pgap = ratio_height(context, 30); //30;
+    double image_container_gap = ratio_height(context, 50); //50;
     return ModalProgressHUD(
       inAsyncCall: saving,
       dismissible: true,
@@ -44,8 +44,10 @@ class loginformat_page extends StatelessWidget {
                           ),
                       SizedBox(height: image_container_gap),
                       Container(
-                        height:
-                            totalheight - image_container_gap - t0pgap - 259,
+                        height: totalheight -
+                            image_container_gap -
+                            t0pgap -
+                            ratio_height(context, 259), //x-259,
                         width: double.infinity,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(

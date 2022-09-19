@@ -322,6 +322,7 @@ class _foodnameState extends State<foodname> {
 }
 
 String dataentrypage_FOODTYPE = foodtype_name_list.nMediterranean;
+//rember to change above foodtype after 5 time ffodlist
 String dataentrypage_FOODlist =
     foodtype_name_list.md_Healthy_chicken_pasta_bake;
 

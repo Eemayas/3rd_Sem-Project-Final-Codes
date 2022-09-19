@@ -17,9 +17,7 @@ class Sign_In extends StatefulWidget {
 
 class _Sign_InState extends State<Sign_In> {
   late String _email;
-
   late String _password;
-
   bool saving = false;
 
   void savingtrue() {
@@ -52,8 +50,8 @@ class _Sign_InState extends State<Sign_In> {
             Hero(
               tag: "logo",
               child: Container(
-                height: 100,
-                width: 100,
+                height: ratio_height(context, 100), // 100,
+                width: ratio_width(context, 100), //100,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.transparent,
@@ -92,6 +90,15 @@ class _Sign_InState extends State<Sign_In> {
                             .instance
                             .signInWithEmailAndPassword(
                                 email: _email, password: _password);
+                        FirebaseAuth.instance
+                            .userChanges()
+                            .listen((User? user) {
+                          if (user == null) {
+                            print('User is currently signed out!');
+                          } else {
+                            print('User is signed in!');
+                          }
+                        });
                         Navigator.pushNamed(context, Firstpage_food.ID);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'user-not-found') {

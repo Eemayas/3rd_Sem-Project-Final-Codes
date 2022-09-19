@@ -136,11 +136,23 @@ class _Sign_UpState extends State<Sign_Up> {
                                 _name != null &&
                                 _ph_number != null &&
                                 _address != null) {
+                              // print(_email +
+                              //     "\n" +
+                              //     _password +
+                              //     "\n" +
+                              //     _name +
+                              //     "\n" +
+                              //     _ph_number +
+                              //     "\n" +
+                              //     _address +
+                              //     "\n");
                               try {
                                 UserCredential userCredential =
                                     await FirebaseAuth.instance
                                         .createUserWithEmailAndPassword(
                                             email: _email, password: _password);
+                                Detail_to_firebase(
+                                    _email, _name, _ph_number, _address);
                                 Navigator.pushNamed(
                                     context, Firstpage_foodtype.ID);
                               } on FirebaseAuthException catch (e) {
@@ -153,8 +165,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                   print(
                                       'The account already exists for that email.');
                                 }
-                                Detail_to_firebase(
-                                    _email, _name, _ph_number, _address);
+
                                 // Map<String, String> info = {
                                 //   "Email": _email,
                                 //   "Name": _name,
@@ -178,7 +189,7 @@ class _Sign_UpState extends State<Sign_Up> {
                           // Navigator.pushNamed(context, Firstpage_foodtype.ID);
                         }),
                     login_button(
-                        Textt: "Sign In Anonymous",
+                        Textt: "Sign up Anonymous",
                         onTap: () {
                           Navigator.pushNamed(context, Firstpage_foodtype.ID);
                         }),

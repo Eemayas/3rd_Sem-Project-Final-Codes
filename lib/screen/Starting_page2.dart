@@ -46,7 +46,7 @@ class startingpage2 extends StatelessWidget {
               Navigator.pushNamed(context, Sign_Up.ID);
             }),
         SizedBox(
-          height: 30 + MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height,
         )
       ],
     );

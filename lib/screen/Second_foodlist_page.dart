@@ -283,7 +283,7 @@ class _Secondpage_foodState extends State<Secondpage_food> {
               ),
             ),
             SizedBox(
-              height: total_height * 0.45,
+              height: total_height * 0.4,
               child: ListView(
                 padding: const EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,

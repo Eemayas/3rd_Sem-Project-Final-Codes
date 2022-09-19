@@ -42,7 +42,7 @@ class _Firstpage_foodState extends State<Firstpage_food> {
               hoverColor: Colors.grey[100]!,
               gap: 8,
               activeColor: Colors.black,
-              iconSize: 24,
+              iconSize: ratio_height(context, 24), //24,
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               duration: Duration(milliseconds: 400),
               tabBackgroundColor: Colors.grey[100]!,
@@ -145,7 +145,7 @@ class _Firstpage_foodState extends State<Firstpage_food> {
                   ),
                 ),
                 Container(
-                  height: totalheight * 0.45,
+                  height: totalheight * 0.4,
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 20),
                     child: ListView(
@@ -239,12 +239,16 @@ class slide_view extends StatelessWidget {
               // Hero(
               //     tag: "text+$Textt",
               //     child:
-              Text(foodname_Textt,
-                  textAlign: TextAlign.center, style: textStyle),
+              Expanded(
+                child: Text(foodname_Textt,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: textStyle),
+              ),
               //),
               Container(
-                height: 51,
-                width: 75,
+                height: ratio_height(context, 51), //51,
+                width: ratio_width(context, 75), //75,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(65)),
                     gradient: LinearGradient(
@@ -253,7 +257,7 @@ class slide_view extends StatelessWidget {
                         colors: [Color(0xff741F1F), Color(0x00D9D9D9)])),
                 child: Icon(
                   Icons.arrow_right_alt_sharp,
-                  size: 40,
+                  size: ratio_height(context, 40), //40,
                   shadows: [
                     Shadow(
                         color: Color(0xffEA5753),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/constanst/constanst.dart';
 
 class emailbox extends StatelessWidget {
   final Function(String)? Onchanged;
@@ -21,7 +22,7 @@ class emailbox extends StatelessWidget {
             )
           ],
         ),
-        height: 60,
+        height: ratio_height(context, 60), //60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
           onChanged: Onchanged,
@@ -73,7 +74,7 @@ class _passwordboxState extends State<passwordbox> {
             )
           ],
         ),
-        height: 60,
+        height: ratio_height(context, 60), //60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
           onChanged: widget.Onchanged,
@@ -127,7 +128,7 @@ class generalbox extends StatelessWidget {
             )
           ],
         ),
-        height: 60,
+        height: ratio_height(context, 60), //60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
           onChanged: Onchanged,

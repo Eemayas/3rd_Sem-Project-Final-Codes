@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:image_from_firebase_public/constanst/constanst.dart';
+import '/screen/Starting_page2.dart';
+import '/screen/Starting_page1.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:image_from_firebase_public/screen/profile_page.dart';
 
@@ -34,8 +37,8 @@ class New_drawer_page extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    width: 120,
-                    height: 120,
+                    width: ratio_height(context, 120), //120
+                    height: ratio_height(context, 120), //120,
                     margin: EdgeInsets.only(top: 30),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -96,7 +99,14 @@ class New_drawer_page extends StatelessWidget {
                   Navigator.pushNamed(context, "datata");
                 }),
             Tile_drawer_page(
-                Text_list: "Logout", Iccon: Icon(Icons.exit_to_app)),
+                Text_list: "Logout",
+                Iccon: Icon(Icons.exit_to_app),
+                onpressed: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.popUntil(
+                      context, ModalRoute.withName(startingpage1.ID));
+                  Navigator.pushNamed(context, startingpage2.ID);
+                }),
           ]),
         ),
       ),
