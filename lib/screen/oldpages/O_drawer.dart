@@ -5,6 +5,8 @@ import 'package:image_from_firebase_public/screen/oldpages/O_First_page_foodlist
 import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
 import 'package:image_from_firebase_public/screen/oldpages/O_profile_page.dart';
 
+import '../Profile_Page.dart';
+
 class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class MainDrawer extends StatelessWidget {
             Drawer_Text: 'Profile',
             Icons: Icons.person,
             onpressed: () {
-              Navigator.pushNamed(context, profile_page.ID);
+              Navigator.pushNamed(context, Profile_Page.ID);
             },
           ),
           lists_drawer(

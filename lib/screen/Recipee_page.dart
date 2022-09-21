@@ -53,19 +53,50 @@ class _Recipe_PageState extends State<Recipe_Page> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 20),
-                      child: Container(
-                          height: 20,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Color(0xffFF6433)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.arrow_back_ios,
-                              size: 25,
-                              color: Colors.white,
+                      padding:
+                          const EdgeInsets.only(top: 20, left: 20, right: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                  height: ratio_height(context, 40), //40
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xffFF6433)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Icons.arrow_back_ios,
+                                      size: 25,
+                                      color: Colors.white,
+                                    ),
+                                  )),
                             ),
-                          )),
+                            Expanded(child: Container()),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                  height: ratio_height(context, 40), //40
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xffFF6433)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Icons.favorite,
+                                      size: 25,
+                                      color: Colors.white,
+                                    ),
+                                  )),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),

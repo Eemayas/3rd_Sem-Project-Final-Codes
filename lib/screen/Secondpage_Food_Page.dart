@@ -104,19 +104,24 @@ class _Secondpage_Food_PageState extends State<Secondpage_Food_Page> {
                         padding: const EdgeInsets.only(left: 20, top: 20),
                         child: Align(
                             alignment: Alignment.topLeft,
-                            child: Container(
-                                height: 40,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Color(0xffFF6433)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(
-                                    Icons.arrow_back_ios,
-                                    size: 25,
-                                    color: Colors.white,
-                                  ),
-                                ))),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xffFF6433)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Icons.arrow_back_ios,
+                                      size: 25,
+                                      color: Colors.white,
+                                    ),
+                                  )),
+                            )),
                       ),
                       Center(
                         child: SizedBox(
