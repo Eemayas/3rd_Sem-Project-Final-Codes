@@ -2,23 +2,25 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/Firebase/Detail_from_Firebase.dart';
 import 'package:image_from_firebase_public/Firebase/firebase_extractor.dart';
 
+import '../Firebase/New_Firebase_extractoe.dart';
 import '../constanst/constanst.dart';
 
-class Recipe_page extends StatefulWidget {
+class Recipe_Page extends StatefulWidget {
   final String Img_URL;
   final String foodname_text;
   final String Cuisines;
-  Recipe_page(
+  Recipe_Page(
       {required this.Img_URL,
       required this.foodname_text,
       required this.Cuisines});
   @override
-  State<Recipe_page> createState() => _Recipe_pageState();
+  State<Recipe_Page> createState() => _Recipe_PageState();
 }
 
-class _Recipe_pageState extends State<Recipe_page> {
+class _Recipe_PageState extends State<Recipe_Page> {
   int _selectedtab = 1;
 
   @override
@@ -246,53 +248,6 @@ class _Recipe_pageState extends State<Recipe_page> {
           ),
         ),
       )),
-    );
-  }
-}
-
-class Listtile_recipe extends StatelessWidget {
-  final String texttt;
-  Listtile_recipe({required this.texttt});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      //height: 50,
-
-      width:
-          MediaQuery.of(context).size.width - ratio_height(context, 20), //x-20,
-      decoration: BoxDecoration(
-          color: Color(0x20FFC5A4),
-          borderRadius: BorderRadius.all(Radius.circular(12))),
-      //child: detail
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Icon(
-              Icons.restaurant,
-              color: Color(0xffFF5C00),
-              size: 18,
-            ),
-          ),
-          SizedBox(
-            width: ratio_height(context, 20), //20,
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Text(
-                texttt,
-                style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: "Poppins",
-                    fontStyle: FontStyle.italic,
-                    color: Color(0xffFF5C00)),
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

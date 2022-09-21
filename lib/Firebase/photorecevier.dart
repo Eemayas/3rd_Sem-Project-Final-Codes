@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
-import '../Firebase/database_manager.dart';
+import 'database_manager.dart';
 
 class photoviewer_format extends StatelessWidget {
   photoviewer_format(this.photoname);

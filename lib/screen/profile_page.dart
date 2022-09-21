@@ -1,191 +1,149 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class profile_page extends StatelessWidget {
-  static String ID = "profilepage";
+import '../Firebase/Detail_from_Firebase.dart';
+import '../component/Alertdialouge.dart';
+import '../constanst/constanst.dart';
+
+class Profile_Page extends StatelessWidget {
+  static String ID = "Profile_page";
+  String Email = "mealup@gmail.com";
+
+  void get_current_User() {
+    FirebaseAuth.instance.userChanges().listen((User? user) async {
+      if (user == null) {
+        print('User is currently signed out!');
+        // showAlertDialog("User is currently signed out!");
+      } else {
+        print('User is signed in!');
+        var currentUser = FirebaseAuth.instance.currentUser!.email;
+
+        if (currentUser != null) {
+          print("email:   ${currentUser}");
+        }
+        Email = currentUser!;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    String User_name = "Meal up";
-    String phone_number = '+9779800000000';
-    String Email_address = 'mealup@gmail.com';
-    String address = 'Dhulikhel,Nepal';
+    get_current_User();
+    double total_height = MediaQuery.of(context).size.height;
+    double total_width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.grey[900],
-      body: Center(
+      body: SafeArea(
         child: Container(
-          height: height * 0.7,
-          width: width * 0.8,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            gradient: LinearGradient(
-              colors: [
-                //#3a1c71 → #d76d77 → #ffaf7b
-                Color(0xff3a1c71),
-                Color(0xffd76d77),
-                Color(0xffffaf7b),
-                // Colors.purple.shade900,
-                // Colors.red.shade700,
-              ],
-            ),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: CustomPaint(
-              size: Size(width, height),
-              painter: CardCustomPainter(),
-              child: Stack(
+          height: total_height,
+          width: total_width,
+          decoration: boxDecoration_backgroundimage,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Stack(
+                alignment: Alignment.topCenter,
                 children: [
-                  Positioned(
-                    bottom: 10,
-                    left: 10,
-                    child: Image.asset(
-                      'image/img.png',
-                      color: Colors.purpleAccent.withOpacity(0.3),
-                      width: width * 0.7,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: total_height * 3 * 0.178125 / 4,
+                        ),
+                        Container(
+                          height: total_height / 2,
+                          width: total_width,
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(4, 7),
+                                blurRadius: 10,
+                                spreadRadius: 2,
+                              )
+                            ],
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(41.25)),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  "image/background2.png",
+                                ),
+                                fit: BoxFit.fill),
+                          ),
+                          child: Deatil_extractor(
+                            email: Email,
+                          ),
+                          // child: Column(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          //   children: [
+                          //     SizedBox(height: total_height * 0.178125 / 4),
+                          //     // Tile_for_detail(
+                          //     //     Text_list: "MEAL Up",
+                          //     //     Iccon: Icon(Icons.person)),
+                          //     // Tile_for_detail(
+                          //     //     Text_list: "+9779800000000",
+                          //     //     Iccon: Icon(Icons.phone)),
+                          //     // Tile_for_detail(
+                          //     //     Text_list: "mealuo@gmail.com",
+                          //     //     Iccon: Icon(Icons.email)),
+                          //     // Tile_for_detail(
+                          //     //     Text_list: "DHULIKEHEL",
+                          //     //     Iccon: Icon(Icons.location_on)),
+                          //     Deatil_extractor(),
+                          //     Padding(
+                          //       padding:
+                          //           const EdgeInsets.symmetric(horizontal: 20),
+                          //       child: Image(image: AssetImage("image/2.png")),
+                          //     )
+                          //   ],
+                          // ),
+                        ),
+                      ],
                     ),
                   ),
-                  Positioned(
-                    bottom: 30,
-                    left: 20,
-                    child: Image.asset(
-                      'image/2.png',
-                      width: width * 0.7,
-                      color: Colors.white70,
-                    ),
-                  ),
-                  Column(
+                  Stack(
                     children: [
-                      SizedBox(
-                        height: 30,
+                      Container(
+                        height: total_height * 0.178125,
+                        width: total_height * 0.178125,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(4, 7),
+                              blurRadius: 10,
+                              spreadRadius: 2,
+                            )
+                          ],
+                          color: Color(0xffffffff),
+                        ),
+                        child: Icon(
+                          Icons.person_outline,
+                          size: total_height * 0.178125,
+                          color: Color(0xffFF541E), //
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Center(
-                            child: Image.asset(
-                              'image/eye.png',
-                              color: Colors.deepPurple[700],
-                              width: width * 0.4,
-                            ),
-                          ),
-                          Text(
-                            User_name,
-                            style: TextStyle(
-                              color: Colors.deepPurple[700],
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 150,
-                      ),
-                      Column(
-                        children: [
-                          detailWidget(
-                            icon: Icons.phone,
-                            text: phone_number,
-                          ),
-                          detailWidget(
-                            icon: Icons.email,
-                            text: Email_address,
-                          ),
-                          detailWidget(
-                            icon: Icons.location_on,
-                            text: address,
-                          )
-                        ],
+                      Container(
+                        height: total_height * 0.178125,
+                        width: total_height * 0.178125,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0x4DFF541E),
+                        ),
+                        child: Icon(
+                          Icons.person_outline,
+                          size: total_height * 0.178125,
+                          color: Color(0xffFF541E), //
+                        ),
                       ),
                     ],
                   )
                 ],
               ),
-            ),
+            ],
           ),
         ),
       ),
     );
   }
-
-  Widget detailWidget({required IconData icon, required String text}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Icon(
-                icon,
-                size: 30,
-                color: Colors.white70,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: Text(
-                  text,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white70,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Divider(),
-        ],
-      ),
-    );
-  }
 }
-
-class CardCustomPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = new Paint()
-      //   ..shader =LinearGradient(
-      //   // startOffset,
-      //   // endOffset,
-      //  colors:  [
-      //      Color(0xffffdde1),
-      //         Color(0xff753a88),
-      //         Color(0xff48b1bf),
-      //   ],
-      //) as Shader?;
-      // ..shader = LinearGradient(
-      //   colors: [
-      //     Color(0xffffdde1),
-      //     Color(0xff753a88),
-      //     Color(0xff48b1bf),
-      //   ],
-      // ).createShader(Rect.fromCircle(
-      //   radius: 7,
-      //   center: Offset(0, 0),
-      // ))
-      //..color = Color.fromARGB(255, 111, 165, 25)
-      ..color = Color.fromARGB(255, 61, 116, 224)
-      ..style = PaintingStyle.fill;
-
-    Path path = Path();
-    path.moveTo(0, 0);
-    path.lineTo(0, size.height * 0.32);
-    path.quadraticBezierTo(size.width * 0.24, size.height * 0.45,
-        size.width * 0.49, size.height * 0.45);
-    path.quadraticBezierTo(
-        size.width * 0.73, size.height * 0.45, size.width, size.height * 0.32);
-    path.lineTo(size.width, 0);
-    path.lineTo(0, 0);
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
+//  email:   User(displayName: null, email: manandharprashant888@gmail.com, emailVerified: false, isAnonymous: false, metadata: UserMetadata(creationTime: 2022-09-21 12:28:58.763Z, lastSignInTime: 2022-09-21 12:28:58.763Z), phoneNumber: null, photoURL: null, providerData, [UserInfo(displayName: null, email: manandharprashant888@gmail.com, phoneNumber: null, photoURL: null, providerId: password, uid: manandharprashant888@gmail.com)], refreshToken: , tenantId: null, uid: nPOC0WdiQRNReUvwfmSxdBGGQ6z1)

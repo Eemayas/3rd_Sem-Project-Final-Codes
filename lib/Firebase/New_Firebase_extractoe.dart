@@ -1,13 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../screen/ListTile_Recipe.dart';
 import '../screen/Recipee_Page.dart';
 
-class firebase_extractor extends StatelessWidget {
+class new_firebase_extractor extends StatelessWidget {
   final String foodlist_s;
   final String foodtype_f;
   final int selection;
-  firebase_extractor(
+  new_firebase_extractor(
       {required this.selection,
       required this.foodlist_s,
       required this.foodtype_f});
@@ -41,17 +42,19 @@ class firebase_extractor extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Card(
-                        color: Colors.white54,
-                        elevation: 20,
-                        child: Text(
-                          " No. " +
-                              ii.toString() +
-                              ". \n" +
-                              datastore[ii.toString() as String],
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      ),
+                      Listtile_Recipe(
+                          texttt: datastore[ii.toString() as String]),
+                      // Card(
+                      //   color: Colors.white54,
+                      //   elevation: 20,
+                      //   child: Text(
+                      //     " No. " +
+                      //         ii.toString() +
+                      //         ". \n" +
+                      //         datastore[ii.toString() as String],
+                      //     style: TextStyle(fontSize: 20),
+                      //   ),
+                      // ),
                       SizedBox(
                         height: 15,
                       )

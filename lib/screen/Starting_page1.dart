@@ -1,21 +1,21 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors, camel_case_types
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors, camel_case_types, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:image_from_firebase_public/screen/Starting_page2.dart';
+import 'Starting_Page2.dart';
 import "package:firebase_auth/firebase_auth.dart";
-import 'package:image_from_firebase_public/screen/checkpage.dart';
-import '../component/frontphoto.dart';
-import '../component/slider_component.dart';
+import 'package:image_from_firebase_public/screen/Check_Sign_in_out_Page.dart';
+import '../component/Photo_Starting_Page1.dart';
+import '../component/Slider_component.dart';
 import '../constanst/constanst.dart';
-import 'First_foodtype_page.dart';
+import 'Firstpage_Food_Page.dart';
 
-class startingpage1 extends StatefulWidget {
+class Starting_Page_1 extends StatefulWidget {
   static String ID = "startingpage1";
   @override
-  State<startingpage1> createState() => _startingpage1State();
+  State<Starting_Page_1> createState() => _Starting_Page_1State();
 }
 
-class _startingpage1State extends State<startingpage1> {
+class _Starting_Page_1State extends State<Starting_Page_1> {
   bool log_in = false;
   @override
   void initState() {
@@ -83,8 +83,10 @@ class _startingpage1State extends State<startingpage1> {
               //     });
               // if (log_in) {
               Navigator.of(context).pop();
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (builder) => Checkpage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (builder) => Check_Sign_in_out_Page()));
               // } else {
               //   Navigator.of(context).pop();
               //   Navigator.pushNamed(context, startingpage2.ID);

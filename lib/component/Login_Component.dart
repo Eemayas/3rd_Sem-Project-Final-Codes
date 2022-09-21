@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import '../constanst/constanst.dart';
-import 'frontphoto.dart';
+import 'Photo_Starting_Page1.dart';
 import "package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart";
 
 class loginformat_page extends StatelessWidget {

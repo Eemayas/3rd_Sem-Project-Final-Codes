@@ -2,11 +2,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/constanst/constanst.dart';
+import 'package:image_from_firebase_public/screen/Starting_page3.dart';
 import '../component/Alertdialouge.dart';
-import '../component/loginpage.dart';
-import '../component/signuppage_comp.dart';
+import '../component/Login_Component.dart';
 
-import 'First_foodtype_page.dart';
+import '../component/Sign_TextField.dart';
+
+import 'Firstpage_Food_Page.dart';
 
 class Sign_In extends StatefulWidget {
   static String ID = "sign in";
@@ -99,7 +101,7 @@ class _Sign_InState extends State<Sign_In> {
                             print('User is signed in!');
                           }
                         });
-                        Navigator.pushNamed(context, Firstpage_food.ID);
+                        Navigator.pushNamed(context, Starting_Page_3.ID);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'user-not-found') {
                           showAlertDialog(
@@ -121,7 +123,7 @@ class _Sign_InState extends State<Sign_In> {
             login_button(
                 Textt: "Sign In Anonymous",
                 onTap: () {
-                  Navigator.pushNamed(context, Firstpage_food.ID);
+                  Navigator.pushNamed(context, Starting_Page_3.ID);
                 }),
           ],
         ),

@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:image_from_firebase_public/constanst/constanst.dart';
-import '/screen/Starting_page2.dart';
-import '/screen/Starting_page1.dart';
+import '../constanst/constanst.dart';
+import '../constanst/Tile_for_detail.dart';
+import 'Starting_Page1.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'package:image_from_firebase_public/screen/profile_page.dart';
+import 'package:image_from_firebase_public/screen/oldpages/O_profile_page.dart';
 
-import 'First_foodtype_page.dart';
+import 'Firstpage_Food_Page.dart';
 
-class New_drawer_page extends StatelessWidget {
-  const New_drawer_page({Key? key}) : super(key: key);
+class Drawer_Page extends StatelessWidget {
+  const Drawer_Page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -75,78 +75,38 @@ class New_drawer_page extends StatelessWidget {
                 ],
               ),
             ),
-            Tile_drawer_page(
+            Tile_for_detail(
               Text_list: "Profile",
               Iccon: Icon(Icons.person),
               onpressed: () {
                 Navigator.pushNamed(context, profile_page.ID);
               },
             ),
-            Tile_drawer_page(
+            Tile_for_detail(
               Text_list: "Cuisines",
               Iccon: Icon(Icons.restaurant),
               onpressed: () {
-                Navigator.pushNamed(context, Firstpage_food.ID);
+                Navigator.pushNamed(context, Firstpage_Food_Page.ID);
               },
             ),
-            Tile_drawer_page(
-                Text_list: "Info", Iccon: Icon(Icons.info_outline)),
+            Tile_for_detail(Text_list: "Info", Iccon: Icon(Icons.info_outline)),
             Expanded(child: Container()),
-            Tile_drawer_page(
+            Tile_for_detail(
                 Text_list: "Data Entry(Developer Only)",
                 Iccon: Icon(Icons.devices_rounded),
                 onpressed: () {
                   Navigator.pushNamed(context, "datata");
                 }),
-            Tile_drawer_page(
+            Tile_for_detail(
                 Text_list: "Logout",
                 Iccon: Icon(Icons.exit_to_app),
                 onpressed: () {
                   FirebaseAuth.instance.signOut();
                   Navigator.popUntil(
-                      context, ModalRoute.withName(startingpage1.ID));
-                  Navigator.pushNamed(context, startingpage2.ID);
+                      context, ModalRoute.withName(Starting_Page_1.ID));
+                  Navigator.pushNamed(context, Starting_Page_1.ID);
                 }),
           ]),
-        ),
-      ),
-    );
-  }
-}
-
-class Tile_drawer_page extends StatelessWidget {
-  final String Text_list;
-  final Widget Iccon;
-  final Function()? onpressed;
-  Tile_drawer_page(
-      {required this.Text_list, required this.Iccon, this.onpressed});
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 15, right: 15, top: 9, bottom: 9),
-      child: GestureDetector(
-        onTap: onpressed,
-        child: Container(
-          height: 40,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(8))),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Iccon,
-              ),
-              Expanded(child: Container()),
-              Text(
-                Text_list,
-                style: TextStyle(fontSize: 16, fontFamily: "Poppins"),
-              ),
-              Expanded(child: Container()),
-            ],
-          ),
         ),
       ),
     );

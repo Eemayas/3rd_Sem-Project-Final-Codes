@@ -6,24 +6,25 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'package:line_icons/line_icons.dart';
+import '../component/Slide_ViewLile_FoodDisplay.dart';
 import '../constanst/secondpage_foodlists_constant.dart';
 import '../constanst/constanst.dart';
 import '../constanst/firstpage_constant.dart';
 
-import 'First_foodtype_page.dart';
-import 'Recipee_page.dart';
+import 'Firstpage_Food_Page.dart';
+import 'Recipee_Page.dart';
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-class Secondpage_food extends StatefulWidget {
+class Secondpage_Food_Page extends StatefulWidget {
   final String FoodType;
   static String ID = "second foodlist";
-  Secondpage_food({required this.FoodType});
+  Secondpage_Food_Page({required this.FoodType});
 
   @override
-  State<Secondpage_food> createState() => _Secondpage_foodState();
+  State<Secondpage_Food_Page> createState() => _Secondpage_Food_PageState();
 }
 
-class _Secondpage_foodState extends State<Secondpage_food> {
+class _Secondpage_Food_PageState extends State<Secondpage_Food_Page> {
   int _selectedIndex = 1;
   List secondpage_list = Foodlist_AMERICAN;
   Map secondpage_map_imageurl = AMERICAN_imageeurl;
@@ -86,73 +87,6 @@ class _Secondpage_foodState extends State<Secondpage_food> {
     }
 
     return Scaffold(
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.black.withOpacity(.1),
-            )
-          ],
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-            child: GNav(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              rippleColor: Colors.grey[300]!,
-              hoverColor: Colors.grey[100]!,
-              gap: 8,
-              activeColor: Colors.black,
-              iconSize: 24,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              duration: Duration(milliseconds: 400),
-              tabBackgroundColor: Colors.grey[100]!,
-              color: Colors.black,
-              tabs: [
-                GButton(
-                  icon: LineIcons.home,
-                  text: 'Home',
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Firstpage_food(),
-                        ));
-                  },
-                ),
-                // GButton(
-                //   icon: LineIcons.heart,
-                //   text: 'Likes',
-                // ),
-                // GButton(
-                //   icon: LineIcons.search,
-                //   text: 'Search',
-                // ),
-                GButton(
-                  icon: LineIcons.user,
-                  text: 'Profile',
-                  // onPressed: () {
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) => Recipe_page(),
-                  //       ));
-                  // },
-                ),
-              ],
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-            ),
-          ),
-        ),
-      ),
       body: Container(
         height: total_height,
         width: MediaQuery.of(context).size.width,
@@ -289,7 +223,7 @@ class _Secondpage_foodState extends State<Secondpage_food> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   for (int i = 0; i < secondpage_list.length; i++)
-                    slide_view(
+                    Slide_ViewLile_FoodDisplay(
                         foodname_Textt: secondpage_list[i].name,
                         img_url:
                             secondpage_map_imageurl[secondpage_list[i].name],
@@ -298,7 +232,7 @@ class _Secondpage_foodState extends State<Secondpage_food> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (builder) => Recipe_page(
+                                  builder: (builder) => Recipe_Page(
                                         Cuisines: Foodtype_name,
                                         foodname_text: secondpage_list[i].name,
                                         Img_URL: secondpage_map_imageurl[

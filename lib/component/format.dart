@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:image_from_firebase_public/component/photorecevier.dart';
-import 'package:image_from_firebase_public/screen/O_recipeepage.dart';
+import 'package:image_from_firebase_public/Firebase/photorecevier.dart';
+import 'package:image_from_firebase_public/screen/oldpages/O_recipeepage.dart';
 
 import '../constanst/constanst.dart';
 

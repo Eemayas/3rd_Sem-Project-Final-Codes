@@ -7,10 +7,10 @@ import 'package:image_from_firebase_public/constanst/constanst.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../component/Alertdialouge.dart';
-import '../component/Detail_to_Firebase.dart';
-import '../component/loginpage.dart';
-import '../component/signuppage_comp.dart';
-import 'O_First_page_foodlist.dart';
+import '../Firebase/Detail_to_Firebase.dart';
+import '../component/Login_Component.dart';
+import '../component/Sign_TextField.dart';
+import 'oldpages/O_First_page_foodlist.dart';
 
 class Sign_Up extends StatefulWidget {
   static String ID = "sign up";
@@ -204,6 +204,62 @@ class _Sign_UpState extends State<Sign_Up> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Future<void> resitration(String _email, String _password) async {
 //   try {

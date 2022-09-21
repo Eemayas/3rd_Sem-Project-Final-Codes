@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'Starting_Page3.dart';
 
-import 'First_foodtype_page.dart';
-import 'Starting_page2.dart';
+import 'Starting_Page2.dart';
 
-class Checkpage extends StatelessWidget {
+class Check_Sign_in_out_Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,11 +12,9 @@ class Checkpage extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              // Navigator.of(context).pop();
-              // Navigator.pushNamed(context, Firstpage_food.ID);
-              return Firstpage_food();
+              return Starting_Page_3();
             } else {
-              return startingpage2();
+              return Starting_Page_2();
             }
           }),
     );

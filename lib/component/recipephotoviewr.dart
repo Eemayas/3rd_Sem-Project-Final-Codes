@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import 'photorecevier.dart';
+import '../Firebase/photorecevier.dart';
 
 class recipepage_photo extends StatelessWidget {
   recipepage_photo({

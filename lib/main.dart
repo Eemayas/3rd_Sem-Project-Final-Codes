@@ -3,27 +3,29 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 import 'package:image_from_firebase_public/constanst/constanst.dart';
+import 'package:image_from_firebase_public/screen/Profile_Page.dart';
+import 'package:image_from_firebase_public/screen/Starting_Page3.dart';
 import '/screen/listpage/italian.dart';
 import '/screen/listpage/japnese.dart';
 import '/screen/listpage/korean.dart';
 import '/screen/listpage/subcontinental.dart';
 import '/screen/listpage/thai.dart';
 import '/screen/listpage/turkish.dart';
-import '/screen/profile_page.dart';
-import 'screen/First_foodtype_page.dart';
-import 'screen/O_second_page_foodlist.dart';
-import 'screen/SignIn_page.dart';
-import 'screen/SignUp_page.dart';
-import 'screen/Starting_page1.dart';
+import 'screen/oldpages/O_profile_page.dart';
+import 'screen/Firstpage_Food_Page.dart';
+import 'screen/oldpages/O_second_page_foodlist.dart';
+import 'screen/SignIn_Page.dart';
+import 'screen/SignUp_Page.dart';
+import 'screen/Starting_Page1.dart';
 import 'dummy/dataentry_page.dart';
 import 'dummy/foodlist.dart';
-import 'screen/O_First_page_foodlist.dart';
+import 'screen/oldpages/O_First_page_foodlist.dart';
 import 'dummy/dataentry.dart';
-import 'screen/Second_foodlist_page.dart';
+import 'screen/Secondpage_Food_Page.dart';
 
 import 'screen/listpage/chinese.dart';
 import 'screen/listpage/french.dart';
-import 'screen/Starting_page2.dart';
+import 'screen/Starting_Page2.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,16 +46,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      initialRoute: startingpage1.ID,
+      initialRoute: Starting_Page_1.ID, //Profile_page.ID, // "tryyyyyyy",
       // Firstpage_food.ID, // //Firstpage_foodtype.ID,
       routes: {
         for (int i = 0; i < secondpagelist.length; i++)
           secondpagelist[i]: (context) =>
               new secondpage_foodlist(Foodtype_name: secondpagelist[i]),
-        "data": (context) => dataentry(),
+
         profile_page.ID: (context) => profile_page(),
         foodlist.ID: (context) => foodlist(),
         Firstpage_foodtype.ID: (context) => Firstpage_foodtype(),
+
         // "recipeepage.ID": (context) => recipee_page(foodtype: '',),
         french.ID: (context) => french(),
         chinese.ID: (context) => chinese(),
@@ -65,18 +68,21 @@ class MyApp extends StatelessWidget {
         turkish.ID: (context) => turkish(),
 
         "datata": (context) => dataentrypage(),
+        "data": (context) => dataentry(),
 
-        startingpage1.ID: (context) => startingpage1(),
-        startingpage2.ID: (context) => startingpage2(),
+        Starting_Page_1.ID: (context) => Starting_Page_1(),
+        Starting_Page_2.ID: (context) => Starting_Page_2(),
+        Starting_Page_3.ID: (context) => Starting_Page_3(),
         Sign_In.ID: (context) => Sign_In(),
         Sign_Up.ID: (context) => Sign_Up(),
-        Firstpage_food.ID: (context) => Firstpage_food(),
-        Secondpage_food.ID: (context) => Secondpage_food(
-              FoodType: 'AMERICAN',
-            ),
-        for (int i = 0; i < secondpagelist.length; i++)
-          secondpagelist[i] + "try": (context) =>
-              Secondpage_food(FoodType: secondpagelist[i]),
+        Profile_Page.ID: (context) => Profile_Page(),
+        Firstpage_Food_Page.ID: (context) => Firstpage_Food_Page(),
+        // Secondpage_food.ID: (context) => Secondpage_food(
+        //       FoodType: 'AMERICAN',
+        //     ),
+        // for (int i = 0; i < secondpagelist.length; i++)
+        //   secondpagelist[i] + "try": (context) =>
+        //       Secondpage_food(FoodType: secondpagelist[i]),
       },
     );
   }
