@@ -224,7 +224,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                               //crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Expanded(
+                                Container(
                                   child: Text(
                                     foodname_text,
                                     overflow: TextOverflow.ellipsis,
@@ -330,20 +330,20 @@ class _Recipe_PageState extends State<Recipe_Page> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.all(ratio_height(context, 10)),
-                      child: Text(
-                        "9 item",
-                        style: TextStyle(
-                            fontSize: 24,
-                            fontFamily: "Poppins",
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff752A00)),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.all(ratio_height(context, 10)),
+                    //   child: Text(
+                    //     "9 item",
+                    //     style: TextStyle(
+                    //         fontSize: 24,
+                    //         fontFamily: "Poppins",
+                    //         fontStyle: FontStyle.italic,
+                    //         fontWeight: FontWeight.bold,
+                    //         color: Color(0xff752A00)),
+                    //   ),
+                    // ),
                     SizedBox(
-                        height: total_height * 0.4,
+                        height: total_height * 0.48,
                         child: _selectedtab == 1
                             ? new_firebase_extractor(
                                 selection: 0,

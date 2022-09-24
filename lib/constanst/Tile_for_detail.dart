@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/constanst/constanst.dart';
 
 class Tile_for_detail extends StatelessWidget {
   final String Text_list;
@@ -13,7 +14,7 @@ class Tile_for_detail extends StatelessWidget {
       child: GestureDetector(
         onTap: onpressed,
         child: Container(
-          height: 40,
+          height: ratio_height(context, 40),
           width: double.infinity,
           decoration: BoxDecoration(
               boxShadow: [
