@@ -224,16 +224,19 @@ class _Recipe_PageState extends State<Recipe_Page> {
                               //crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Text(
-                                  foodname_text,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 29,
-                                      fontFamily: "Poppins",
-                                      fontStyle: FontStyle.italic,
-                                      fontWeight: FontWeight.bold,
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.white),
+                                Expanded(
+                                  child: Text(
+                                    foodname_text,
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 29,
+                                        fontFamily: "Poppins",
+                                        fontStyle: FontStyle.italic,
+                                        fontWeight: FontWeight.bold,
+                                        decoration: TextDecoration.underline,
+                                        color: Colors.white),
+                                  ),
                                 )
                               ],
                             ),
@@ -340,7 +343,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                       ),
                     ),
                     SizedBox(
-                        height: total_height * 0.42,
+                        height: total_height * 0.4,
                         child: _selectedtab == 1
                             ? new_firebase_extractor(
                                 selection: 0,
