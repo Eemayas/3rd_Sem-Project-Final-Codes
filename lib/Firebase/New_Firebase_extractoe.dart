@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/constanst/constanst.dart';
 
 import '../screen/ListTile_Recipe.dart';
 import '../screen/Recipee_Page.dart';
@@ -34,34 +35,34 @@ class new_firebase_extractor extends StatelessWidget {
                 "Document Is Empty",
                 style: TextStyle(fontSize: 50),
               );
+            } else {
+              return ListView(
+                children: [
+                  for (int ii = 1; ii <= datastore.length; ii++)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Listtile_Recipe(
+                            texttt: datastore[ii.toString() as String]),
+                        // Card(
+                        //   color: Colors.white54,
+                        //   elevation: 20,
+                        //   child: Text(
+                        //     " No. " +
+                        //         ii.toString() +
+                        //         ". \n" +
+                        //         datastore[ii.toString() as String],
+                        //     style: TextStyle(fontSize: 20),
+                        //   ),
+                        // ),
+                        // SizedBox(
+                        //   height: ratio_height(context, 15),
+                        // )
+                      ],
+                    ),
+                ],
+              );
             }
-
-            return ListView(
-              children: [
-                for (int ii = 1; ii <= datastore.length; ii++)
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Listtile_Recipe(
-                          texttt: datastore[ii.toString() as String]),
-                      // Card(
-                      //   color: Colors.white54,
-                      //   elevation: 20,
-                      //   child: Text(
-                      //     " No. " +
-                      //         ii.toString() +
-                      //         ". \n" +
-                      //         datastore[ii.toString() as String],
-                      //     style: TextStyle(fontSize: 20),
-                      //   ),
-                      // ),
-                      SizedBox(
-                        height: 15,
-                      )
-                    ],
-                  ),
-              ],
-            );
           } else {
             return Text(
               "DataBase Error",

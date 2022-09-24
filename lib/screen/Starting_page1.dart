@@ -1,6 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors, camel_case_types, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/component/Provider_comp.dart';
+import 'package:provider/provider.dart';
 import 'Starting_Page2.dart';
 import "package:firebase_auth/firebase_auth.dart";
 import 'package:image_from_firebase_public/screen/Check_Sign_in_out_Page.dart';
@@ -82,6 +84,8 @@ class _Starting_Page_1State extends State<Starting_Page_1> {
               //       }
               //     });
               // if (log_in) {
+              context.read<Emaill>().Provider_get_current_user();
+
               Navigator.of(context).pop();
               Navigator.push(
                   context,

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:image_from_firebase_public/constanst/foodname.dart';
-import 'package:image_from_firebase_public/dummy/foodlist.dart';
-import 'package:image_from_firebase_public/screen/oldpages/O_First_page_foodlist.dart';
-import 'package:image_from_firebase_public/screen/listpage/chinese.dart';
-import 'package:image_from_firebase_public/screen/oldpages/O_profile_page.dart';
+import '../../constanst/foodname.dart';
+import 'O_First_page_foodlist.dart';
 
 import '../Profile_Page.dart';
 

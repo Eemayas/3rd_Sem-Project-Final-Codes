@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'foodname.dart';
 
@@ -78,3 +79,5 @@ double ratio_width(BuildContext context, double width) {
       width * MediaQuery.of(context).size.width / workingscreen_width;
   return width_ratio;
 }
+
+String? Email_constant = FirebaseAuth.instance.currentUser!.email;

@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/screen/Favorities_page.dart';
 import 'package:image_from_firebase_public/screen/Firstpage_Food_Page.dart';
 import 'package:image_from_firebase_public/screen/Profile_Page.dart';
 
@@ -12,7 +13,11 @@ class Starting_Page_3 extends StatefulWidget {
 }
 
 class _Starting_Page_3State extends State<Starting_Page_3> {
-  final screen = [Firstpage_Food_Page(), Profile_Page()];
+  final screen = [
+    Firstpage_Food_Page(),
+    Favorities_Page(),
+    Profile_Page(),
+  ];
   int _page = 0;
 
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
@@ -30,6 +35,10 @@ class _Starting_Page_3State extends State<Starting_Page_3> {
           items: <Widget>[
             Icon(
               Icons.home,
+              size: ratio_height(context, 24),
+            ),
+            Icon(
+              Icons.favorite,
               size: ratio_height(context, 24),
             ), //24,),
             Icon(

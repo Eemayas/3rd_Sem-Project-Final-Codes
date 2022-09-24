@@ -8,8 +8,11 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../component/Alertdialouge.dart';
 import '../Firebase/Detail_to_Firebase.dart';
+import '../component/Initilization_Favorities.dart';
 import '../component/Login_Component.dart';
 import '../component/Sign_TextField.dart';
+import 'Firstpage_Food_Page.dart';
+import 'Starting_Page3.dart';
 import 'oldpages/O_First_page_foodlist.dart';
 
 class Sign_Up extends StatefulWidget {
@@ -154,7 +157,8 @@ class _Sign_UpState extends State<Sign_Up> {
                                 Detail_to_firebase(
                                     _email, _name, _ph_number, _address);
                                 Navigator.pushNamed(
-                                    context, Firstpage_foodtype.ID);
+                                    context, Starting_Page_3.ID);
+                                initilization();
                               } on FirebaseAuthException catch (e) {
                                 if (e.code == 'weak-password') {
                                   showAlertDialog(context, 'weak-password');

@@ -1,11 +1,18 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:image_from_firebase_public/Firebase/Detail_from_Firebase.dart';
-import 'package:image_from_firebase_public/Firebase/firebase_extractor.dart';
+import 'package:image_from_firebase_public/Firebase/Favorities/Remove_from_favorities.dart';
+import 'package:image_from_firebase_public/dummy/favorities_try.dart';
+import 'package:provider/provider.dart';
 
+import '../Firebase/Favorities/Check_Favorities.dart';
+import '../Firebase/Favorities/Favorites_to_Firebase.dart';
+import '../Firebase/Favorities/Favorities_from_Firebase.dart';
 import '../Firebase/New_Firebase_extractoe.dart';
+import '../component/Provider_comp.dart';
 import '../constanst/constanst.dart';
 
 class Recipe_Page extends StatefulWidget {
@@ -16,20 +23,63 @@ class Recipe_Page extends StatefulWidget {
       {required this.Img_URL,
       required this.foodname_text,
       required this.Cuisines});
+
   @override
   State<Recipe_Page> createState() => _Recipe_PageState();
 }
 
 class _Recipe_PageState extends State<Recipe_Page> {
   int _selectedtab = 1;
+  List data_favorities_recipe = [];
+  bool isfav = false;
+  int loop = 0;
+  // String Email = 'manandharprashant888@gmail.com'; //"mealup@gmail.com";
+  // void get_current_User() {
+  //   FirebaseAuth.instance.userChanges().listen((User? user) async {
+  //     if (user == null) {
+  //       print('User is currently signed out!');
+  //       // showAlertDialog("User is currently signed out!");
+  //     } else {
+  //       print('User is signed in!');
+  //       var currentUser = FirebaseAuth.instance.currentUser!.email;
+
+  //       if (currentUser != null) {
+  //         print("email:   ${currentUser}");
+  //       }
+  //       Email = currentUser!;
+  //     }
+  //   });
+  // }
+
+  void check(String Email) async {
+    if (loop == 0)
+      isfav = await Check_Favorities(
+          Foodlist_s: widget.foodname_text, email: Email);
+    setState(() {
+      loop++;
+    });
+  }
+
+  //@override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   super.dispose();
+  //   context
+  //       .read<Provider_Fav_list>()
+  //       .provide_get_favlist(context.watch<Emaill>().Email);
+  // }
 
   @override
   Widget build(BuildContext context) {
+    String Email = context.watch<Emaill>().Email;
     double recipepage_photoheight = ratio_height(context, 200); //200;
     String foodname_text = widget.foodname_text;
     String Img_URL = widget.Img_URL;
     String Cuisines = widget.Cuisines;
     double total_height = MediaQuery.of(context).size.height;
+
+    //get_current_User();
+    check(Email);
     return Scaffold(
       appBar: null,
       body: SafeArea(
@@ -53,8 +103,10 @@ class _Recipe_PageState extends State<Recipe_Page> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20, left: 20, right: 20),
+                      padding: EdgeInsets.only(
+                          top: ratio_height(context, 20), //20,
+                          left: 20,
+                          right: 20),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Row(
@@ -69,27 +121,57 @@ class _Recipe_PageState extends State<Recipe_Page> {
                                       shape: BoxShape.circle,
                                       color: Color(0xffFF6433)),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(
+                                        ratio_height(context, 8)),
                                     child: Icon(
                                       Icons.arrow_back_ios,
-                                      size: 25,
+                                      size: ratio_height(context, 25), //25,
                                       color: Colors.white,
                                     ),
                                   )),
                             ),
                             Expanded(child: Container()),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () async {
+                                print(await Check_Favorities(
+                                    Foodlist_s: foodname_text, email: Email));
+                                if (await Check_Favorities(
+                                    Foodlist_s: foodname_text, email: Email)) {
+                                  isfav = false;
+                                  Remove_from_favorities(
+                                      email: Email,
+                                      Foodtype_f: Cuisines,
+                                      Foodlist_s: foodname_text,
+                                      ImgUrl: Img_URL);
+                                } else {
+                                  isfav = true;
+
+                                  Favorities__Firebase_entry(
+                                      ImgUrl: Img_URL,
+                                      Foodlist_s_name: foodname_text,
+                                      Foodtype_f_name: Cuisines,
+                                      email: Email);
+                                }
+                                // retrivedata();
+                                // retrivedata1();
+                                //searchlist();
+                                //delete();
+                                context.read<Provider_Fav_list>().Fav_list;
+                                setState(() {});
+                              },
                               child: Container(
                                   height: ratio_height(context, 40), //40
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Color(0xffFF6433)),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(
+                                        ratio_height(context, 8)),
                                     child: Icon(
-                                      Icons.favorite,
-                                      size: 25,
+                                      isfav
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      size: ratio_height(context, 25), //25,
                                       color: Colors.white,
                                     ),
                                   )),
@@ -99,7 +181,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding: EdgeInsets.all(ratio_height(context, 20)), //20.0
                       child: Stack(
                         children: [
                           Container(
@@ -160,7 +242,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: ratio_height(context, 10), // 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -197,8 +279,8 @@ class _Recipe_PageState extends State<Recipe_Page> {
                         ),
                         GestureDetector(
                           child: Container(
-                            height: 35,
-                            width: 110,
+                            height: ratio_height(context, 35), //35,
+                            width: ratio_width(context, 110), //110,
                             decoration: BoxDecoration(
                                 color: _selectedtab == 2
                                     ? Color(0xffFF6433)
@@ -228,7 +310,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                       ],
                     ),
                     SizedBox(
-                      height: 10,
+                      height: ratio_height(context, 10),
                     ),
                   ],
                 ),
@@ -246,7 +328,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(ratio_height(context, 10)),
                       child: Text(
                         "9 item",
                         style: TextStyle(
@@ -258,7 +340,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                       ),
                     ),
                     SizedBox(
-                        height: total_height * 0.44,
+                        height: total_height * 0.42,
                         child: _selectedtab == 1
                             ? new_firebase_extractor(
                                 selection: 0,

@@ -10,8 +10,7 @@ void Detail_to_firebase(
     "Phone Number": _ph_number,
     "Address": _address,
   };
-  String tojson = json.encode(info);
-  Map<String, String> info2 = {_email: tojson};
+
   var db = FirebaseFirestore.instance.collection("User_detail");
   db
       .doc("ACCOUNTS")

@@ -1,15 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/component/Initilization_Favorities.dart';
+import 'package:provider/provider.dart';
 
 import '../Firebase/Detail_from_Firebase.dart';
-import '../component/Alertdialouge.dart';
+import '../component/Provider_comp.dart';
 import '../constanst/constanst.dart';
 
 class Profile_Page extends StatelessWidget {
   static String ID = "Profile_page";
   String Email = "mealup@gmail.com";
 
-  void get_current_User() {
+  Future<void> get_current_User() async {
     FirebaseAuth.instance.userChanges().listen((User? user) async {
       if (user == null) {
         print('User is currently signed out!');
@@ -21,7 +23,7 @@ class Profile_Page extends StatelessWidget {
         if (currentUser != null) {
           print("email:   ${currentUser}");
         }
-        Email = currentUser!;
+        Email = await currentUser!;
       }
     });
   }
@@ -70,7 +72,7 @@ class Profile_Page extends StatelessWidget {
                                 fit: BoxFit.fill),
                           ),
                           child: Deatil_extractor(
-                            email: Email,
+                            email: context.watch<Emaill>().Email, //Email,
                           ),
                           // child: Column(
                           //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

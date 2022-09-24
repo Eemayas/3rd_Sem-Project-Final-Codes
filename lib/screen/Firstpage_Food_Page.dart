@@ -1,7 +1,11 @@
 // ignore_for_file: sized_box_for_whitespace, camel_case_types, non_constant_identifier_names, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
+
 import 'package:image_from_firebase_public/screen/Drawer_Page.dart';
+import 'package:provider/provider.dart';
+
+import '../component/Provider_comp.dart';
 import '../component/Slide_ViewLile_FoodDisplay.dart';
 import '../constanst/constanst.dart';
 import '../constanst/firstpage_constant.dart';
@@ -13,6 +17,9 @@ class Firstpage_Food_Page extends StatelessWidget {
   int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    context
+        .read<Provider_Fav_list>()
+        .provide_get_favlist(context.watch<Emaill>().Email);
     double totalheight = MediaQuery.of(context).size.height;
     return Scaffold(
       drawer: Drawer_Page(),
