@@ -3,10 +3,14 @@ import 'package:image_from_firebase_public/constanst/constanst.dart';
 
 class Tile_for_detail extends StatelessWidget {
   final String Text_list;
+  final String Device_Orientation;
   final Widget Iccon;
   final Function()? onpressed;
   Tile_for_detail(
-      {required this.Text_list, required this.Iccon, this.onpressed});
+      {required this.Text_list,
+      required this.Iccon,
+      this.onpressed,
+      required this.Device_Orientation});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +18,9 @@ class Tile_for_detail extends StatelessWidget {
       child: GestureDetector(
         onTap: onpressed,
         child: Container(
-          height: ratio_height(context, 40),
+          height: Device_Orientation == Portraitt.ID
+              ? ratio_height(context, 40)
+              : ratio_width(context, 20),
           width: double.infinity,
           decoration: BoxDecoration(
               boxShadow: [

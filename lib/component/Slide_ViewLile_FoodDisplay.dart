@@ -7,10 +7,12 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
   final String foodname_Textt;
   final String img_url;
   final Function() OnTap;
+  final String Device_Orientation;
   Slide_ViewLile_FoodDisplay(
       {required this.foodname_Textt,
       required this.OnTap,
-      required this.img_url});
+      required this.img_url,
+      required this.Device_Orientation});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +21,12 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
       child: GestureDetector(
         onTap: OnTap,
         child: Container(
-          height: ratio_height(context, 340), //340,
-          width: ratio_width(context, 244.5), // 244.5,
+          height: Device_Orientation == Portraitt.ID
+              ? ratio_height(context, 340)
+              : Total_Height(context), //340,
+          width: Device_Orientation == Portraitt.ID
+              ? ratio_width(context, 244.5)
+              : Total_Width(context) * 0.4, // 244.5,
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -42,8 +48,12 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
               //   tag: "photo+$Textt",
               //   child:
               Container(
-                height: ratio_height(context, 160), // 160,
-                width: ratio_width(context, 160), //160,
+                height: Device_Orientation == Portraitt.ID
+                    ? ratio_height(context, 160)
+                    : ratio_height(context, 300), // 160,
+                width: Device_Orientation == Portraitt.ID
+                    ? ratio_width(context, 160)
+                    : ratio_width(context, 300), //160,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.transparent,
@@ -73,8 +83,12 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
               ),
               //),
               Container(
-                height: ratio_height(context, 51), //51,
-                width: ratio_width(context, 75), //75,
+                height: Device_Orientation == Portraitt.ID
+                    ? ratio_height(context, 51)
+                    : ratio_height(context, 90), //51,
+                width: Device_Orientation == Portraitt.ID
+                    ? ratio_width(context, 75)
+                    : ratio_width(context, 100), //75,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(65)),
                     gradient: LinearGradient(
@@ -83,7 +97,9 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
                         colors: [Color(0xff741F1F), Color(0x00D9D9D9)])),
                 child: Icon(
                   Icons.arrow_right_alt_sharp,
-                  size: ratio_height(context, 40), //40,
+                  size: Device_Orientation == Portraitt.ID
+                      ? ratio_height(context, 40)
+                      : ratio_height(context, 60), //40,
                   shadows: [
                     Shadow(
                         color: Color(0xffEA5753),

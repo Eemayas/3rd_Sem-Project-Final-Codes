@@ -81,3 +81,19 @@ double ratio_width(BuildContext context, double width) {
 }
 
 String? Email_constant = FirebaseAuth.instance.currentUser!.email;
+
+double Total_Height(BuildContext context) {
+  return MediaQuery.of(context).size.height;
+}
+
+double Total_Width(BuildContext context) {
+  return MediaQuery.of(context).size.width;
+}
+
+class Portraitt {
+  static String ID = "Portrait";
+}
+
+class Landscapee {
+  static String ID = "Landscapee";
+}

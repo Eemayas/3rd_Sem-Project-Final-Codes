@@ -3,18 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:image_from_firebase_public/Firebase/Favorities/Favorities_from_Firebase.dart';
 import 'package:image_from_firebase_public/component/Provider_comp.dart';
+import 'package:image_from_firebase_public/constanst/constanst.dart';
 import 'package:provider/provider.dart';
 
 import '../../component/Slide_ViewLile_FoodDisplay.dart';
 import '../../screen/Recipee_Page.dart';
 
 class Display_favorities extends StatefulWidget {
+  final String Device_Orientation;
   final String Email;
   final int i;
   final double height;
 
   Display_favorities(
-      {required this.Email, required this.i, required this.height});
+      {required this.Email,
+      required this.i,
+      required this.height,
+      required this.Device_Orientation});
 
   @override
   State<Display_favorities> createState() => _Display_favoritiesState();
@@ -40,6 +45,7 @@ class _Display_favoritiesState extends State<Display_favorities> {
               children: [
                 for (int i = 1; i < length; i++)
                   Slide_ViewLile_FoodDisplay(
+                      Device_Orientation: widget.Device_Orientation,
                       foodname_Textt: yourResponseDataFromAsync![i]
                           ["Foodlist_s"],
                       img_url: yourResponseDataFromAsync[i]["ImgUrl"],

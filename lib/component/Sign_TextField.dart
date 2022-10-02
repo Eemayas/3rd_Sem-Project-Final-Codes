@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/constanst/constanst.dart';
 
 class emailbox extends StatelessWidget {
+  final String Orientation;
   final Function(String)? Onchanged;
 
-  emailbox({required this.Onchanged});
+  emailbox({required this.Onchanged, required this.Orientation});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +23,9 @@ class emailbox extends StatelessWidget {
             )
           ],
         ),
-        height: ratio_height(context, 60), //60,
+        height: Orientation == Portraitt.ID
+            ? ratio_height(context, 60)
+            : ratio_height(context, 130), //60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
           onChanged: Onchanged,
@@ -48,8 +51,9 @@ class emailbox extends StatelessWidget {
 }
 
 class passwordbox extends StatefulWidget {
+  final String Oreintation;
   final Function(String)? Onchanged;
-  passwordbox({this.Onchanged});
+  passwordbox({this.Onchanged, required this.Oreintation});
   @override
   State<passwordbox> createState() => _passwordboxState();
 }
@@ -74,7 +78,9 @@ class _passwordboxState extends State<passwordbox> {
             )
           ],
         ),
-        height: ratio_height(context, 60), //60,
+        height: widget.Oreintation == Portraitt.ID
+            ? ratio_height(context, 60)
+            : ratio_height(context, 130), //60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
           onChanged: widget.Onchanged,
@@ -106,11 +112,16 @@ class _passwordboxState extends State<passwordbox> {
 }
 
 class generalbox extends StatelessWidget {
+  final String orientation;
   final Function(String)? Onchanged;
 
   final String label;
   TextInputType keyboardtype;
-  generalbox({required this.label, required this.keyboardtype, this.Onchanged});
+  generalbox(
+      {required this.label,
+      required this.keyboardtype,
+      this.Onchanged,
+      required this.orientation});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -128,7 +139,9 @@ class generalbox extends StatelessWidget {
             )
           ],
         ),
-        height: ratio_height(context, 60), //60,
+        height: orientation == Portraitt.ID
+            ? ratio_height(context, 60)
+            : ratio_height(context, 130), //60,
         width: MediaQuery.of(context).size.width,
         child: TextFormField(
           onChanged: Onchanged,

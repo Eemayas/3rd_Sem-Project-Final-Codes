@@ -61,149 +61,321 @@ class _Sign_UpState extends State<Sign_Up> {
                     colors: [Color(0xffDE7544), Color(0x0DDBEC17)],
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft)),
-            child: ListView(
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+            child: OrientationBuilder(builder: (context, orientation) {
+              if (orientation == Orientation.portrait) {
+                return ListView(
+                  keyboardDismissBehavior:
+                      ScrollViewKeyboardDismissBehavior.onDrag,
                   children: [
-                    SizedBox(height: ratio_height(context, 40) //40,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(height: ratio_height(context, 40) //40,
+                            ),
+                        Hero(
+                          tag: "logo",
+                          child: Container(
+                            height: 160,
+                            width: 160,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.transparent,
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(4, 7),
+                                    blurRadius: 10,
+                                    spreadRadius: 2,
+                                  )
+                                ],
+                                image: DecorationImage(
+                                    image: AssetImage("image/logo.jpg"))),
+                          ),
                         ),
-                    Hero(
-                      tag: "logo",
-                      child: Container(
-                        height: 160,
-                        width: 160,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.transparent,
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(4, 7),
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            image: DecorationImage(
-                                image: AssetImage("image/logo.jpg"))),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20, bottom: 10),
-                      child: Text("Sign UP",
-                          textAlign: TextAlign.center, style: textStyle),
-                    ),
-                    emailbox(Onchanged: (value) {
-                      _email = value;
-                      print(value);
-                    }),
-                    passwordbox(Onchanged: (value) {
-                      _password = value;
-                      print(value);
-                    }),
-                    generalbox(
-                      label: "Name",
-                      keyboardtype: TextInputType.name,
-                      Onchanged: (p0) {
-                        _name = p0;
-                        print(p0);
-                      },
-                    ),
-                    generalbox(
-                      label: "Phone Number",
-                      keyboardtype: TextInputType.phone,
-                      Onchanged: (p0) {
-                        _ph_number = p0;
-                        print(p0);
-                      },
-                    ),
-                    generalbox(
-                      label: "Address",
-                      keyboardtype: TextInputType.streetAddress,
-                      Onchanged: (p0) {
-                        _address = p0;
-                        print(p0);
-                      },
-                    ),
-                    SizedBox(
-                      height: ratio_height(context, 20), //20,
-                    ),
-                    login_button(
-                        Textt: "Sign UP",
-                        onTap: () async {
-                          savingtrue();
-                          try {
-                            if (_email != null &&
-                                _password != null &&
-                                _name != null &&
-                                _ph_number != null &&
-                                _address != null) {
-                              // print(_email +
-                              //     "\n" +
-                              //     _password +
-                              //     "\n" +
-                              //     _name +
-                              //     "\n" +
-                              //     _ph_number +
-                              //     "\n" +
-                              //     _address +
-                              //     "\n");
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20, bottom: 10),
+                          child: Text("Sign UP",
+                              textAlign: TextAlign.center, style: textStyle),
+                        ),
+                        emailbox(
+                            Orientation: Portraitt.ID,
+                            Onchanged: (value) {
+                              _email = value;
+                              print(value);
+                            }),
+                        passwordbox(
+                            Oreintation: Portraitt.ID,
+                            Onchanged: (value) {
+                              _password = value;
+                              print(value);
+                            }),
+                        generalbox(
+                          orientation: Portraitt.ID,
+                          label: "Name",
+                          keyboardtype: TextInputType.name,
+                          Onchanged: (p0) {
+                            _name = p0;
+                            print(p0);
+                          },
+                        ),
+                        generalbox(
+                          orientation: Portraitt.ID,
+                          label: "Phone Number",
+                          keyboardtype: TextInputType.phone,
+                          Onchanged: (p0) {
+                            _ph_number = p0;
+                            print(p0);
+                          },
+                        ),
+                        generalbox(
+                          orientation: Portraitt.ID,
+                          label: "Address",
+                          keyboardtype: TextInputType.streetAddress,
+                          Onchanged: (p0) {
+                            _address = p0;
+                            print(p0);
+                          },
+                        ),
+                        SizedBox(
+                          height: ratio_height(context, 20), //20,
+                        ),
+                        login_button(
+                            Textt: "Sign UP",
+                            onTap: () async {
+                              savingtrue();
                               try {
-                                UserCredential userCredential =
-                                    await FirebaseAuth.instance
-                                        .createUserWithEmailAndPassword(
-                                            email: _email, password: _password);
-                                Detail_to_firebase(
-                                    _email, _name, _ph_number, _address);
-                                Navigator.pushNamed(
-                                    context, Starting_Page_3.ID);
-                                initilization();
-                              } on FirebaseAuthException catch (e) {
-                                if (e.code == 'weak-password') {
-                                  showAlertDialog(context, 'weak-password');
-                                  print('The password provided is too weak.');
-                                } else if (e.code == 'email-already-in-use') {
-                                  showAlertDialog(context,
-                                      'The account already exists for that email');
-                                  print(
-                                      'The account already exists for that email.');
-                                }
+                                if (_email != null &&
+                                    _password != null &&
+                                    _name != null &&
+                                    _ph_number != null &&
+                                    _address != null) {
+                                  // print(_email +
+                                  //     "\n" +
+                                  //     _password +
+                                  //     "\n" +
+                                  //     _name +
+                                  //     "\n" +
+                                  //     _ph_number +
+                                  //     "\n" +
+                                  //     _address +
+                                  //     "\n");
+                                  try {
+                                    UserCredential userCredential =
+                                        await FirebaseAuth.instance
+                                            .createUserWithEmailAndPassword(
+                                                email: _email,
+                                                password: _password);
+                                    Detail_to_firebase(
+                                        _email, _name, _ph_number, _address);
+                                    Navigator.pushNamed(
+                                        context, Starting_Page_3.ID);
+                                    initilization();
+                                  } on FirebaseAuthException catch (e) {
+                                    if (e.code == 'weak-password') {
+                                      showAlertDialog(context, 'weak-password');
+                                      print(
+                                          'The password provided is too weak.');
+                                    } else if (e.code ==
+                                        'email-already-in-use') {
+                                      showAlertDialog(context,
+                                          'The account already exists for that email');
+                                      print(
+                                          'The account already exists for that email.');
+                                    }
 
-                                // Map<String, String> info = {
-                                //   "Email": _email,
-                                //   "Name": _name,
-                                //   "Phone Number": _ph_number,
-                                //   "Address": _address,
-                                // };
-                                // var db = FirebaseFirestore.instance
-                                //     .collection("User_detail");
-                                // db
-                                //     .doc(_email)
-                                //     .set(info)
-                                //     .then((value) => print("sucesss"));
-                              } catch (e) {
-                                print(e);
-                              }
-                            }
-                          } catch (e) {}
-                          savingfalse();
-                          // resitration(_email, _password);
-                          // print("pressed");
-                          // Navigator.pushNamed(context, Firstpage_foodtype.ID);
-                        }),
-                    login_button(
-                        Textt: "Sign up Anonymous",
-                        onTap: () {
-                          Navigator.pushNamed(context, Firstpage_foodtype.ID);
-                        }),
-                    SizedBox(
-                      height: totalheight / 2,
-                    )
+                                    // Map<String, String> info = {
+                                    //   "Email": _email,
+                                    //   "Name": _name,
+                                    //   "Phone Number": _ph_number,
+                                    //   "Address": _address,
+                                    // };
+                                    // var db = FirebaseFirestore.instance
+                                    //     .collection("User_detail");
+                                    // db
+                                    //     .doc(_email)
+                                    //     .set(info)
+                                    //     .then((value) => print("sucesss"));
+                                  } catch (e) {
+                                    print(e);
+                                  }
+                                }
+                              } catch (e) {}
+                              savingfalse();
+                              // resitration(_email, _password);
+                              // print("pressed");
+                              // Navigator.pushNamed(context, Firstpage_foodtype.ID);
+                            }),
+                        login_button(
+                            Textt: "Sign up Anonymous",
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, Firstpage_foodtype.ID);
+                            }),
+                        SizedBox(
+                          height: totalheight / 2,
+                        )
+                      ],
+                    ),
                   ],
-                ),
-              ],
-            ),
+                );
+              } else {
+                return ListView(
+                  keyboardDismissBehavior:
+                      ScrollViewKeyboardDismissBehavior.onDrag,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(height: ratio_height(context, 40) //40,
+                            ),
+                        Hero(
+                          tag: "logo",
+                          child: Container(
+                            height: 160,
+                            width: 160,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.transparent,
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(4, 7),
+                                    blurRadius: 10,
+                                    spreadRadius: 2,
+                                  )
+                                ],
+                                image: DecorationImage(
+                                    image: AssetImage("image/logo.jpg"))),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20, bottom: 10),
+                          child: Text("Sign UP",
+                              textAlign: TextAlign.center, style: textStyle),
+                        ),
+                        emailbox(
+                            Orientation: Landscapee.ID,
+                            Onchanged: (value) {
+                              _email = value;
+                              print(value);
+                            }),
+                        passwordbox(
+                            Oreintation: Landscapee.ID,
+                            Onchanged: (value) {
+                              _password = value;
+                              print(value);
+                            }),
+                        generalbox(
+                          orientation: Landscapee.ID,
+                          label: "Name",
+                          keyboardtype: TextInputType.name,
+                          Onchanged: (p0) {
+                            _name = p0;
+                            print(p0);
+                          },
+                        ),
+                        generalbox(
+                          orientation: Landscapee.ID,
+                          label: "Phone Number",
+                          keyboardtype: TextInputType.phone,
+                          Onchanged: (p0) {
+                            _ph_number = p0;
+                            print(p0);
+                          },
+                        ),
+                        generalbox(
+                          orientation: Landscapee.ID,
+                          label: "Address",
+                          keyboardtype: TextInputType.streetAddress,
+                          Onchanged: (p0) {
+                            _address = p0;
+                            print(p0);
+                          },
+                        ),
+                        SizedBox(
+                          height: ratio_height(context, 20), //20,
+                        ),
+                        login_button_landscape(
+                            Textt: "Sign UP",
+                            onTap: () async {
+                              savingtrue();
+                              try {
+                                if (_email != null &&
+                                    _password != null &&
+                                    _name != null &&
+                                    _ph_number != null &&
+                                    _address != null) {
+                                  // print(_email +
+                                  //     "\n" +
+                                  //     _password +
+                                  //     "\n" +
+                                  //     _name +
+                                  //     "\n" +
+                                  //     _ph_number +
+                                  //     "\n" +
+                                  //     _address +
+                                  //     "\n");
+                                  try {
+                                    UserCredential userCredential =
+                                        await FirebaseAuth.instance
+                                            .createUserWithEmailAndPassword(
+                                                email: _email,
+                                                password: _password);
+                                    Detail_to_firebase(
+                                        _email, _name, _ph_number, _address);
+                                    Navigator.pushNamed(
+                                        context, Starting_Page_3.ID);
+                                    initilization();
+                                  } on FirebaseAuthException catch (e) {
+                                    if (e.code == 'weak-password') {
+                                      showAlertDialog(context, 'weak-password');
+                                      print(
+                                          'The password provided is too weak.');
+                                    } else if (e.code ==
+                                        'email-already-in-use') {
+                                      showAlertDialog(context,
+                                          'The account already exists for that email');
+                                      print(
+                                          'The account already exists for that email.');
+                                    }
+
+                                    // Map<String, String> info = {
+                                    //   "Email": _email,
+                                    //   "Name": _name,
+                                    //   "Phone Number": _ph_number,
+                                    //   "Address": _address,
+                                    // };
+                                    // var db = FirebaseFirestore.instance
+                                    //     .collection("User_detail");
+                                    // db
+                                    //     .doc(_email)
+                                    //     .set(info)
+                                    //     .then((value) => print("sucesss"));
+                                  } catch (e) {
+                                    print(e);
+                                  }
+                                }
+                              } catch (e) {}
+                              savingfalse();
+                              // resitration(_email, _password);
+                              // print("pressed");
+                              // Navigator.pushNamed(context, Firstpage_foodtype.ID);
+                            }),
+                        login_button_landscape(
+                            Textt: "Sign up Anonymous",
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, Firstpage_foodtype.ID);
+                            }),
+                        SizedBox(
+                          height: totalheight / 2,
+                        )
+                      ],
+                    ),
+                  ],
+                );
+              }
+            }),
           )),
     );
   }

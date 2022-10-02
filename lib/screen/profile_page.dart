@@ -39,110 +39,223 @@ class Profile_Page extends StatelessWidget {
           height: total_height,
           width: total_width,
           decoration: boxDecoration_backgroundimage,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Stack(
-                alignment: Alignment.topCenter,
+          child: OrientationBuilder(builder: (context, orientation) {
+            if (orientation == Orientation.portrait) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
+                  Stack(
+                    alignment: Alignment.topCenter,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: total_height * 3 * 0.178125 / 4,
+                            ),
+                            Container(
+                              height: total_height / 2,
+                              width: total_width,
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(4, 7),
+                                    blurRadius: 10,
+                                    spreadRadius: 2,
+                                  )
+                                ],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(41.25)),
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                      "image/background2.png",
+                                    ),
+                                    fit: BoxFit.fill),
+                              ),
+                              child: Deatil_extractor(
+                                Device_Orientation: Portraitt.ID,
+                                email: context.watch<Emaill>().Email, //Email,
+                              ),
+                              // child: Column(
+                              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              //   children: [
+                              //     SizedBox(height: total_height * 0.178125 / 4),
+                              //     // Tile_for_detail(
+                              //     //     Text_list: "MEAL Up",
+                              //     //     Iccon: Icon(Icons.person)),
+                              //     // Tile_for_detail(
+                              //     //     Text_list: "+9779800000000",
+                              //     //     Iccon: Icon(Icons.phone)),
+                              //     // Tile_for_detail(
+                              //     //     Text_list: "mealuo@gmail.com",
+                              //     //     Iccon: Icon(Icons.email)),
+                              //     // Tile_for_detail(
+                              //     //     Text_list: "DHULIKEHEL",
+                              //     //     Iccon: Icon(Icons.location_on)),
+                              //     Deatil_extractor(),
+                              //     Padding(
+                              //       padding:
+                              //           const EdgeInsets.symmetric(horizontal: 20),
+                              //       child: Image(image: AssetImage("image/2.png")),
+                              //     )
+                              //   ],
+                              // ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Stack(
+                        children: [
+                          Container(
+                            height: total_height * 0.178125,
+                            width: total_height * 0.178125,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(4, 7),
+                                  blurRadius: 10,
+                                  spreadRadius: 2,
+                                )
+                              ],
+                              color: Color(0xffffffff),
+                            ),
+                            child: Icon(
+                              Icons.person_outline,
+                              size: total_height * 0.178125,
+                              color: Color(0xffFF541E), //
+                            ),
+                          ),
+                          Container(
+                            height: total_height * 0.178125,
+                            width: total_height * 0.178125,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0x4DFF541E),
+                            ),
+                            child: Icon(
+                              Icons.person_outline,
+                              size: total_height * 0.178125,
+                              color: Color(0xffFF541E), //
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              );
+            } else {
+              return SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Stack(
+                      alignment: Alignment.topCenter,
                       children: [
-                        SizedBox(
-                          height: total_height * 3 * 0.178125 / 4,
-                        ),
-                        Container(
-                          height: total_height / 2,
-                          width: total_width,
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(4, 7),
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(41.25)),
-                            image: DecorationImage(
-                                image: AssetImage(
-                                  "image/background2.png",
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: total_width * 3 * 0.178125 / 4,
+                              ),
+                              Container(
+                                height: total_width / 2,
+                                width: total_height,
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(4, 7),
+                                      blurRadius: 10,
+                                      spreadRadius: 2,
+                                    )
+                                  ],
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(41.25)),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                        "image/background2.png",
+                                      ),
+                                      fit: BoxFit.fill),
                                 ),
-                                fit: BoxFit.fill),
+                                child: Deatil_extractor(
+                                  Device_Orientation: Landscapee.ID,
+                                  email: context.watch<Emaill>().Email, //Email,
+                                ),
+                                // child: Column(
+                                //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                //   children: [
+                                //     SizedBox(height: total_height * 0.178125 / 4),
+                                //     // Tile_for_detail(
+                                //     //     Text_list: "MEAL Up",
+                                //     //     Iccon: Icon(Icons.person)),
+                                //     // Tile_for_detail(
+                                //     //     Text_list: "+9779800000000",
+                                //     //     Iccon: Icon(Icons.phone)),
+                                //     // Tile_for_detail(
+                                //     //     Text_list: "mealuo@gmail.com",
+                                //     //     Iccon: Icon(Icons.email)),
+                                //     // Tile_for_detail(
+                                //     //     Text_list: "DHULIKEHEL",
+                                //     //     Iccon: Icon(Icons.location_on)),
+                                //     Deatil_extractor(),
+                                //     Padding(
+                                //       padding:
+                                //           const EdgeInsets.symmetric(horizontal: 20),
+                                //       child: Image(image: AssetImage("image/2.png")),
+                                //     )
+                                //   ],
+                                // ),
+                              ),
+                            ],
                           ),
-                          child: Deatil_extractor(
-                            email: context.watch<Emaill>().Email, //Email,
-                          ),
-                          // child: Column(
-                          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          //   children: [
-                          //     SizedBox(height: total_height * 0.178125 / 4),
-                          //     // Tile_for_detail(
-                          //     //     Text_list: "MEAL Up",
-                          //     //     Iccon: Icon(Icons.person)),
-                          //     // Tile_for_detail(
-                          //     //     Text_list: "+9779800000000",
-                          //     //     Iccon: Icon(Icons.phone)),
-                          //     // Tile_for_detail(
-                          //     //     Text_list: "mealuo@gmail.com",
-                          //     //     Iccon: Icon(Icons.email)),
-                          //     // Tile_for_detail(
-                          //     //     Text_list: "DHULIKEHEL",
-                          //     //     Iccon: Icon(Icons.location_on)),
-                          //     Deatil_extractor(),
-                          //     Padding(
-                          //       padding:
-                          //           const EdgeInsets.symmetric(horizontal: 20),
-                          //       child: Image(image: AssetImage("image/2.png")),
-                          //     )
-                          //   ],
-                          // ),
                         ),
+                        Stack(
+                          children: [
+                            Container(
+                              height: total_width * 0.178125,
+                              width: total_width * 0.178125,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(4, 7),
+                                    blurRadius: 10,
+                                    spreadRadius: 2,
+                                  )
+                                ],
+                                color: Color(0xffffffff),
+                              ),
+                              // child: Icon(
+                              //   Icons.person_outline,
+                              //   size: total_height * 0.178125,
+                              //   color: Color(0xffFF541E), //
+                              // ),
+                            ),
+                            Container(
+                              height: total_width * 0.178125,
+                              width: total_width * 0.178125,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0x4DFF541E),
+                              ),
+                              child: Icon(
+                                Icons.person_outline,
+                                size: total_height * 0.178125,
+                                color: Color(0xffFF541E), //
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
-                  ),
-                  Stack(
-                    children: [
-                      Container(
-                        height: total_height * 0.178125,
-                        width: total_height * 0.178125,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(4, 7),
-                              blurRadius: 10,
-                              spreadRadius: 2,
-                            )
-                          ],
-                          color: Color(0xffffffff),
-                        ),
-                        child: Icon(
-                          Icons.person_outline,
-                          size: total_height * 0.178125,
-                          color: Color(0xffFF541E), //
-                        ),
-                      ),
-                      Container(
-                        height: total_height * 0.178125,
-                        width: total_height * 0.178125,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color(0x4DFF541E),
-                        ),
-                        child: Icon(
-                          Icons.person_outline,
-                          size: total_height * 0.178125,
-                          color: Color(0xffFF541E), //
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ],
-          ),
+                  ],
+                ),
+              );
+            }
+          }),
         ),
       ),
     );

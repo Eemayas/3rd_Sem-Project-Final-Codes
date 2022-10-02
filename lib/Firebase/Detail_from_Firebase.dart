@@ -5,8 +5,9 @@ import 'package:image_from_firebase_public/constanst/constanst.dart';
 import '../constanst/Tile_for_detail.dart';
 
 class Deatil_extractor extends StatelessWidget {
+  final String Device_Orientation;
   final String email;
-  Deatil_extractor({required this.email});
+  Deatil_extractor({required this.email, required this.Device_Orientation});
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -34,15 +35,23 @@ class Deatil_extractor extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.178125 / 4),
+                    height: Device_Orientation == Portraitt.ID
+                        ? MediaQuery.of(context).size.height * 0.178125 / 4
+                        : MediaQuery.of(context).size.width * 0.178125 / 4),
                 Tile_for_detail(
-                    Text_list: datastore["Name"], Iccon: Icon(Icons.person)),
+                    Device_Orientation: Device_Orientation,
+                    Text_list: datastore["Name"],
+                    Iccon: Icon(Icons.person)),
                 Tile_for_detail(
+                    Device_Orientation: Device_Orientation,
                     Text_list: datastore['Phone Number'],
                     Iccon: Icon(Icons.phone)),
                 Tile_for_detail(
-                    Text_list: datastore["Email"], Iccon: Icon(Icons.email)),
+                    Device_Orientation: Device_Orientation,
+                    Text_list: datastore["Email"],
+                    Iccon: Icon(Icons.email)),
                 Tile_for_detail(
+                    Device_Orientation: Device_Orientation,
                     Text_list: datastore["Address"],
                     Iccon: Icon(Icons.location_on)),
                 Padding(

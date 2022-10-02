@@ -92,111 +92,202 @@ class _Secondpage_Food_PageState extends State<Secondpage_Food_Page> {
         width: MediaQuery.of(context).size.width,
         decoration: boxDecoration_backgroundimage,
         child: SafeArea(
-          child: Column(children: [
-            SizedBox(
-              height: total_height * 0.4,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
+          child: OrientationBuilder(builder: (context, orientation) {
+            if (orientation == Orientation.portrait) {
+              return Column(children: [
+                SizedBox(
+                  height: total_height * 0.4,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 20),
-                        child: Align(
-                            alignment: Alignment.topLeft,
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Container(
-                                  height: 40,
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20, top: 20),
+                            child: Align(
+                                alignment: Alignment.topLeft,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Container(
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Color(0xffFF6433)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Icon(
+                                          Icons.arrow_back_ios,
+                                          size: 25,
+                                          color: Colors.white,
+                                        ),
+                                      )),
+                                )),
+                          ),
+                          Center(
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.75,
+                              child: Hero(
+                                tag: "logo",
+                                child: Container(
+                                  height: ratio_height(context, 100), //100,
+                                  width: ratio_width(context, 100), //100,
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: Color(0xffFF6433)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(
-                                      Icons.arrow_back_ios,
-                                      size: 25,
-                                      color: Colors.white,
-                                    ),
-                                  )),
-                            )),
-                      ),
-                      Center(
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.75,
-                          child: Hero(
-                            tag: "logo",
-                            child: Container(
-                              height: ratio_height(context, 100), //100,
-                              width: ratio_width(context, 100), //100,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.transparent,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(4, 7),
-                                      blurRadius: 10,
-                                      spreadRadius: 2,
-                                    )
-                                  ],
-                                  image: DecorationImage(
-                                      image: AssetImage("image/logo.jpg"))),
+                                      color: Colors.transparent,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(4, 7),
+                                          blurRadius: 10,
+                                          spreadRadius: 2,
+                                        )
+                                      ],
+                                      image: DecorationImage(
+                                          image: AssetImage("image/logo.jpg"))),
+                                ),
+                              ),
                             ),
                           ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Stack(
+                          children: [
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Container(
+                                  height: ratio_height(context, 100), //100,
+                                  width: MediaQuery.of(context).size.width -
+                                      ratio_width(context, 100), //x-100
+                                  decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color(0x40741F1F),
+                                          offset: Offset(4, 7),
+                                          blurRadius: 10,
+                                          spreadRadius: 2,
+                                        )
+                                      ],
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(65)),
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [
+                                            Color(0xff8D8988),
+                                            Color(0x4DD9D9D9)
+                                          ])),
+                                  child: Center(
+                                    // child: Hero(
+                                    //   tag: "text+${widget.FoodType}",
+                                    child: Text(
+                                      widget.FoodType,
+                                      style: textStyle.copyWith(
+                                          fontStyle: FontStyle.normal),
+                                    ),
+                                    //  ),
+                                  )),
+                            ),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child:
+                                  //  Hero(
+                                  //   tag: "photo+${widget.FoodType}",
+                                  //   child:
+                                  Container(
+                                height: ratio_height(context, 100), //100,
+                                width: ratio_width(context, 100), //100,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.transparent,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        offset: Offset(4, 7),
+                                        blurRadius: 10,
+                                        spreadRadius: 2,
+                                      )
+                                    ],
+                                    image: DecorationImage(
+                                        image: CachedNetworkImageProvider(
+                                          imageeurl[Foodtype_name] ?? '',
+                                        ),
+                                        fit: BoxFit.fill)),
+                              ),
+                              //),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Stack(
+                ),
+                SizedBox(
+                  height: total_height * 0.4,
+                  child: ListView(
+                    padding: const EdgeInsets.all(8.0),
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      for (int i = 0; i < secondpage_list.length; i++)
+                        Slide_ViewLile_FoodDisplay(
+                            Device_Orientation: Portraitt.ID,
+                            foodname_Textt: secondpage_list[i].name,
+                            img_url: secondpage_map_imageurl[
+                                secondpage_list[i].name],
+                            OnTap: () {
+                              print("pressed");
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) => Recipe_Page(
+                                            Cuisines: Foodtype_name,
+                                            foodname_text:
+                                                secondpage_list[i].name,
+                                            Img_URL: secondpage_map_imageurl[
+                                                secondpage_list[i].name],
+                                          )));
+                            }),
+                    ],
+                  ),
+                ),
+              ]);
+            } else {
+              return Row(
+                children: [
+                  Container(
+                    width: Total_Width(context) * 0.4,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                              height: ratio_height(context, 100), //100,
-                              width: MediaQuery.of(context).size.width -
-                                  ratio_width(context, 100), //x-100
-                              decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0x40741F1F),
-                                      offset: Offset(4, 7),
-                                      blurRadius: 10,
-                                      spreadRadius: 2,
-                                    )
-                                  ],
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(65)),
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                      colors: [
-                                        Color(0xff8D8988),
-                                        Color(0x4DD9D9D9)
-                                      ])),
-                              child: Center(
-                                // child: Hero(
-                                //   tag: "text+${widget.FoodType}",
-                                child: Text(
-                                  widget.FoodType,
-                                  style: textStyle.copyWith(
-                                      fontStyle: FontStyle.normal),
-                                ),
-                                //  ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, top: 20),
+                          child: Align(
+                              alignment: Alignment.topLeft,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Container(
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xffFF6433)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        Icons.arrow_back_ios,
+                                        size: 25,
+                                        color: Colors.white,
+                                      ),
+                                    )),
                               )),
                         ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child:
-                              //  Hero(
-                              //   tag: "photo+${widget.FoodType}",
-                              //   child:
-                              Container(
-                            height: ratio_height(context, 100), //100,
-                            width: ratio_width(context, 100), //100,
+                        Hero(
+                          tag: "logo",
+                          child: Container(
+                            height: ratio_height(context, 190), //100,
+                            width: ratio_width(context, 190), //100,
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.transparent,
@@ -208,46 +299,115 @@ class _Secondpage_Food_PageState extends State<Secondpage_Food_Page> {
                                   )
                                 ],
                                 image: DecorationImage(
-                                    image: CachedNetworkImageProvider(
-                                      imageeurl[Foodtype_name] ?? '',
-                                    ),
-                                    fit: BoxFit.fill)),
+                                    image: AssetImage("image/logo.jpg"))),
                           ),
-                          //),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Stack(
+                            children: [
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Container(
+                                    height: ratio_height(context, 150), //100,
+                                    width: MediaQuery.of(context).size.width -
+                                        ratio_width(context, 260), //x-100
+                                    decoration: BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Color(0x40741F1F),
+                                            offset: Offset(4, 7),
+                                            blurRadius: 10,
+                                            spreadRadius: 2,
+                                          )
+                                        ],
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(65)),
+                                        gradient: LinearGradient(
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                            colors: [
+                                              Color(0xff8D8988),
+                                              Color(0x4DD9D9D9)
+                                            ])),
+                                    child: Center(
+                                      // child: Hero(
+                                      //   tag: "text+${widget.FoodType}",
+                                      child: Text(
+                                        widget.FoodType,
+                                        style: textStyle.copyWith(
+                                            fontStyle: FontStyle.normal),
+                                      ),
+                                      //  ),
+                                    )),
+                              ),
+                              Container(
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child:
+                                      //  Hero(
+                                      //   tag: "photo+${widget.FoodType}",
+                                      //   child:
+                                      Container(
+                                    height: ratio_height(context, 150), //100,
+                                    width: ratio_height(context, 150), //100,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.transparent,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            offset: Offset(4, 7),
+                                            blurRadius: 10,
+                                            spreadRadius: 2,
+                                          )
+                                        ],
+                                        image: DecorationImage(
+                                            image: CachedNetworkImageProvider(
+                                              imageeurl[Foodtype_name] ?? '',
+                                            ),
+                                            fit: BoxFit.fill)),
+                                  ),
+                                  //),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
+                  SizedBox(
+                    width: Total_Width(context) * 0.55,
+                    child: ListView(
+                      padding: const EdgeInsets.all(8.0),
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        for (int i = 0; i < secondpage_list.length; i++)
+                          Slide_ViewLile_FoodDisplay(
+                              Device_Orientation: Landscapee.ID,
+                              foodname_Textt: secondpage_list[i].name,
+                              img_url: secondpage_map_imageurl[
+                                  secondpage_list[i].name],
+                              OnTap: () {
+                                print("pressed");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) => Recipe_Page(
+                                              Cuisines: Foodtype_name,
+                                              foodname_text:
+                                                  secondpage_list[i].name,
+                                              Img_URL: secondpage_map_imageurl[
+                                                  secondpage_list[i].name],
+                                            )));
+                              }),
+                      ],
+                    ),
+                  ),
                 ],
-              ),
-            ),
-            SizedBox(
-              height: total_height * 0.4,
-              child: ListView(
-                padding: const EdgeInsets.all(8.0),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  for (int i = 0; i < secondpage_list.length; i++)
-                    Slide_ViewLile_FoodDisplay(
-                        foodname_Textt: secondpage_list[i].name,
-                        img_url:
-                            secondpage_map_imageurl[secondpage_list[i].name],
-                        OnTap: () {
-                          print("pressed");
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (builder) => Recipe_Page(
-                                        Cuisines: Foodtype_name,
-                                        foodname_text: secondpage_list[i].name,
-                                        Img_URL: secondpage_map_imageurl[
-                                            secondpage_list[i].name],
-                                      )));
-                        }),
-                ],
-              ),
-            ),
-          ]),
+              );
+            }
+          }),
         ),
       ),
     );

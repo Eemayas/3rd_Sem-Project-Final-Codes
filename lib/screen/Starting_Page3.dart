@@ -26,32 +26,64 @@ class _Starting_Page_3State extends State<Starting_Page_3> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBody: true,
-        bottomNavigationBar: CurvedNavigationBar(
-          height: ratio_height(context, 60), //60
-          color: Colors.orangeAccent,
-          buttonBackgroundColor: Colors.amberAccent,
-          key: _bottomNavigationKey,
-          backgroundColor: Colors.transparent,
-          items: <Widget>[
-            Icon(
-              Icons.home,
-              size: ratio_height(context, 24),
-            ),
-            Icon(
-              Icons.favorite,
-              size: ratio_height(context, 24),
-            ), //24,),
-            Icon(
-              Icons.person,
-              size: ratio_height(context, 24),
-            ) //24,),
-          ],
-          onTap: (index) {
-            setState(() {
-              _page = index;
-            });
-          },
-        ),
+        bottomNavigationBar:
+            OrientationBuilder(builder: (context, orientation) {
+          if (orientation == Orientation.portrait) {
+            return CurvedNavigationBar(
+              height: ratio_height(context, 60), //60
+              color: Colors.orangeAccent,
+              buttonBackgroundColor: Colors.amberAccent,
+              key: _bottomNavigationKey,
+              backgroundColor: Colors.transparent,
+              items: <Widget>[
+                Icon(
+                  Icons.home,
+                  size: ratio_height(context, 24),
+                ),
+                Icon(
+                  Icons.favorite,
+                  size: ratio_height(context, 24),
+                ), //24,),
+                Icon(
+                  Icons.person,
+                  size: ratio_height(context, 24),
+                ) //24,),
+              ],
+              onTap: (index) {
+                setState(() {
+                  _page = index;
+                });
+              },
+            );
+          } else {
+            return CurvedNavigationBar(
+              height: 60, //60
+              color: Colors.orangeAccent,
+              buttonBackgroundColor: Colors.amberAccent,
+              key: _bottomNavigationKey,
+              backgroundColor: Colors.transparent,
+              items: <Widget>[
+                Icon(
+                  Icons.home,
+                  size: ratio_height(context, 45),
+                ),
+                Icon(
+                  Icons.favorite,
+                  size: ratio_height(context, 45),
+                ), //24,),
+                Icon(
+                  Icons.person,
+                  size: ratio_height(context, 45),
+                ) //24,),
+              ],
+              onTap: (index) {
+                setState(() {
+                  _page = index;
+                });
+              },
+            );
+          }
+        }),
         body: screen[_page]
         // Container(
         //   color: Colors.blueAccent,
