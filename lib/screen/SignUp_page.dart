@@ -167,6 +167,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                                 password: _password);
                                     Detail_to_firebase(
                                         _email, _name, _ph_number, _address);
+                                    Navigator.pop(context);
                                     Navigator.pushNamed(
                                         context, Starting_Page_3.ID);
                                     initilization();
@@ -205,12 +206,12 @@ class _Sign_UpState extends State<Sign_Up> {
                               // print("pressed");
                               // Navigator.pushNamed(context, Firstpage_foodtype.ID);
                             }),
-                        login_button(
-                            Textt: "Sign up Anonymous",
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, Firstpage_foodtype.ID);
-                            }),
+                        // login_button(
+                        //     Textt: "Sign up Anonymous",
+                        //     onTap: () {
+                        //       Navigator.pushNamed(
+                        //           context, Firstpage_foodtype.ID);
+                        //     }),
                         SizedBox(
                           height: totalheight / 2,
                         )
@@ -323,6 +324,7 @@ class _Sign_UpState extends State<Sign_Up> {
                                                 password: _password);
                                     Detail_to_firebase(
                                         _email, _name, _ph_number, _address);
+                                    Navigator.pop(context);
                                     Navigator.pushNamed(
                                         context, Starting_Page_3.ID);
                                     initilization();
@@ -361,12 +363,12 @@ class _Sign_UpState extends State<Sign_Up> {
                               // print("pressed");
                               // Navigator.pushNamed(context, Firstpage_foodtype.ID);
                             }),
-                        login_button_landscape(
-                            Textt: "Sign up Anonymous",
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, Firstpage_foodtype.ID);
-                            }),
+                        // login_button_landscape(
+                        //     Textt: "Sign up Anonymous",
+                        //     onTap: () {
+                        //       Navigator.pushNamed(
+                        //           context, Firstpage_foodtype.ID);
+                        //     }),
                         SizedBox(
                           height: totalheight / 2,
                         )

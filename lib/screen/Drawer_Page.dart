@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../constanst/constanst.dart';
 import '../constanst/Tile_for_detail.dart';
+import 'Profile_Page.dart';
 import 'Starting_Page1.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:image_from_firebase_public/screen/oldpages/O_profile_page.dart';
@@ -82,7 +83,7 @@ class Drawer_Page extends StatelessWidget {
                   Text_list: "Profile",
                   Iccon: Icon(Icons.person),
                   onpressed: () {
-                    Navigator.pushNamed(context, profile_page.ID);
+                    Navigator.pushNamed(context, Profile_Page.ID);
                   },
                 ),
                 Tile_for_detail(
@@ -96,6 +97,21 @@ class Drawer_Page extends StatelessWidget {
                 Tile_for_detail(
                     Device_Orientation: Portraitt.ID,
                     Text_list: "Info",
+                    onpressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) => AboutDialog(
+                                applicationIcon: Icon(Icons.restaurant),
+                                applicationName: "Meal Up",
+                                applicationVersion: "Version 1.0.0",
+                                children: [
+                                  Center(
+                                    child: Text(
+                                        "Developed By:\nJayash Bhattari\n Saugat Khatri\nPrashant Manandhar\nPrajwol Timalsina"),
+                                  )
+                                ],
+                              ));
+                    },
                     Iccon: Icon(Icons.info_outline)),
                 Expanded(child: Container()),
                 Tile_for_detail(
@@ -172,7 +188,7 @@ class Drawer_Page extends StatelessWidget {
                   Text_list: "Profile",
                   Iccon: Icon(Icons.person),
                   onpressed: () {
-                    Navigator.pushNamed(context, profile_page.ID);
+                    Navigator.pushNamed(context, Profile_Page.ID);
                   },
                 ),
                 Tile_for_detail(
@@ -186,6 +202,21 @@ class Drawer_Page extends StatelessWidget {
                 Tile_for_detail(
                     Device_Orientation: Landscapee.ID,
                     Text_list: "Info",
+                    onpressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) => AboutDialog(
+                                applicationIcon: Icon(Icons.restaurant),
+                                applicationName: "Meal Up",
+                                applicationVersion: "Version 1.0.0",
+                                children: [
+                                  Center(
+                                    child: Text(
+                                        "Developed By:\nJayash Bhattari\n Saugat Khatri\nPrashant Manandhar\nPrajwol Timalsina"),
+                                  )
+                                ],
+                              ));
+                    },
                     Iccon: Icon(Icons.info_outline)),
                 Expanded(child: Container()),
                 Tile_for_detail(

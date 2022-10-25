@@ -14,6 +14,7 @@ import '../Firebase/Favorities/Favorities_from_Firebase.dart';
 import '../Firebase/New_Firebase_extractoe.dart';
 import '../component/Provider_comp.dart';
 import '../constanst/constanst.dart';
+import 'Timer_Page.dart';
 
 class Recipe_Page extends StatefulWidget {
   final String Img_URL;
@@ -133,6 +134,29 @@ class _Recipe_PageState extends State<Recipe_Page> {
                                       )),
                                 ),
                                 Expanded(child: Container()),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => CountdownPage(),
+                                        ));
+                                  },
+                                  child: Container(
+                                      height: ratio_height(context, 40), //40
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Color(0xffFF6433)),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(
+                                            ratio_height(context, 8)),
+                                        child: Icon(
+                                          Icons.timer,
+                                          size: ratio_height(context, 25), //25,
+                                          color: Colors.white,
+                                        ),
+                                      )),
+                                ),
                                 GestureDetector(
                                   onTap: () async {
                                     print(await Check_Favorities(
@@ -408,6 +432,29 @@ class _Recipe_PageState extends State<Recipe_Page> {
                                       )),
                                 ),
                                 Expanded(child: Container()),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => CountdownPage(),
+                                        ));
+                                  },
+                                  child: Container(
+                                      height: ratio_height(context, 60), //40
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Color(0xffFF6433)),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(
+                                            ratio_height(context, 8)),
+                                        child: Icon(
+                                          Icons.timer,
+                                          size: ratio_height(context, 50), //25,
+                                          color: Colors.white,
+                                        ),
+                                      )),
+                                ),
                                 GestureDetector(
                                   onTap: () async {
                                     print(await Check_Favorities(

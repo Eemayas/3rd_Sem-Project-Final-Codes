@@ -107,6 +107,7 @@ class _Sign_InState extends State<Sign_In> {
                                 print('User is signed in!');
                               }
                             });
+                            Navigator.pop(context);
                             Navigator.pushNamed(context, Starting_Page_3.ID);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
@@ -211,6 +212,7 @@ class _Sign_InState extends State<Sign_In> {
                                 print('User is signed in!');
                               }
                             });
+                            Navigator.pop(context);
                             Navigator.pushNamed(context, Starting_Page_3.ID);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
