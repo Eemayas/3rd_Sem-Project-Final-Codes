@@ -50,7 +50,7 @@ class _Starting_Page_1State extends State<Starting_Page_1> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Startingpage_Photo(
-                  Side: MediaQuery.of(context).size.width * 0.7,
+                  Side: MediaQuery.of(context).size.width * 0.5,
                 ),
                 Staringpage_Text(),
                 Startingpage_Slider()
