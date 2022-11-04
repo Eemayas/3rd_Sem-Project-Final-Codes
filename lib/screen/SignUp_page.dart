@@ -52,7 +52,7 @@ class _Sign_UpState extends State<Sign_Up> {
       inAsyncCall: saving,
       dismissible: true,
       child: Scaffold(
-          resizeToAvoidBottomInset: false,
+          resizeToAvoidBottomInset: true,
           body: Container(
             height: totalheight,
             width: double.infinity,

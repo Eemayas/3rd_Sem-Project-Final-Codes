@@ -19,7 +19,7 @@ class loginformat_page_portrait extends StatelessWidget {
       inAsyncCall: saving,
       dismissible: true,
       child: Scaffold(
-          resizeToAvoidBottomInset: false,
+          resizeToAvoidBottomInset: true,
           extendBody: true,
           body: SafeArea(
             child: Container(
@@ -214,7 +214,7 @@ class login_button_landscape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: EdgeInsets.only(top: 10.0, left: 10, right: 10, bottom: 10),
       child: GestureDetector(
         onTap: () {
           onTap();

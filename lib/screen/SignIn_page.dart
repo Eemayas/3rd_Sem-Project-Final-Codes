@@ -240,8 +240,11 @@ class _Sign_InState extends State<Sign_In> {
               ],
             ),
             //),
-
-            SizedBox(height: MediaQuery.of(context).size.height * 0.95)
+            Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom +
+                        MediaQuery.of(context).size.height * 0.95))
+            // SizedBox(height: MediaQuery.of(context).size.height * 0.95)
           ],
         );
       }
