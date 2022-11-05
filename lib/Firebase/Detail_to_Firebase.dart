@@ -17,7 +17,7 @@ void Detail_to_firebase(
       .collection(_email)
       .doc("info")
       .set(info)
-      .then((value) => print("sucesss"));
+      .then((value) => print("Detail added sucesss"));
 }
 
 // void Detail_to_firebase(

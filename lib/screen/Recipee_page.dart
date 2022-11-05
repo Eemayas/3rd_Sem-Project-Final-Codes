@@ -159,6 +159,7 @@ class _Recipe_PageState extends State<Recipe_Page> {
                                 ),
                                 GestureDetector(
                                   onTap: () async {
+                                    print("Pressed");
                                     print(await Check_Favorities(
                                         Foodlist_s: foodname_text,
                                         email: Email));

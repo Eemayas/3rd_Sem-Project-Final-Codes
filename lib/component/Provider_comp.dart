@@ -8,10 +8,10 @@ class Emaill with ChangeNotifier {
   void Provider_get_current_user() {
     FirebaseAuth.instance.userChanges().listen((User? user) async {
       if (user == null) {
-        print('User is currently signed out!');
+        print('User is currently signed out!(Provider)');
         // showAlertDialog("User is currently signed out!");
       } else {
-        print('User is signed in!');
+        print('User is signed in!(Provider)');
         var currentUser = FirebaseAuth.instance.currentUser!.email;
 
         if (currentUser != null) {

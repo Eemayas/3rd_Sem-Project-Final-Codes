@@ -25,7 +25,7 @@ void Favorites_to_firebase(
       .doc("ACCOUNTS")
       .collection(_email)
       .doc("Favorities")
-      .set({}).then((value) => print("sucesss"));
+      .set({}).then((value) => print("Favorities added sucesss"));
 }
 
 // void Detail_to_firebase(
@@ -63,7 +63,7 @@ void firebase_entry({
       .collection(email)
       .doc("Favorities")
       .update(datatta)
-      .then((value) => print("sucesss"));
+      .then((value) => print("Favorities added array sucesss"));
 }
 
 List data = [];
@@ -147,6 +147,6 @@ void delete() {
           }
         ]),
       })
-      .then((value) => print("sucesss"))
+      .then((value) => print("favorities delete sucesss"))
       .onError((error, stackTrace) => print(error));
 }

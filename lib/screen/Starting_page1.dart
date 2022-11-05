@@ -28,10 +28,10 @@ class _Starting_Page_1State extends State<Starting_Page_1> {
     FirebaseAuth.instance.userChanges().listen((User? user) {
       if (user == null) {
         log_in = false;
-        print('User is currently signed out!');
+        print('User is currently signed out!(Strating PAge)');
       } else {
         log_in = true;
-        print('User is signed in!');
+        print('User is signed in!(Strating PAge)');
       }
     });
   }

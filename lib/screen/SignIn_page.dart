@@ -206,11 +206,11 @@ class _Sign_InState extends State<Sign_In> {
                             FirebaseAuth.instance
                                 .userChanges()
                                 .listen((User? user) {
-                              if (user == null) {
-                                print('User is currently signed out!');
-                              } else {
-                                print('User is signed in!');
-                              }
+                              // if (user == null) {
+                              //   print('User is currently signed out!');
+                              // } else {
+                              //   print('User is signed in!');
+                              // }
                             });
                             Navigator.pop(context);
                             Navigator.pushNamed(context, Starting_Page_3.ID);

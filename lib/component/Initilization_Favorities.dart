@@ -7,10 +7,10 @@ String Email = "mealup";
 Future<void> get_current_User() async {
   FirebaseAuth.instance.userChanges().listen((User? user) async {
     if (user == null) {
-      print('User is currently signed out!');
+      print('User is currently signed out!(getCurrent User)');
       // showAlertDialog("User is currently signed out!");
     } else {
-      print('User is signed in!');
+      print('User is signed in!(getCurrent User)');
       var currentUser = FirebaseAuth.instance.currentUser!.email;
 
       if (currentUser != null) {
@@ -21,21 +21,31 @@ Future<void> get_current_User() async {
   });
 }
 
-void route() async {
+void route({required String Emaill}) async {
   Map<String, dynamic> initialization = {};
   var db = FirebaseFirestore.instance.collection("FAVORITIES");
 
   await db
       .doc("ACCOUNTS")
-      .collection(Email)
+      .collection(Emaill)
       .doc("Favorities")
       .set(initialization)
-      .then((value) => print("sucesss"));
+      .then((value) => print(" route initilization"));
 }
 
-Future<void> initilization() async {
+Future<void> initilization({required String Emaill}) async {
   await get_current_User();
-  route();
+  route(Emaill: Emaill);
+  Favorities__Firebase_entry(
+      ImgUrl: "null",
+      Foodlist_s_name: "null",
+      Foodtype_f_name: "null",
+      email: Emaill);
+}
+
+Future<void> initilizationn() async {
+  await get_current_User();
+  route(Emaill: Email);
   Favorities__Firebase_entry(
       ImgUrl: "null",
       Foodlist_s_name: "null",

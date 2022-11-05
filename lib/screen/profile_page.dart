@@ -17,7 +17,7 @@ class Profile_Page extends StatelessWidget {
         print('User is currently signed out!');
         // showAlertDialog("User is currently signed out!");
       } else {
-        print('User is signed in!');
+        print('User is signed in!1');
         var currentUser = FirebaseAuth.instance.currentUser!.email;
 
         if (currentUser != null) {
