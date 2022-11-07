@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../constanst/constanst.dart';
 import '../constanst/Tile_for_detail.dart';
+import 'Pin_Input_Page.dart';
 import 'Profile_Page.dart';
 import 'Starting_Page1.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -119,7 +120,12 @@ class Drawer_Page extends StatelessWidget {
                     Text_list: "Data Entry(Developer Only)",
                     Iccon: Icon(Icons.devices_rounded),
                     onpressed: () {
-                      Navigator.pushNamed(context, "datata");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (builder) => Pin_Input_Page()));
+
+                      //Navigator.pushNamed(context, "datata");
                     }),
                 Tile_for_detail(
                     Device_Orientation: Portraitt.ID,

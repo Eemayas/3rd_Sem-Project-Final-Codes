@@ -15,7 +15,6 @@ import '../component/Sign_TextField.dart';
 import 'Firstpage_Food_Page.dart';
 import 'Starting_Page3.dart';
 import 'oldpages/O_First_page_foodlist.dart';
-import 'try.dart';
 
 class Sign_Up extends StatefulWidget {
   static String ID = "sign up";
@@ -182,40 +181,30 @@ class _Sign_UpState extends State<Sign_Up> {
                                     // print("try2");
                                   } on FirebaseAuthException catch (e) {
                                     Error = e.code;
-                                    // if (e.code == 'weak-password') {
-                                    //   showAlertDialog(context, 'weak-password');
-                                    //   print(
-                                    //       'The password provided is too weak.');
-                                    // } else if (e.code ==
-                                    //     'email-already-in-use') {
-                                    //   showAlertDialog(context,
-                                    //       'The account already exists for that email');
-                                    //   print(
-                                    //       'The account already exists for that email.');
-                                    // }
-
                                   } catch (e) {
                                     print(e);
                                   }
-                                }
-                                if (Error == "null") {
-                                  Navigator.pushNamed(
-                                      context, Starting_Page_3.ID);
-                                } else {
-                                  if (Error == 'weak-password') {
-                                    showAlertDialogSignin(
-                                        context, 'weak-password', OnTap: () {
-                                      setState(() {});
-                                    });
-                                    print('The password provided is too weak.');
-                                  } else if (Error == 'email-already-in-use') {
-                                    showAlertDialogSignin(context,
-                                        'The account already exists for that email',
-                                        OnTap: () {
-                                      setState(() {});
-                                    });
-                                    print(
-                                        'The account already exists for that email.');
+                                  if (Error == "null") {
+                                    Navigator.pushNamed(
+                                        context, Starting_Page_3.ID);
+                                  } else {
+                                    if (Error == 'weak-password') {
+                                      showAlertDialogSignin(
+                                          context, 'weak-password', OnTap: () {
+                                        setState(() {});
+                                      });
+                                      print(
+                                          'The password provided is too weak.');
+                                    } else if (Error ==
+                                        'email-already-in-use') {
+                                      showAlertDialogSignin(context,
+                                          'The account already exists for that email',
+                                          OnTap: () {
+                                        setState(() {});
+                                      });
+                                      print(
+                                          'The account already exists for that email.');
+                                    }
                                   }
                                 }
                               } catch (e) {}
@@ -225,18 +214,18 @@ class _Sign_UpState extends State<Sign_Up> {
                               // print("pressed");
                               // Navigator.pushNamed(context, Firstpage_foodtype.ID);
                             }),
-                        login_button(
-                          Textt: "Next",
-                          onTap: () {
-                            if (FirebaseAuth.instance.currentUser?.uid ==
-                                null) {
-                              return showAlertDialog(
-                                  context, "Please create account");
-                            } else {
-                              Navigator.pushNamed(context, Starting_Page_3.ID);
-                            }
-                          },
-                        ),
+                        // login_button(
+                        //   Textt: "Next",
+                        //   onTap: () {
+                        //     if (FirebaseAuth.instance.currentUser?.uid ==
+                        //         null) {
+                        //       return showAlertDialog(
+                        //           context, "Please create account");
+                        //     } else {
+                        //       Navigator.pushNamed(context, Starting_Page_3.ID);
+                        //     }
+                        //   },
+                        // ),
                         SizedBox(
                           height: totalheight / 2,
                         )
@@ -331,64 +320,49 @@ class _Sign_UpState extends State<Sign_Up> {
                                     _name != null &&
                                     _ph_number != null &&
                                     _address != null) {
-                                  // print(_email +
-                                  //     "\n" +
-                                  //     _password +
-                                  //     "\n" +
-                                  //     _name +
-                                  //     "\n" +
-                                  //     _ph_number +
-                                  //     "\n" +
-                                  //     _address +
-                                  //     "\n");
                                   try {
-                                    UserCredential userCredential =
-                                        await FirebaseAuth.instance
-                                            .createUserWithEmailAndPassword(
-                                                email: _email,
-                                                password: _password);
+                                    final newUser = await FirebaseAuth.instance
+                                        .createUserWithEmailAndPassword(
+                                            email: _email, password: _password);
                                     Detail_to_firebase(
                                         _email, _name, _ph_number, _address);
                                     initilization(Emaill: _email);
-                                    // Navigator.pop(context);
-                                    // Navigator.pushNamed(
-                                    //     context, Starting_Page_3.ID);
-
                                   } on FirebaseAuthException catch (e) {
-                                    if (e.code == 'weak-password') {
-                                      showAlertDialog(context, 'weak-password');
+                                    Error = e.code;
+                                  } catch (e) {
+                                    print(e);
+                                  }
+                                  if (Error == "null") {
+                                    Navigator.pushNamed(
+                                        context, Starting_Page_3.ID);
+                                  } else {
+                                    if (Error == 'weak-password') {
+                                      showAlertDialogSignin(
+                                          context, 'weak-password', OnTap: () {
+                                        setState(() {});
+                                      });
                                       print(
                                           'The password provided is too weak.');
-                                    } else if (e.code ==
+                                    } else if (Error ==
                                         'email-already-in-use') {
-                                      showAlertDialog(context,
-                                          'The account already exists for that email');
+                                      showAlertDialogSignin(context,
+                                          'The account already exists for that email',
+                                          OnTap: () {
+                                        setState(() {});
+                                      });
                                       print(
                                           'The account already exists for that email.');
                                     }
-
-                                    // Map<String, String> info = {
-                                    //   "Email": _email,
-                                    //   "Name": _name,
-                                    //   "Phone Number": _ph_number,
-                                    //   "Address": _address,
-                                    // };
-                                    // var db = FirebaseFirestore.instance
-                                    //     .collection("User_detail");
-                                    // db
-                                    //     .doc(_email)
-                                    //     .set(info)
-                                    //     .then((value) => print("sucesss"));
-                                  } catch (e) {
-                                    print(e);
                                   }
                                 }
                               } catch (e) {}
                               savingfalse();
+
                               // resitration(_email, _password);
                               // print("pressed");
                               // Navigator.pushNamed(context, Firstpage_foodtype.ID);
                             }),
+
                         // login_button_landscape(
                         //     Textt: "Sign up Anonymous",
                         //     onTap: () {

@@ -5,6 +5,7 @@ import 'package:image_from_firebase_public/component/Provider_comp.dart';
 
 import 'package:image_from_firebase_public/constanst/constanst.dart';
 import 'package:image_from_firebase_public/screen/Profile_Page.dart';
+import 'package:image_from_firebase_public/screen/Splash_Page.dart';
 import 'package:image_from_firebase_public/screen/Starting_Page3.dart';
 import 'package:provider/provider.dart';
 import '/screen/listpage/italian.dart';
@@ -54,30 +55,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      initialRoute: Starting_Page_1.ID, //Profile_page.ID, // "tryyyyyyy",
-      // Firstpage_food.ID, // //Firstpage_foodtype.ID,// Favorities_Page.ID,
+      initialRoute: Splash_Page.ID, //Starting_Page_1.ID,
       routes: {
-        for (int i = 0; i < secondpagelist.length; i++)
-          secondpagelist[i]: (context) =>
-              new secondpage_foodlist(Foodtype_name: secondpagelist[i]),
-
-        profile_page.ID: (context) => profile_page(),
-        foodlist.ID: (context) => foodlist(),
-        Firstpage_foodtype.ID: (context) => Firstpage_foodtype(),
-
-        // "recipeepage.ID": (context) => recipee_page(foodtype: '',),
-        french.ID: (context) => french(),
-        chinese.ID: (context) => chinese(),
-        italian.ID: (context) => italian(),
-        japanese.ID: (context) => japanese(),
-        korean.ID: (context) => korean(),
-        subcontiental.ID: (context) => subcontiental(),
-        thai.ID: (context) => thai(),
-        turkish.ID: (context) => turkish(),
-
-        "datata": (context) => dataentrypage(),
-        "data": (context) => dataentry(),
-
         Starting_Page_1.ID: (context) => Starting_Page_1(),
         Starting_Page_2.ID: (context) => Starting_Page_2(),
         Starting_Page_3.ID: (context) => Starting_Page_3(),
@@ -86,16 +65,36 @@ class MyApp extends StatelessWidget {
         Profile_Page.ID: (context) => Profile_Page(),
         Favorities_Page.ID: (context) => Favorities_Page(),
         Firstpage_Food_Page.ID: (context) => Firstpage_Food_Page(),
-        // Secondpage_food.ID: (context) => Secondpage_food(
-        //       FoodType: 'AMERICAN',
-        //     ),
-        // for (int i = 0; i < secondpagelist.length; i++)
-        //   secondpagelist[i] + "try": (context) =>
-        //       Secondpage_food(FoodType: secondpagelist[i]),
+        Splash_Page.ID: (context) => Splash_Page(),
+        for (int i = 0; i < secondpagelist.length; i++)
+          secondpagelist[i]: (context) =>
+              new secondpage_foodlist(Foodtype_name: secondpagelist[i]),
+        profile_page.ID: (context) => profile_page(),
+        foodlist.ID: (context) => foodlist(),
+        Firstpage_foodtype.ID: (context) => Firstpage_foodtype(),
+        french.ID: (context) => french(),
+        chinese.ID: (context) => chinese(),
+        italian.ID: (context) => italian(),
+        japanese.ID: (context) => japanese(),
+        korean.ID: (context) => korean(),
+        subcontiental.ID: (context) => subcontiental(),
+        thai.ID: (context) => thai(),
+        turkish.ID: (context) => turkish(),
+        "datata": (context) => dataentrypage(),
+        "data": (context) => dataentry(),
       },
     );
   }
 }
+
+// "recipeepage.ID": (context) => recipee_page(foodtype: '',),
+
+// Secondpage_food.ID: (context) => Secondpage_food(
+//       FoodType: 'AMERICAN',
+//     ),
+// for (int i = 0; i < secondpagelist.length; i++)
+//   secondpagelist[i] + "try": (context) =>
+//       Secondpage_food(FoodType: secondpagelist[i]),
 
 //   foodtype_name_list.nAmerican: (context) => new secondpage_foodlist(
 //       Foodtype_name: foodtype_name_list.nAmerican),
