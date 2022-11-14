@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/component/Provider_comp.dart';
 
 import 'package:image_from_firebase_public/constanst/constanst.dart';
+import 'package:image_from_firebase_public/screen/First_FromChef_Page.dart';
 import 'package:image_from_firebase_public/screen/Profile_Page.dart';
 import 'package:image_from_firebase_public/screen/Splash_Page.dart';
 import 'package:image_from_firebase_public/screen/Starting_Page3.dart';
@@ -21,7 +22,7 @@ import 'screen/oldpages/O_second_page_foodlist.dart';
 import 'screen/SignIn_Page.dart';
 import 'screen/SignUp_Page.dart';
 import 'screen/Starting_Page1.dart';
-import 'dummy/dataentry_page.dart';
+import 'screen/DataEntry_page.dart';
 import 'dummy/foodlist.dart';
 import 'screen/oldpages/O_First_page_foodlist.dart';
 import 'dummy/dataentry.dart';
@@ -55,7 +56,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      initialRoute: Splash_Page.ID, //Starting_Page_1.ID,
+      initialRoute: Splash_Page.ID,
+      //"datata",
+      //FromChefPage.ID,
+      //, // // //Starting_Page_1.ID,
       routes: {
         Starting_Page_1.ID: (context) => Starting_Page_1(),
         Starting_Page_2.ID: (context) => Starting_Page_2(),
@@ -66,6 +70,7 @@ class MyApp extends StatelessWidget {
         Favorities_Page.ID: (context) => Favorities_Page(),
         Firstpage_Food_Page.ID: (context) => Firstpage_Food_Page(),
         Splash_Page.ID: (context) => Splash_Page(),
+        First_FromChefPage.ID: (context) => First_FromChefPage(),
         for (int i = 0; i < secondpagelist.length; i++)
           secondpagelist[i]: (context) =>
               new secondpage_foodlist(Foodtype_name: secondpagelist[i]),
@@ -79,7 +84,7 @@ class MyApp extends StatelessWidget {
         korean.ID: (context) => korean(),
         subcontiental.ID: (context) => subcontiental(),
         thai.ID: (context) => thai(),
-        turkish.ID: (context) => turkish(),
+        turkish.ID: (constext) => turkish(),
         "datata": (context) => dataentrypage(),
         "data": (context) => dataentry(),
       },

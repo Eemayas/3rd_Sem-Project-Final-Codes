@@ -33,6 +33,7 @@ dependencies:
   connectivity_plus: ^2.3.6+1
   cupertino_icons: ^1.0.2
   curved_navigation_bar: ^1.0.3
+  email_validator: ^2.1.17
   firebase_auth: ^3.9.0
   firebase_core: ^1.6.0
   firebase_database: ^9.1.4

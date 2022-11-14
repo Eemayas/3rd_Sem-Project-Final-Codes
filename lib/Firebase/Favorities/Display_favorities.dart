@@ -45,6 +45,7 @@ class _Display_favoritiesState extends State<Display_favorities> {
               children: [
                 for (int i = 1; i < length; i++)
                   Slide_ViewLile_FoodDisplay(
+                      isChefPage: false,
                       Device_Orientation: widget.Device_Orientation,
                       foodname_Textt: yourResponseDataFromAsync![i]
                           ["Foodlist_s"],

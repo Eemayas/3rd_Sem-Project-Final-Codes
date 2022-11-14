@@ -2,6 +2,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_from_firebase_public/constanst/constanst.dart';
+import 'package:image_from_firebase_public/screen/ForgotPasswordPage.dart';
 import 'package:image_from_firebase_public/screen/Starting_page3.dart';
 import '../component/Alertdialouge.dart';
 import '../component/Login_Component.dart';
@@ -87,6 +88,22 @@ class _Sign_InState extends State<Sign_In> {
                       _password = value;
                       print(value);
                     }),
+                Row(
+                  children: [
+                    Spacer(),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (builder) => ForgotPasswordPage()));
+                        },
+                        child: Text(
+                          "Forget Password?",
+                          style: TextStyle(color: Colors.white),
+                        ))
+                  ],
+                ),
                 login_button(
                     Textt: "Sign In",
                     onTap: () async {

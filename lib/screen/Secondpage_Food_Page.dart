@@ -231,6 +231,7 @@ class _Secondpage_Food_PageState extends State<Secondpage_Food_Page> {
                     children: [
                       for (int i = 0; i < secondpage_list.length; i++)
                         Slide_ViewLile_FoodDisplay(
+                            isChefPage: false,
                             Device_Orientation: Portraitt.ID,
                             foodname_Textt: secondpage_list[i].name,
                             img_url: secondpage_map_imageurl[
@@ -384,6 +385,7 @@ class _Secondpage_Food_PageState extends State<Secondpage_Food_Page> {
                       children: [
                         for (int i = 0; i < secondpage_list.length; i++)
                           Slide_ViewLile_FoodDisplay(
+                              isChefPage: false,
                               Device_Orientation: Landscapee.ID,
                               foodname_Textt: secondpage_list[i].name,
                               img_url: secondpage_map_imageurl[

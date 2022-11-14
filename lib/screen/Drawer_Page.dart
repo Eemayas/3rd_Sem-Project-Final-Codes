@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_from_firebase_public/screen/First_FromChef_Page.dart';
 import '../constanst/constanst.dart';
 import '../constanst/Tile_for_detail.dart';
 import 'Pin_Input_Page.dart';
@@ -95,6 +96,19 @@ class Drawer_Page extends StatelessWidget {
                     Navigator.pushNamed(context, Firstpage_Food_Page.ID);
                   },
                 ),
+                Tile_for_detail(
+                    Device_Orientation: Portraitt.ID,
+                    Text_list: "From Chef",
+                    Iccon: Icon(Icons.restaurant),
+                    onpressed: () {
+                      Navigator.pushNamed(context, First_FromChefPage.ID);
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (builder) => Pin_Input_Page()));
+
+                      //Navigator.pushNamed(context, "datata");
+                    }),
                 Tile_for_detail(
                     Device_Orientation: Portraitt.ID,
                     Text_list: "Info",
@@ -205,6 +219,19 @@ class Drawer_Page extends StatelessWidget {
                     Navigator.pushNamed(context, Firstpage_Food_Page.ID);
                   },
                 ),
+                Tile_for_detail(
+                    Device_Orientation: Landscapee.ID,
+                    Text_list: "From Chef",
+                    Iccon: Icon(Icons.restaurant),
+                    onpressed: () {
+                      Navigator.pushNamed(context, First_FromChefPage.ID);
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (builder) => Pin_Input_Page()));
+
+                      //Navigator.pushNamed(context, "datata");
+                    }),
                 Tile_for_detail(
                     Device_Orientation: Landscapee.ID,
                     Text_list: "Info",

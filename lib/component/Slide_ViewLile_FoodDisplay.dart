@@ -8,11 +8,13 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
   final String img_url;
   final Function() OnTap;
   final String Device_Orientation;
+  final bool isChefPage;
   Slide_ViewLile_FoodDisplay(
       {required this.foodname_Textt,
       required this.OnTap,
       required this.img_url,
-      required this.Device_Orientation});
+      required this.Device_Orientation,
+      required this.isChefPage});
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +66,15 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
                         spreadRadius: 2,
                       )
                     ],
-                    image: DecorationImage(
-                      image: CachedNetworkImageProvider(img_url),
-                      fit: BoxFit.fill,
-                    )),
+                    image: isChefPage
+                        ? DecorationImage(
+                            image: AssetImage(img_url),
+                            fit: BoxFit.fill,
+                          )
+                        : DecorationImage(
+                            image: CachedNetworkImageProvider(img_url),
+                            fit: BoxFit.fill,
+                          )),
 
                 //DecorationImage(image: AssetImage("image/logo.jpg"))),
                 //),
@@ -75,11 +82,14 @@ class Slide_ViewLile_FoodDisplay extends StatelessWidget {
               // Hero(
               //     tag: "text+$Textt",
               //     child:
-              Expanded(
-                child: Text(foodname_Textt,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    style: textStyle),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: Text(foodname_Textt,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: textStyle),
+                ),
               ),
               //),
               Container(
