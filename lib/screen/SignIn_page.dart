@@ -67,14 +67,12 @@ class _Sign_InState extends State<Sign_In> {
                             spreadRadius: 2,
                           )
                         ],
-                        image: DecorationImage(
-                            image: AssetImage("image/logo.jpg"))),
+                        image: DecorationImage(image: AssetImage("image/logo.jpg"))),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: Text("Sign IN",
-                      textAlign: TextAlign.center, style: textStyle),
+                  child: Text("Sign IN", textAlign: TextAlign.center, style: textStyle),
                 ),
                 emailbox(
                     Orientation: Portraitt.ID,
@@ -93,10 +91,7 @@ class _Sign_InState extends State<Sign_In> {
                     Spacer(),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (builder) => ForgotPasswordPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (builder) => ForgotPasswordPage()));
                         },
                         child: Text(
                           "Forget Password?",
@@ -111,13 +106,9 @@ class _Sign_InState extends State<Sign_In> {
                       try {
                         if (_email != null && _password != null) {
                           try {
-                            UserCredential userCredential = await FirebaseAuth
-                                .instance
-                                .signInWithEmailAndPassword(
-                                    email: _email, password: _password);
-                            FirebaseAuth.instance
-                                .userChanges()
-                                .listen((User? user) {
+                            UserCredential userCredential =
+                                await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
+                            FirebaseAuth.instance.userChanges().listen((User? user) {
                               if (user == null) {
                                 print('User is currently signed out!');
                               } else {
@@ -128,12 +119,10 @@ class _Sign_InState extends State<Sign_In> {
                             Navigator.pushNamed(context, Starting_Page_3.ID);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
-                              showAlertDialog(
-                                  context, 'No user found for that email.');
+                              showAlertDialog(context, 'No user found for that email.');
                               print('No user found for that email.');
                             } else if (e.code == 'wrong-password') {
-                              showAlertDialog(context,
-                                  'Wrong password provided for that user.');
+                              showAlertDialog(context, 'Wrong password provided for that user.');
                               print('Wrong password provided for that user.');
                             }
                           }
@@ -154,8 +143,7 @@ class _Sign_InState extends State<Sign_In> {
             //),
 
             SizedBox(
-              height:
-                  MediaQuery.of(context).size.height - ratio_height(context, 2),
+              height: MediaQuery.of(context).size.height - ratio_height(context, 2),
             )
           ],
         );
@@ -188,14 +176,12 @@ class _Sign_InState extends State<Sign_In> {
                             spreadRadius: 2,
                           )
                         ],
-                        image: DecorationImage(
-                            image: AssetImage("image/logo.jpg"))),
+                        image: DecorationImage(image: AssetImage("image/logo.jpg"))),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10),
-                  child: Text("Sign IN",
-                      textAlign: TextAlign.center, style: textStyle),
+                  child: Text("Sign IN", textAlign: TextAlign.center, style: textStyle),
                 ),
                 emailbox(
                     Orientation: Landscapee.ID,
@@ -216,13 +202,9 @@ class _Sign_InState extends State<Sign_In> {
                       try {
                         if (_email != null && _password != null) {
                           try {
-                            UserCredential userCredential = await FirebaseAuth
-                                .instance
-                                .signInWithEmailAndPassword(
-                                    email: _email, password: _password);
-                            FirebaseAuth.instance
-                                .userChanges()
-                                .listen((User? user) {
+                            UserCredential userCredential =
+                                await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
+                            FirebaseAuth.instance.userChanges().listen((User? user) {
                               // if (user == null) {
                               //   print('User is currently signed out!');
                               // } else {
@@ -233,12 +215,10 @@ class _Sign_InState extends State<Sign_In> {
                             Navigator.pushNamed(context, Starting_Page_3.ID);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
-                              showAlertDialog(
-                                  context, 'No user found for that email.');
+                              showAlertDialog(context, 'No user found for that email.');
                               print('No user found for that email.');
                             } else if (e.code == 'wrong-password') {
-                              showAlertDialog(context,
-                                  'Wrong password provided for that user.');
+                              showAlertDialog(context, 'Wrong password provided for that user.');
                               print('Wrong password provided for that user.');
                             }
                           }
@@ -257,10 +237,7 @@ class _Sign_InState extends State<Sign_In> {
               ],
             ),
             //),
-            Padding(
-                padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom +
-                        MediaQuery.of(context).size.height * 0.95))
+            Padding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom + MediaQuery.of(context).size.height * 0.95))
             // SizedBox(height: MediaQuery.of(context).size.height * 0.95)
           ],
         );
